@@ -1,37 +1,37 @@
 fileFormatVersion: 2
-guid: 18c4c7fad10de8c4da2485403dfb1c3f
+guid: aa28c40c8e7fd1f48bb5414fb8fdefdf
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Ribbon_0
-    21300002: Ribbon_1
-    21300004: Ribbon_2
-    21300006: Ribbon_3
-    21300008: Ribbon_4
-    21300010: Ribbon_5
-    21300012: Ribbon_6
-    21300014: Ribbon_7
-    21300016: Ribbon_8
-    21300018: Ribbon_9
-    21300020: Ribbon_10
-    21300022: Ribbon_11
-    21300024: Ribbon_12
-    21300026: Ribbon_13
-    21300028: Ribbon_14
-    21300030: Ribbon_15
-    21300032: Ribbon_16
-    21300034: Ribbon_17
-    21300036: Ribbon_18
-    21300038: Ribbon_19
-    21300040: Ribbon_20
-    21300042: Ribbon_21
-    21300044: Ribbon_22
-    21300046: Ribbon_23
-    21300048: Ribbon_24
-    21300050: Ribbon_25
-    21300052: Ribbon_26
-    21300054: Ribbon_27
-    21300056: Ribbon_28
-    21300058: Ribbon_29
+    21300000: Samurai_Kabuto_Back_0
+    21300002: Samurai_Kabuto_Back_1
+    21300004: Samurai_Kabuto_Back_2
+    21300006: Samurai_Kabuto_Back_3
+    21300008: Samurai_Kabuto_Back_4
+    21300010: Samurai_Kabuto_Back_5
+    21300012: Samurai_Kabuto_Back_6
+    21300014: Samurai_Kabuto_Back_7
+    21300016: Samurai_Kabuto_Back_8
+    21300018: Samurai_Kabuto_Back_9
+    21300020: Samurai_Kabuto_Back_10
+    21300022: Samurai_Kabuto_Back_11
+    21300024: Samurai_Kabuto_Back_12
+    21300026: Samurai_Kabuto_Back_13
+    21300028: Samurai_Kabuto_Back_14
+    21300030: Samurai_Kabuto_Back_15
+    21300032: Samurai_Kabuto_Back_16
+    21300034: Samurai_Kabuto_Back_17
+    21300036: Samurai_Kabuto_Back_18
+    21300038: Samurai_Kabuto_Back_19
+    21300040: Samurai_Kabuto_Back_20
+    21300042: Samurai_Kabuto_Back_21
+    21300044: Samurai_Kabuto_Back_22
+    21300046: Samurai_Kabuto_Back_23
+    21300048: Samurai_Kabuto_Back_24
+    21300050: Samurai_Kabuto_Back_25
+    21300052: Samurai_Kabuto_Back_26
+    21300054: Samurai_Kabuto_Back_27
+    21300056: Samurai_Kabuto_Back_28
+    21300058: Samurai_Kabuto_Back_29
   externalObjects: {}
   serializedVersion: 5
   mipmaps:
@@ -156,13 +156,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Ribbon_0
+      name: Samurai_Kabuto_Back_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 436
-        width: 276
-        height: 218
+        y: 632
+        width: 458
+        height: 316
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -170,19 +170,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1e392f5b337c8884caa5a5ae8a87a8ba
+      spriteID: 8c27eb85a8fb0b74d8a14da7895ddbd7
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ribbon_1
+      name: Samurai_Kabuto_Back_1
       rect:
         serializedVersion: 2
-        x: 276
-        y: 436
-        width: 276
-        height: 218
+        x: 458
+        y: 632
+        width: 458
+        height: 316
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -190,19 +190,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 577a04475f6ebd1449bb94479f6a0c91
+      spriteID: 1088236f43eda344e8e868b49be21611
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ribbon_2
+      name: Samurai_Kabuto_Back_2
       rect:
         serializedVersion: 2
-        x: 552
-        y: 436
-        width: 276
-        height: 218
+        x: 916
+        y: 632
+        width: 458
+        height: 316
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -210,19 +210,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 36f6fea5421d57147bc19472d927e243
+      spriteID: 40221c9fe4a6b934b8c74968dca16d27
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ribbon_3
+      name: Samurai_Kabuto_Back_3
       rect:
         serializedVersion: 2
-        x: 828
-        y: 436
-        width: 276
-        height: 218
+        x: 1374
+        y: 632
+        width: 458
+        height: 316
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -230,19 +230,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3198aca161dbcc847a8e49a125980b39
+      spriteID: db7b41160ba2c634cb49a7858e9f8845
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ribbon_4
+      name: Samurai_Kabuto_Back_4
       rect:
         serializedVersion: 2
-        x: 1104
-        y: 436
-        width: 276
-        height: 218
+        x: 1832
+        y: 632
+        width: 458
+        height: 316
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -250,19 +250,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c18947d401976954fb6969ad42466069
+      spriteID: 44f2387ac62d70a4483e84cb66f94763
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ribbon_5
+      name: Samurai_Kabuto_Back_5
       rect:
         serializedVersion: 2
-        x: 1380
-        y: 436
-        width: 276
-        height: 218
+        x: 2290
+        y: 632
+        width: 458
+        height: 316
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -270,19 +270,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 10c378d89e7b9864da1d67d2f7320077
+      spriteID: 4fe19a0f2055a23408c81df2df3c82b5
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ribbon_6
+      name: Samurai_Kabuto_Back_6
       rect:
         serializedVersion: 2
-        x: 1656
-        y: 436
-        width: 276
-        height: 218
+        x: 2748
+        y: 632
+        width: 458
+        height: 316
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -290,19 +290,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e56908a6aac8d204abf26939a29718d7
+      spriteID: bbc2357a585d7664d8e6ad4ef8b98962
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ribbon_7
+      name: Samurai_Kabuto_Back_7
       rect:
         serializedVersion: 2
-        x: 1932
-        y: 436
-        width: 276
-        height: 218
+        x: 3206
+        y: 632
+        width: 458
+        height: 316
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -310,19 +310,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0f785ec5913bbf948a2ba277b0a6d130
+      spriteID: e76ecdbb48e01ac4e93e2526f0d8f604
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ribbon_8
+      name: Samurai_Kabuto_Back_8
       rect:
         serializedVersion: 2
-        x: 2208
-        y: 436
-        width: 276
-        height: 218
+        x: 3664
+        y: 632
+        width: 458
+        height: 316
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -330,19 +330,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5bbed92e9c5a793498321905d1c6a90b
+      spriteID: 3f2a7bd25ba8742428b4fdc19484f664
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ribbon_9
+      name: Samurai_Kabuto_Back_9
       rect:
         serializedVersion: 2
-        x: 2484
-        y: 436
-        width: 276
-        height: 218
+        x: 4122
+        y: 632
+        width: 458
+        height: 316
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -350,219 +350,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ed66f17ea98e56348a57a95de8617bf6
+      spriteID: 385d2df7e9a9ad942a4d4b2e68a2f867
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ribbon_10
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 218
-        width: 276
-        height: 218
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d31ff81030957fd41b52d5b1aa657325
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Ribbon_11
-      rect:
-        serializedVersion: 2
-        x: 276
-        y: 218
-        width: 276
-        height: 218
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bd2fbaeabb9f8ab49a4156dbee14f10c
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Ribbon_12
-      rect:
-        serializedVersion: 2
-        x: 552
-        y: 218
-        width: 276
-        height: 218
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 30a1b5e55c09a7641aef3afe3414ad9e
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Ribbon_13
-      rect:
-        serializedVersion: 2
-        x: 828
-        y: 218
-        width: 276
-        height: 218
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2e1de36f3d1b78a46858990bf21afd76
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Ribbon_14
-      rect:
-        serializedVersion: 2
-        x: 1104
-        y: 218
-        width: 276
-        height: 218
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f9bf3eb0bc8b08649997759a7868c346
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Ribbon_15
-      rect:
-        serializedVersion: 2
-        x: 1380
-        y: 218
-        width: 276
-        height: 218
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c06d86ef1a260c045aa6a1fd80c59385
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Ribbon_16
-      rect:
-        serializedVersion: 2
-        x: 1656
-        y: 218
-        width: 276
-        height: 218
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 33fd845da94de1145907e9e358aee569
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Ribbon_17
-      rect:
-        serializedVersion: 2
-        x: 1932
-        y: 218
-        width: 276
-        height: 218
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f30cef555a10c6745976d890f12415ed
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Ribbon_18
-      rect:
-        serializedVersion: 2
-        x: 2208
-        y: 218
-        width: 276
-        height: 218
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a045a0f45ec2e804bb634025639a6fe1
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Ribbon_19
-      rect:
-        serializedVersion: 2
-        x: 2484
-        y: 218
-        width: 276
-        height: 218
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ffb540bb7eb1b144e895e1eff2868757
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Ribbon_20
+      name: Samurai_Kabuto_Back_10
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 276
-        height: 218
+        y: 316
+        width: 458
+        height: 316
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -570,19 +370,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2c869f193d847e142b9759b85d2a301c
+      spriteID: 641b505b6d38b6f46bbd79d2f95b4a8d
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ribbon_21
+      name: Samurai_Kabuto_Back_11
       rect:
         serializedVersion: 2
-        x: 276
-        y: 0
-        width: 276
-        height: 218
+        x: 458
+        y: 316
+        width: 458
+        height: 316
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -590,19 +390,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 841638a8d8643d04a877e781adfa8ff3
+      spriteID: e364670474be982478d26e4bfe59130b
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ribbon_22
+      name: Samurai_Kabuto_Back_12
       rect:
         serializedVersion: 2
-        x: 552
-        y: 0
-        width: 276
-        height: 218
+        x: 916
+        y: 316
+        width: 458
+        height: 316
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -610,19 +410,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0e5cca64ddad866419408e01f9f0b6d2
+      spriteID: 271cc539dd27a7c41840bdd3251aa675
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ribbon_23
+      name: Samurai_Kabuto_Back_13
       rect:
         serializedVersion: 2
-        x: 828
-        y: 0
-        width: 276
-        height: 218
+        x: 1374
+        y: 316
+        width: 458
+        height: 316
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -630,19 +430,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d2c53ed7021e6a743af124ca822bcada
+      spriteID: 4f87670848faa7b45a72fd39e8d957a3
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ribbon_24
+      name: Samurai_Kabuto_Back_14
       rect:
         serializedVersion: 2
-        x: 1104
-        y: 0
-        width: 276
-        height: 218
+        x: 1832
+        y: 316
+        width: 458
+        height: 316
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -650,19 +450,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9be4e21c4c972c84eb413e7481e738bf
+      spriteID: 039dde4692c49a3478553dace2c06049
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ribbon_25
+      name: Samurai_Kabuto_Back_15
       rect:
         serializedVersion: 2
-        x: 1380
-        y: 0
-        width: 276
-        height: 218
+        x: 2290
+        y: 316
+        width: 458
+        height: 316
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -670,19 +470,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f0e4f4f09887e744baa2228924f1cf13
+      spriteID: 5c9cf255c8a3fad4fa48fb7dffe0f891
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ribbon_26
+      name: Samurai_Kabuto_Back_16
       rect:
         serializedVersion: 2
-        x: 1656
-        y: 0
-        width: 276
-        height: 218
+        x: 2748
+        y: 316
+        width: 458
+        height: 316
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -690,19 +490,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 980492cb44d0cb74f871f7594cb784f4
+      spriteID: db1c275885a35894388cf6c5989bbad2
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ribbon_27
+      name: Samurai_Kabuto_Back_17
       rect:
         serializedVersion: 2
-        x: 1932
-        y: 0
-        width: 276
-        height: 218
+        x: 3206
+        y: 316
+        width: 458
+        height: 316
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -710,19 +510,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 74980a9762d3a434b900e7660671fca7
+      spriteID: cc140331d3d0e4a48b94f7a30fa503c0
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ribbon_28
+      name: Samurai_Kabuto_Back_18
       rect:
         serializedVersion: 2
-        x: 2208
-        y: 0
-        width: 276
-        height: 218
+        x: 3664
+        y: 316
+        width: 458
+        height: 316
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -730,19 +530,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f6efbfe54b4e75248bf319c29b8cb78c
+      spriteID: 25160935599ad1c489105055b70a2d16
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ribbon_29
+      name: Samurai_Kabuto_Back_19
       rect:
         serializedVersion: 2
-        x: 2484
-        y: 0
-        width: 276
-        height: 218
+        x: 4122
+        y: 316
+        width: 458
+        height: 316
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -750,7 +550,207 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 99116657b26a98844a09082db26f9af7
+      spriteID: bc660e6b5bb5b5d4581ac3e1acbaa2b7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Samurai_Kabuto_Back_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 458
+        height: 316
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5021f74e3cae8949a45b559beac9b07
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Samurai_Kabuto_Back_21
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 0
+        width: 458
+        height: 316
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdf860c8aa8357d438789efaba54951c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Samurai_Kabuto_Back_22
+      rect:
+        serializedVersion: 2
+        x: 916
+        y: 0
+        width: 458
+        height: 316
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46f6292d32facc74487e4ec90b5e7f27
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Samurai_Kabuto_Back_23
+      rect:
+        serializedVersion: 2
+        x: 1374
+        y: 0
+        width: 458
+        height: 316
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c84a427f6763fb24fa89e77ed4c29940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Samurai_Kabuto_Back_24
+      rect:
+        serializedVersion: 2
+        x: 1832
+        y: 0
+        width: 458
+        height: 316
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 283f0a8cd6342bf488a64ff780c4b8af
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Samurai_Kabuto_Back_25
+      rect:
+        serializedVersion: 2
+        x: 2290
+        y: 0
+        width: 458
+        height: 316
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3f39a9be6f096346b8430c703b8355a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Samurai_Kabuto_Back_26
+      rect:
+        serializedVersion: 2
+        x: 2748
+        y: 0
+        width: 458
+        height: 316
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da577d429b2a858428d491e96e88e242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Samurai_Kabuto_Back_27
+      rect:
+        serializedVersion: 2
+        x: 3206
+        y: 0
+        width: 458
+        height: 316
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 103686be05e4de842903413eeb17f851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Samurai_Kabuto_Back_28
+      rect:
+        serializedVersion: 2
+        x: 3664
+        y: 0
+        width: 458
+        height: 316
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bd277e712b4feb469a4b8e338c8b42f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Samurai_Kabuto_Back_29
+      rect:
+        serializedVersion: 2
+        x: 4122
+        y: 0
+        width: 458
+        height: 316
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44c90707559e6424bbaf50b704c81fb8
       vertices: []
       indices: 
       edges: []
@@ -758,7 +758,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: eae0c954dcdc235458796ee76a501ea0
+    spriteID: 197f0b853d63b174a9106dfda9533f3d
     vertices: []
     indices: 
     edges: []
