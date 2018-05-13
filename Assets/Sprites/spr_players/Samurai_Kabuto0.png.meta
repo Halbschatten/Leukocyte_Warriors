@@ -1,0 +1,769 @@
+fileFormatVersion: 2
+guid: b797b9a48a6f2164daddb19b5097659a
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Samurai_Kabuto0_0
+    21300002: Samurai_Kabuto0_1
+    21300004: Samurai_Kabuto0_2
+    21300006: Samurai_Kabuto0_3
+    21300008: Samurai_Kabuto0_4
+    21300010: Samurai_Kabuto0_5
+    21300012: Samurai_Kabuto0_6
+    21300014: Samurai_Kabuto0_7
+    21300016: Samurai_Kabuto0_8
+    21300018: Samurai_Kabuto0_9
+    21300020: Samurai_Kabuto0_10
+    21300022: Samurai_Kabuto0_11
+    21300024: Samurai_Kabuto0_12
+    21300026: Samurai_Kabuto0_13
+    21300028: Samurai_Kabuto0_14
+    21300030: Samurai_Kabuto0_15
+    21300032: Samurai_Kabuto0_16
+    21300034: Samurai_Kabuto0_17
+    21300036: Samurai_Kabuto0_18
+    21300038: Samurai_Kabuto0_19
+    21300040: Samurai_Kabuto0_20
+    21300042: Samurai_Kabuto0_21
+    21300044: Samurai_Kabuto0_22
+    21300046: Samurai_Kabuto0_23
+    21300048: Samurai_Kabuto0_24
+    21300050: Samurai_Kabuto0_25
+    21300052: Samurai_Kabuto0_26
+    21300054: Samurai_Kabuto0_27
+    21300056: Samurai_Kabuto0_28
+    21300058: Samurai_Kabuto0_29
+  externalObjects: {}
+  serializedVersion: 5
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Samurai_Kabuto0_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 942
+        width: 557
+        height: 471
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83bd0f4919bb22e4d837767e4399f55e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Samurai_Kabuto0_1
+      rect:
+        serializedVersion: 2
+        x: 557
+        y: 942
+        width: 557
+        height: 471
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55bca8e4f20db6947aee43e2867fa307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Samurai_Kabuto0_2
+      rect:
+        serializedVersion: 2
+        x: 1114
+        y: 942
+        width: 557
+        height: 471
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ad00d1cc71a2d344ab1c85a199dd953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Samurai_Kabuto0_3
+      rect:
+        serializedVersion: 2
+        x: 1671
+        y: 942
+        width: 557
+        height: 471
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b68f541dd0168747a99fa1e342c31bc
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Samurai_Kabuto0_4
+      rect:
+        serializedVersion: 2
+        x: 2228
+        y: 942
+        width: 557
+        height: 471
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad556de903cbd0c4180405537b74fe24
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Samurai_Kabuto0_5
+      rect:
+        serializedVersion: 2
+        x: 2785
+        y: 942
+        width: 557
+        height: 471
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c737a0dcf0295e4f8aec60afa94fe5e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Samurai_Kabuto0_6
+      rect:
+        serializedVersion: 2
+        x: 3342
+        y: 942
+        width: 557
+        height: 471
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da301708d4bac4d44bd00708572058b9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Samurai_Kabuto0_7
+      rect:
+        serializedVersion: 2
+        x: 3899
+        y: 942
+        width: 557
+        height: 471
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69f027eea713e5f45b13e439df90cafd
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Samurai_Kabuto0_8
+      rect:
+        serializedVersion: 2
+        x: 4456
+        y: 942
+        width: 557
+        height: 471
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b956fff1a9b4928429a7923156acc778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Samurai_Kabuto0_9
+      rect:
+        serializedVersion: 2
+        x: 5013
+        y: 942
+        width: 557
+        height: 471
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 301fa93f7ab011841b021f43eb651201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Samurai_Kabuto0_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 471
+        width: 557
+        height: 471
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71ccf73c7f523234097161fce6e91f63
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Samurai_Kabuto0_11
+      rect:
+        serializedVersion: 2
+        x: 557
+        y: 471
+        width: 557
+        height: 471
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a7bf9cdbcef78a43a875317c2d157df
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Samurai_Kabuto0_12
+      rect:
+        serializedVersion: 2
+        x: 1114
+        y: 471
+        width: 557
+        height: 471
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60384d7361a178e42b8eac874e35967f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Samurai_Kabuto0_13
+      rect:
+        serializedVersion: 2
+        x: 1671
+        y: 471
+        width: 557
+        height: 471
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fa7fdeb0c0e3dd40921241825b7b2e6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Samurai_Kabuto0_14
+      rect:
+        serializedVersion: 2
+        x: 2228
+        y: 471
+        width: 557
+        height: 471
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 044e9f00bccf97e4dbd6a9b2c588c319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Samurai_Kabuto0_15
+      rect:
+        serializedVersion: 2
+        x: 2785
+        y: 471
+        width: 557
+        height: 471
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 731cb68a6b582e34198491b102f22f48
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Samurai_Kabuto0_16
+      rect:
+        serializedVersion: 2
+        x: 3342
+        y: 471
+        width: 557
+        height: 471
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec425c28d391cb24b9b025999c7b3452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Samurai_Kabuto0_17
+      rect:
+        serializedVersion: 2
+        x: 3899
+        y: 471
+        width: 557
+        height: 471
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fd7c49a8b3b1334ab8e7d8046ff434c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Samurai_Kabuto0_18
+      rect:
+        serializedVersion: 2
+        x: 4456
+        y: 471
+        width: 557
+        height: 471
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7c751dfed67f8640ba7e21278bd3ed3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Samurai_Kabuto0_19
+      rect:
+        serializedVersion: 2
+        x: 5013
+        y: 471
+        width: 557
+        height: 471
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d94e9855c7fa2ad45bc4523eb3cdf1ae
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Samurai_Kabuto0_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 557
+        height: 471
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc5b4a05837255240bc0d96560607d75
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Samurai_Kabuto0_21
+      rect:
+        serializedVersion: 2
+        x: 557
+        y: 0
+        width: 557
+        height: 471
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93e005cad7e5d3a4a9b4594e7cac2103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Samurai_Kabuto0_22
+      rect:
+        serializedVersion: 2
+        x: 1114
+        y: 0
+        width: 557
+        height: 471
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 465e0ecad70dcbd4d89db61709fff471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Samurai_Kabuto0_23
+      rect:
+        serializedVersion: 2
+        x: 1671
+        y: 0
+        width: 557
+        height: 471
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9efb4bb622006354aa08342b65fe4819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Samurai_Kabuto0_24
+      rect:
+        serializedVersion: 2
+        x: 2228
+        y: 0
+        width: 557
+        height: 471
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8240a4c1b6ae714c9ccfed463830225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Samurai_Kabuto0_25
+      rect:
+        serializedVersion: 2
+        x: 2785
+        y: 0
+        width: 557
+        height: 471
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36821185d5b5882429a9b91a08ed7a9f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Samurai_Kabuto0_26
+      rect:
+        serializedVersion: 2
+        x: 3342
+        y: 0
+        width: 557
+        height: 471
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6af2d886c94376c4995361859cfef452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Samurai_Kabuto0_27
+      rect:
+        serializedVersion: 2
+        x: 3899
+        y: 0
+        width: 557
+        height: 471
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a84a189cc71136e44acddb9bc8c09aa4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Samurai_Kabuto0_28
+      rect:
+        serializedVersion: 2
+        x: 4456
+        y: 0
+        width: 557
+        height: 471
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4c2395a2ca509f4fbb137aa59ea9176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Samurai_Kabuto0_29
+      rect:
+        serializedVersion: 2
+        x: 5013
+        y: 0
+        width: 557
+        height: 471
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3286cbf2a0d5ede45a3801b327162c05
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 2762cdec62a56174ba8353eff37dd40a
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
