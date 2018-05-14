@@ -9,8 +9,14 @@ public class MainMenuScript : MonoBehaviour
     public float bgScrollSpeed;
     public GameObject mainMenu, playMenu, tutorialMenu, settingsMenu, aboutMenu;
 
+    //Play Menu
+    public Image[] colorSliderBackgrounds = new Image[3];
+    public Color color = Color.black;
+    public Image colorDisplay;
+
     void Update()
     {
+        colorDisplay.color = color;
         //If ESC key is pressed, quit application.
         if (Input.GetKey(KeyCode.Escape))
         {
@@ -42,11 +48,28 @@ public class MainMenuScript : MonoBehaviour
 	{
 		QuitGame();
 	}
+    //Play Menu
     public void PlayMenuBackButton()
     {
         playMenu.SetActive(false);
         mainMenu.SetActive(true);
     }
+    public void OnRedSliderChange(float value)
+    {
+        color = new Color(value, color.g, color.b);
+        colorSliderBackgrounds[0].color = new Vector4(value, 0.0f, 0.0f, 1.0f);
+    }
+    public void OnGreenSliderChange(float value)
+    {
+        color = new Color(color.r, value, color.b);
+        colorSliderBackgrounds[1].color = new Vector4(0.0f, value, 0.0f, 1.0f);
+    }
+    public void OnBlueSliderChange(float value)
+    {
+        color = new Color(color.r, color.g, value);
+        colorSliderBackgrounds[2].color = new Vector4(0.0f, 0.0f, value, 1.0f);
+    }
+    //
     public void TutorialMenuBackButton()
     {
         tutorialMenu.SetActive(false);
