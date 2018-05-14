@@ -350,7 +350,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 937924540}
+      - m_Target: {fileID: 801628355}
         m_MethodName: OnBlueSliderChange
         m_Mode: 0
         m_Arguments:
@@ -1815,7 +1815,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1929,7 +1929,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 937924540}
-        m_MethodName: PlayMenuBackButton
+        m_MethodName: Player1MenuNextButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2057,7 +2057,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 937924540}
+      - m_Target: {fileID: 801628355}
         m_MethodName: OnRedSliderChange
         m_Mode: 0
         m_Arguments:
@@ -2434,7 +2434,7 @@ MonoBehaviour:
   m_Script: {fileID: -619905303, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 1612839286}
+  m_FirstSelected: {fileID: 631559580}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!1 &255749417
@@ -2636,13 +2636,14 @@ GameObject:
   m_Component:
   - component: {fileID: 285853090}
   - component: {fileID: 285853091}
+  - component: {fileID: 285853092}
   m_Layer: 5
   m_Name: Player 1 Customization Screen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &285853090
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2695,6 +2696,23 @@ MonoBehaviour:
   - {fileID: 2027470263}
   - {fileID: 1872788432}
   selectedObject: {fileID: 0}
+--- !u!114 &285853092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 285853089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e5e371ff5b811a45bfd7b5917b36aaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colorSliderBackgrounds:
+  - {fileID: 598329074}
+  - {fileID: 286942776}
+  - {fileID: 1497476259}
+  color: {r: 0, g: 0, b: 0, a: 1}
+  colorDisplay: {fileID: 1472564096}
 --- !u!1 &286942774
 GameObject:
   m_ObjectHideFlags: 0
@@ -2726,7 +2744,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -2846,7 +2864,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 937924540}
+      - m_Target: {fileID: 285853092}
         m_MethodName: OnGreenSliderChange
         m_Mode: 0
         m_Arguments:
@@ -3138,7 +3156,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -3258,7 +3276,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 937924540}
+      - m_Target: {fileID: 285853092}
         m_MethodName: OnBlueSliderChange
         m_Mode: 0
         m_Arguments:
@@ -5094,7 +5112,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -5177,7 +5195,7 @@ GameObject:
   - component: {fileID: 631559583}
   - component: {fileID: 631559582}
   m_Layer: 5
-  m_Name: Player 1 Hats Dropdown
+  m_Name: Player 2 Hats Dropdown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6298,7 +6316,7 @@ MonoBehaviour:
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
   m_isInputParsingRequired: 0
-  m_inputSource: 3
+  m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
   - {fileID: 0}
@@ -6593,13 +6611,14 @@ GameObject:
   m_Component:
   - component: {fileID: 801628353}
   - component: {fileID: 801628354}
+  - component: {fileID: 801628355}
   m_Layer: 5
   m_Name: Player 2 Customization Screen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &801628353
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6652,6 +6671,23 @@ MonoBehaviour:
   - {fileID: 717848694}
   - {fileID: 201248129}
   selectedObject: {fileID: 0}
+--- !u!114 &801628355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 801628352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e5e371ff5b811a45bfd7b5917b36aaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colorSliderBackgrounds:
+  - {fileID: 1123197355}
+  - {fileID: 936088913}
+  - {fileID: 910456531}
+  color: {r: 0, g: 0, b: 0, a: 1}
+  colorDisplay: {fileID: 668383651}
 --- !u!1 &808788097
 GameObject:
   m_ObjectHideFlags: 0
@@ -7538,7 +7574,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -7740,7 +7776,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 937924540}
+      - m_Target: {fileID: 801628355}
         m_MethodName: OnGreenSliderChange
         m_Mode: 0
         m_Arguments:
@@ -7852,7 +7888,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -7984,16 +8020,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bgScrollSpeed: -1
   mainMenu: {fileID: 1047900598}
-  playMenu: {fileID: 285853089}
+  player1Menu: {fileID: 285853089}
+  player2Menu: {fileID: 801628352}
   tutorialMenu: {fileID: 312039415}
   settingsMenu: {fileID: 1868870525}
   aboutMenu: {fileID: 903154728}
-  colorSliderBackgrounds:
-  - {fileID: 598329074}
-  - {fileID: 286942776}
-  - {fileID: 1497476259}
-  color: {r: 0, g: 0, b: 0, a: 1}
-  colorDisplay: {fileID: 1472564096}
 --- !u!1 &939425967
 GameObject:
   m_ObjectHideFlags: 0
@@ -8071,7 +8102,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 937924540}
-        m_MethodName: PlayMenuBackButton
+        m_MethodName: Player1MenuBackButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8963,7 +8994,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -9133,7 +9164,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -11157,7 +11188,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -11322,7 +11353,7 @@ GameObject:
   - component: {fileID: 1423041498}
   - component: {fileID: 1423041497}
   m_Layer: 5
-  m_Name: Player 1 Accessories Dropdown
+  m_Name: Player 2 Accessories Dropdown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11515,7 +11546,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -12687,7 +12718,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -13201,7 +13232,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -14145,7 +14176,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 937924540}
-        m_MethodName: PlayMenuBackButton
+        m_MethodName: Player2MenuBackButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -14447,7 +14478,7 @@ MonoBehaviour:
   m_Script: {fileID: -619905303, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 939425967}
+  m_FirstSelected: {fileID: 67413920}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!1 &1640398356
@@ -14887,7 +14918,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 937924540}
+      - m_Target: {fileID: 285853092}
         m_MethodName: OnRedSliderChange
         m_Mode: 0
         m_Arguments:
@@ -21528,7 +21559,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 937924540}
-        m_MethodName: PlayMenuBackButton
+        m_MethodName: Player2MenuPlayButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -22112,7 +22143,7 @@ GameObject:
   - component: {fileID: 2053704079}
   - component: {fileID: 2053704078}
   m_Layer: 5
-  m_Name: Player 1 Selected Item
+  m_Name: Player 2 Selected Item
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

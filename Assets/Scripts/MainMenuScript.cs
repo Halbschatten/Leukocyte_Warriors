@@ -7,16 +7,10 @@ using UnityEngine.SceneManagement;
 public class MainMenuScript : MonoBehaviour
 {
     public float bgScrollSpeed;
-    public GameObject mainMenu, playMenu, tutorialMenu, settingsMenu, aboutMenu;
-
-    //Play Menu
-    public Image[] colorSliderBackgrounds = new Image[3];
-    public Color color = Color.black;
-    public Image colorDisplay;
+    public GameObject mainMenu, player1Menu, player2Menu, tutorialMenu, settingsMenu, aboutMenu;
 
     void Update()
     {
-        colorDisplay.color = color;
         //If ESC key is pressed, quit application.
         if (Input.GetKey(KeyCode.Escape))
         {
@@ -26,7 +20,7 @@ public class MainMenuScript : MonoBehaviour
 	public void MainMenuButtonPlay()
 	{
         mainMenu.SetActive(false);
-        playMenu.SetActive(true);
+        player1Menu.SetActive(true);
 		//SceneManager.LoadScene("DemoScene");
 	}
 	public void MainMenuButtonTutorial()
@@ -49,25 +43,24 @@ public class MainMenuScript : MonoBehaviour
 		QuitGame();
 	}
     //Play Menu
-    public void PlayMenuBackButton()
+    public void Player1MenuBackButton()
     {
-        playMenu.SetActive(false);
+        player1Menu.SetActive(false);
         mainMenu.SetActive(true);
     }
-    public void OnRedSliderChange(float value)
+    public void Player1MenuNextButton()
     {
-        color = new Color(value, color.g, color.b);
-        colorSliderBackgrounds[0].color = new Vector4(value, 0.0f, 0.0f, 1.0f);
+        player1Menu.SetActive(false);
+        player2Menu.SetActive(true);
     }
-    public void OnGreenSliderChange(float value)
+    public void Player2MenuBackButton()
     {
-        color = new Color(color.r, value, color.b);
-        colorSliderBackgrounds[1].color = new Vector4(0.0f, value, 0.0f, 1.0f);
+        player2Menu.SetActive(false);
+        player1Menu.SetActive(true);
     }
-    public void OnBlueSliderChange(float value)
+    public void Player2MenuPlayButton()
     {
-        color = new Color(color.r, color.g, value);
-        colorSliderBackgrounds[2].color = new Vector4(0.0f, 0.0f, value, 1.0f);
+        //Do magic here ;)
     }
     //
     public void TutorialMenuBackButton()
