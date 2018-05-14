@@ -422,7 +422,8 @@ MonoBehaviour:
   playerTags: []
   player: {fileID: 0}
   followPlayer: 1
-  followSpeedMultiplier: 0.009
+  inactiveTime: 0.05
+  followSpeedMultiplier: 0.005
   followSpeed: 5
   debuffTakeMoreDamage: 0
   debuffTakeMoreDamageMultiplier: 1.75

@@ -13,6 +13,8 @@ public class BacteriaScript : MonoBehaviour {
 	public string[] playerTags;
 	public GameObject player;
 	public bool followPlayer = true;
+    private float time = 0.0f;
+    public float inactiveTime = 0.01f;
 	public float followSpeedMultiplier = 0.009f;
 	public float followSpeed = 5.0f;
     private static float defaultDamage = 1.0f;
@@ -48,13 +50,18 @@ public class BacteriaScript : MonoBehaviour {
 	}
 	void FixedUpdate()
 	{
-		if (followPlayer == true)
+        time += Time.fixedDeltaTime;
+        if (followPlayer == true)
 		{
 			if (player != null) 
 			{
-				transform.rotation = physs.LookAt2D (this.gameObject, player);
-				transform.Translate (Vector2.right * followSpeed * followSpeedMultiplier);
-			}
+                if (time >= inactiveTime)
+                {
+                    transform.rotation = physs.LookAt2D(this.gameObject, player);
+                    time = 0.0f;
+                }
+                transform.Translate(Vector2.right * followSpeed * followSpeedMultiplier);
+            }
 			else 
 			{
 				player = FindOneRandomPlayer ();
