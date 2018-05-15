@@ -68,6 +68,7 @@ public class MainMenuScript : MonoBehaviour
     {
         activeHats[1] = player2Accessories.GetSelectedHat();
         activeItems[1] = player2Accessories.GetSelectedAccessory();
+
         print(activeHats[1]);
         print(activeItems[1]);
         SceneManager.LoadScene("DemoScene");

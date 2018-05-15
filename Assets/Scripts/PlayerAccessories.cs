@@ -7,8 +7,10 @@ public class PlayerAccessories : MonoBehaviour
     public int player;
     public GameObject[] playerAccessories;
     public GameObject[] playerHats;
+    private GameObject[] selected = new GameObject[2];
     private string selectedHat;
     private string selectedAccessory;
+    private MainMenuSelectedItem mainMenuSelectedItem;
 
     public string GetSelectedHat()
     {
@@ -27,6 +29,7 @@ public class PlayerAccessories : MonoBehaviour
             {
                 playerAccessories[i].SetActive(false);
             }
+            selected[0] = null;
         }
         else
         {
@@ -36,6 +39,7 @@ public class PlayerAccessories : MonoBehaviour
             }
             playerAccessories[value - 1].SetActive(true);
             selectedAccessory = playerAccessories[value - 1].name;
+            selected[0] = playerAccessories[value - 1];
         }
     }
     public void PlayerHatsSetActiveByID(int value)
@@ -46,6 +50,7 @@ public class PlayerAccessories : MonoBehaviour
             {
                 playerHats[i].SetActive(false);
             }
+            selected[1] = null;
         }
         else
         {
@@ -55,10 +60,16 @@ public class PlayerAccessories : MonoBehaviour
             }
             playerHats[value - 1].SetActive(true);
             selectedHat = playerHats[value - 1].name;
+            selected[1] = playerHats[value - 1];
         }
+    }
+    private void Update()
+    {
+        mainMenuSelectedItem.UpdateListSelection(selected[0], selected[1]);
     }
     // Use this for initialization
     void Start () 
-    {	
+    {
+        mainMenuSelectedItem = FindObjectOfType<MainMenuSelectedItem>();
 	}
 }
