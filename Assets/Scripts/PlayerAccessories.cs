@@ -4,10 +4,20 @@ using UnityEngine;
 
 public class PlayerAccessories : MonoBehaviour
 {
-    public GameObject player;
+    public int player;
     public GameObject[] playerAccessories;
     public GameObject[] playerHats;
-    public GameObject selectedObject;
+    private string selectedHat;
+    private string selectedAccessory;
+
+    public string GetSelectedHat()
+    {
+        return selectedHat;
+    }
+    public string GetSelectedAccessory()
+    {
+        return selectedAccessory;
+    }
 
     public void PlayerAccessoriesSetActiveByID(int value)
     {
@@ -25,6 +35,7 @@ public class PlayerAccessories : MonoBehaviour
                 playerAccessories[i].SetActive(false);
             }
             playerAccessories[value - 1].SetActive(true);
+            selectedAccessory = playerAccessories[value - 1].name;
         }
     }
     public void PlayerHatsSetActiveByID(int value)
@@ -43,12 +54,11 @@ public class PlayerAccessories : MonoBehaviour
                 playerHats[i].SetActive(false);
             }
             playerHats[value - 1].SetActive(true);
+            selectedHat = playerHats[value - 1].name;
         }
     }
     // Use this for initialization
-    void Start () {
-		
+    void Start () 
+    {	
 	}
-	
-	// Update is called once per frame
 }

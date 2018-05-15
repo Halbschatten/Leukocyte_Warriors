@@ -8,7 +8,9 @@ public class MainMenuScript : MonoBehaviour
 {
     public float bgScrollSpeed;
     public GameObject mainMenu, player1Menu, player2Menu, tutorialMenu, settingsMenu, aboutMenu;
-
+    public string[] activeItems = new string[2], activeHats = new string[2];
+    public PlayerAccessories player1Accessories;
+    public PlayerAccessories player2Accessories;
     void Update()
     {
         //If ESC key is pressed, quit application.
@@ -17,11 +19,11 @@ public class MainMenuScript : MonoBehaviour
             Application.Quit();
         }
     }
+
 	public void MainMenuButtonPlay()
 	{
         mainMenu.SetActive(false);
         player1Menu.SetActive(true);
-		//SceneManager.LoadScene("DemoScene");
 	}
 	public void MainMenuButtonTutorial()
 	{
@@ -50,6 +52,10 @@ public class MainMenuScript : MonoBehaviour
     }
     public void Player1MenuNextButton()
     {
+        activeHats[0] = player1Accessories.GetSelectedHat();
+        activeItems[0] = player1Accessories.GetSelectedAccessory();
+        print(activeHats[0]);
+        print(activeItems[0]);
         player1Menu.SetActive(false);
         player2Menu.SetActive(true);
     }
@@ -60,7 +66,11 @@ public class MainMenuScript : MonoBehaviour
     }
     public void Player2MenuPlayButton()
     {
-        //Do magic here ;)
+        activeHats[1] = player2Accessories.GetSelectedHat();
+        activeItems[1] = player2Accessories.GetSelectedAccessory();
+        print(activeHats[1]);
+        print(activeItems[1]);
+        SceneManager.LoadScene("DemoScene");
     }
     //
     public void TutorialMenuBackButton()
