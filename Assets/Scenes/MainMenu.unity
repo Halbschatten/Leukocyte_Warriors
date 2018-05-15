@@ -2686,7 +2686,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4555531622a39984fbc0ab5107c8de42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1710406974}
+  player: 0
   playerAccessories:
   - {fileID: 1633068225}
   - {fileID: 638082113}
@@ -2695,7 +2695,6 @@ MonoBehaviour:
   - {fileID: 1251655737}
   - {fileID: 2027470263}
   - {fileID: 1872788432}
-  selectedObject: {fileID: 0}
 --- !u!114 &285853092
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6661,7 +6660,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4555531622a39984fbc0ab5107c8de42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 808788097}
+  player: 0
   playerAccessories:
   - {fileID: 1669868553}
   - {fileID: 86296299}
@@ -6670,7 +6669,6 @@ MonoBehaviour:
   - {fileID: 635356679}
   - {fileID: 717848694}
   - {fileID: 201248129}
-  selectedObject: {fileID: 0}
 --- !u!114 &801628355
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8025,6 +8023,14 @@ MonoBehaviour:
   tutorialMenu: {fileID: 312039415}
   settingsMenu: {fileID: 1868870525}
   aboutMenu: {fileID: 903154728}
+  activeItems:
+  - 
+  - 
+  activeHats:
+  - 
+  - 
+  player1Accessories: {fileID: 285853091}
+  player2Accessories: {fileID: 801628354}
 --- !u!1 &939425967
 GameObject:
   m_ObjectHideFlags: 0
