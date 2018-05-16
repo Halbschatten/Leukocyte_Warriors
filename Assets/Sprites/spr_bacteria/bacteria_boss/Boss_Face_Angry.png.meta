@@ -1,37 +1,37 @@
 fileFormatVersion: 2
-guid: 8b2ff1545f3eaf64ebf71be5cf2bdc0c
+guid: 5d8797c40c02ed1469f415b61a5ac3d6
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Boss_DNA_0
-    21300002: Boss_DNA_1
-    21300004: Boss_DNA_2
-    21300006: Boss_DNA_3
-    21300008: Boss_DNA_4
-    21300010: Boss_DNA_5
-    21300012: Boss_DNA_6
-    21300014: Boss_DNA_7
-    21300016: Boss_DNA_8
-    21300018: Boss_DNA_9
-    21300020: Boss_DNA_10
-    21300022: Boss_DNA_11
-    21300024: Boss_DNA_12
-    21300026: Boss_DNA_13
-    21300028: Boss_DNA_14
-    21300030: Boss_DNA_15
-    21300032: Boss_DNA_16
-    21300034: Boss_DNA_17
-    21300036: Boss_DNA_18
-    21300038: Boss_DNA_19
-    21300040: Boss_DNA_20
-    21300042: Boss_DNA_21
-    21300044: Boss_DNA_22
-    21300046: Boss_DNA_23
-    21300048: Boss_DNA_24
-    21300050: Boss_DNA_25
-    21300052: Boss_DNA_26
-    21300054: Boss_DNA_27
-    21300056: Boss_DNA_28
-    21300058: Boss_DNA_29
+    21300000: Boss_Face_Angry_0
+    21300002: Boss_Face_Angry_1
+    21300004: Boss_Face_Angry_2
+    21300006: Boss_Face_Angry_3
+    21300008: Boss_Face_Angry_4
+    21300010: Boss_Face_Angry_5
+    21300012: Boss_Face_Angry_6
+    21300014: Boss_Face_Angry_7
+    21300016: Boss_Face_Angry_8
+    21300018: Boss_Face_Angry_9
+    21300020: Boss_Face_Angry_10
+    21300022: Boss_Face_Angry_11
+    21300024: Boss_Face_Angry_12
+    21300026: Boss_Face_Angry_13
+    21300028: Boss_Face_Angry_14
+    21300030: Boss_Face_Angry_15
+    21300032: Boss_Face_Angry_16
+    21300034: Boss_Face_Angry_17
+    21300036: Boss_Face_Angry_18
+    21300038: Boss_Face_Angry_19
+    21300040: Boss_Face_Angry_20
+    21300042: Boss_Face_Angry_21
+    21300044: Boss_Face_Angry_22
+    21300046: Boss_Face_Angry_23
+    21300048: Boss_Face_Angry_24
+    21300050: Boss_Face_Angry_25
+    21300052: Boss_Face_Angry_26
+    21300054: Boss_Face_Angry_27
+    21300056: Boss_Face_Angry_28
+    21300058: Boss_Face_Angry_29
   externalObjects: {}
   serializedVersion: 5
   mipmaps:
@@ -88,7 +88,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 2
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 8192
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -99,7 +99,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   - serializedVersion: 2
     buildTarget: Standalone
-    maxTextureSize: 8192
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -110,7 +110,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   - serializedVersion: 2
     buildTarget: iPhone
-    maxTextureSize: 8192
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -121,7 +121,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   - serializedVersion: 2
     buildTarget: Android
-    maxTextureSize: 8192
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -132,7 +132,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   - serializedVersion: 2
     buildTarget: Windows Store Apps
-    maxTextureSize: 8192
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -143,7 +143,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   - serializedVersion: 2
     buildTarget: WebGL
-    maxTextureSize: 8192
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -156,13 +156,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Boss_DNA_0
+      name: Boss_Face_Angry_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 1028
-        width: 426
-        height: 514
+        y: 556
+        width: 181
+        height: 278
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -170,19 +170,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 908c29a0dedcc4a45acd261e3b2cde5c
+      spriteID: 1a6d926d903f1cd4ea9376cea3b2a1af
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boss_DNA_1
+      name: Boss_Face_Angry_1
       rect:
         serializedVersion: 2
-        x: 426
-        y: 1028
-        width: 426
-        height: 514
+        x: 181
+        y: 556
+        width: 181
+        height: 278
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -190,19 +190,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2cdb5ce07b6f59444b298ce64002db10
+      spriteID: 292d00a002c44ed4eb079938567c0f5f
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boss_DNA_2
+      name: Boss_Face_Angry_2
       rect:
         serializedVersion: 2
-        x: 852
-        y: 1028
-        width: 426
-        height: 514
+        x: 362
+        y: 556
+        width: 181
+        height: 278
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -210,19 +210,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d872fb47ecf5dfc40991816923ea57b8
+      spriteID: a0138bf9482827248ae2e3c233ba8501
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boss_DNA_3
+      name: Boss_Face_Angry_3
       rect:
         serializedVersion: 2
-        x: 1278
-        y: 1028
-        width: 426
-        height: 514
+        x: 543
+        y: 556
+        width: 181
+        height: 278
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -230,19 +230,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0249f5b825631ff45ae25c403ea5f9fb
+      spriteID: 66d55b61e014a9042ac3e0907d6b0246
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boss_DNA_4
+      name: Boss_Face_Angry_4
       rect:
         serializedVersion: 2
-        x: 1704
-        y: 1028
-        width: 426
-        height: 514
+        x: 724
+        y: 556
+        width: 181
+        height: 278
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -250,19 +250,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 28d03602d3fae6549bb0833d041d55d3
+      spriteID: 933c31551cb9de346a0b86f637343814
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boss_DNA_5
+      name: Boss_Face_Angry_5
       rect:
         serializedVersion: 2
-        x: 2130
-        y: 1028
-        width: 426
-        height: 514
+        x: 905
+        y: 556
+        width: 181
+        height: 278
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -270,19 +270,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d0f6bc06318d1e848a19551762974eef
+      spriteID: 66a44901388b1594793a2192334c3f0d
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boss_DNA_6
+      name: Boss_Face_Angry_6
       rect:
         serializedVersion: 2
-        x: 2556
-        y: 1028
-        width: 426
-        height: 514
+        x: 1086
+        y: 556
+        width: 181
+        height: 278
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -290,19 +290,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5ca69f901c4932c42b5872b640163693
+      spriteID: 102b8f297b537e84cbc429e0972113d6
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boss_DNA_7
+      name: Boss_Face_Angry_7
       rect:
         serializedVersion: 2
-        x: 2982
-        y: 1028
-        width: 426
-        height: 514
+        x: 1267
+        y: 556
+        width: 181
+        height: 278
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -310,19 +310,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4085aa200cf134a48a92851f0361f72d
+      spriteID: e140ba92c3a55f3449c04bdf72bc3545
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boss_DNA_8
+      name: Boss_Face_Angry_8
       rect:
         serializedVersion: 2
-        x: 3408
-        y: 1028
-        width: 426
-        height: 514
+        x: 1448
+        y: 556
+        width: 181
+        height: 278
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -330,19 +330,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5c8b836048ddd9a4e8c0908771b021be
+      spriteID: bd075218b708b0e419760ec4353c3379
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boss_DNA_9
+      name: Boss_Face_Angry_9
       rect:
         serializedVersion: 2
-        x: 3834
-        y: 1028
-        width: 426
-        height: 514
+        x: 1629
+        y: 556
+        width: 181
+        height: 278
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -350,219 +350,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d935dbf17a07beb47a884e566645589f
+      spriteID: 6f8b59db8cb833741a7b861e642e9a4c
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boss_DNA_10
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 514
-        width: 426
-        height: 514
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9861e1225b5e4a04da4d059ea8ddb3e1
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Boss_DNA_11
-      rect:
-        serializedVersion: 2
-        x: 426
-        y: 514
-        width: 426
-        height: 514
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2feb30905ade23a48b3f66c6576bfe2c
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Boss_DNA_12
-      rect:
-        serializedVersion: 2
-        x: 852
-        y: 514
-        width: 426
-        height: 514
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9be4d373073efe145b62197870ab375b
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Boss_DNA_13
-      rect:
-        serializedVersion: 2
-        x: 1278
-        y: 514
-        width: 426
-        height: 514
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 72ab82dedf0bedc4fa229c51fa49deb4
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Boss_DNA_14
-      rect:
-        serializedVersion: 2
-        x: 1704
-        y: 514
-        width: 426
-        height: 514
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4ef6d7001d73e0d41a99dbde9d033d59
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Boss_DNA_15
-      rect:
-        serializedVersion: 2
-        x: 2130
-        y: 514
-        width: 426
-        height: 514
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 15b899b84a6e9674db055d2ea6d5a4ea
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Boss_DNA_16
-      rect:
-        serializedVersion: 2
-        x: 2556
-        y: 514
-        width: 426
-        height: 514
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9624947b318d84649b63160d346bdd05
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Boss_DNA_17
-      rect:
-        serializedVersion: 2
-        x: 2982
-        y: 514
-        width: 426
-        height: 514
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8bd372cefd2ed664ca714835a1e38107
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Boss_DNA_18
-      rect:
-        serializedVersion: 2
-        x: 3408
-        y: 514
-        width: 426
-        height: 514
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 059059249df7f774d9519ac5e5fb0c9f
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Boss_DNA_19
-      rect:
-        serializedVersion: 2
-        x: 3834
-        y: 514
-        width: 426
-        height: 514
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 64b077a1b98af254294ac3a45c2f609f
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Boss_DNA_20
+      name: Boss_Face_Angry_10
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 426
-        height: 514
+        y: 278
+        width: 181
+        height: 278
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -570,19 +370,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: acd8b4fc4ad6ee84196307b49d33c056
+      spriteID: 6857444cfd87e3a469c0836169e11a3e
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boss_DNA_21
+      name: Boss_Face_Angry_11
       rect:
         serializedVersion: 2
-        x: 426
-        y: 0
-        width: 426
-        height: 514
+        x: 181
+        y: 278
+        width: 181
+        height: 278
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -590,19 +390,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b2a8f75302aca81449cba649a0e8978e
+      spriteID: 621749387ae18d84fa5a078dd444b152
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boss_DNA_22
+      name: Boss_Face_Angry_12
       rect:
         serializedVersion: 2
-        x: 852
-        y: 0
-        width: 426
-        height: 514
+        x: 362
+        y: 278
+        width: 181
+        height: 278
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -610,19 +410,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 584dbf85070a6ec4bb7f492bd58eef9d
+      spriteID: 8e4f23a0a4ddb8845a86234b3b822d01
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boss_DNA_23
+      name: Boss_Face_Angry_13
       rect:
         serializedVersion: 2
-        x: 1278
-        y: 0
-        width: 426
-        height: 514
+        x: 543
+        y: 278
+        width: 181
+        height: 278
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -630,19 +430,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ce0f5edc4ef5ae144bfe5b71818063b7
+      spriteID: 17c21e7a099af4640a16b79e1f1d1f68
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boss_DNA_24
+      name: Boss_Face_Angry_14
       rect:
         serializedVersion: 2
-        x: 1704
-        y: 0
-        width: 426
-        height: 514
+        x: 724
+        y: 278
+        width: 181
+        height: 278
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -650,19 +450,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 84eee972ea2cf3241852f1ec6f713c32
+      spriteID: 23cec4852af11ac4d95e80873c4efb30
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boss_DNA_25
+      name: Boss_Face_Angry_15
       rect:
         serializedVersion: 2
-        x: 2130
-        y: 0
-        width: 426
-        height: 514
+        x: 905
+        y: 278
+        width: 181
+        height: 278
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -670,19 +470,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 592a18397e9a8854dbc80c9df5f8bb34
+      spriteID: 672f610ad899a4c4f9ba7ae784a5bca3
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boss_DNA_26
+      name: Boss_Face_Angry_16
       rect:
         serializedVersion: 2
-        x: 2556
-        y: 0
-        width: 426
-        height: 514
+        x: 1086
+        y: 278
+        width: 181
+        height: 278
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -690,19 +490,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fbe0f684d4a63a94abb31f305c4f2e17
+      spriteID: fb4f25e24e52a604eba9f5b1bde0b03f
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boss_DNA_27
+      name: Boss_Face_Angry_17
       rect:
         serializedVersion: 2
-        x: 2982
-        y: 0
-        width: 426
-        height: 514
+        x: 1267
+        y: 278
+        width: 181
+        height: 278
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -710,19 +510,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9d1c3c58a33d8d743b15a8308f7b19c4
+      spriteID: 2b4b6649ede242145b9b921b15a01c4b
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boss_DNA_28
+      name: Boss_Face_Angry_18
       rect:
         serializedVersion: 2
-        x: 3408
-        y: 0
-        width: 426
-        height: 514
+        x: 1448
+        y: 278
+        width: 181
+        height: 278
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -730,19 +530,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9b0952618ae37b94a8ede2626976d8cb
+      spriteID: 14b1c602b1703a54794f5d2281e47591
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Boss_DNA_29
+      name: Boss_Face_Angry_19
       rect:
         serializedVersion: 2
-        x: 3834
-        y: 0
-        width: 426
-        height: 514
+        x: 1629
+        y: 278
+        width: 181
+        height: 278
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -750,7 +550,207 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bfa4b35b01cedd34a949751d06014f54
+      spriteID: 40a765554b63e9f4a83453d53f6941db
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Face_Angry_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 181
+        height: 278
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b10aff0ae569d740954388d735c5675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Face_Angry_21
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 0
+        width: 181
+        height: 278
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f22451677e2b444db654085d9ec8f8d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Face_Angry_22
+      rect:
+        serializedVersion: 2
+        x: 362
+        y: 0
+        width: 181
+        height: 278
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d21577139db4bb49a614a70a3960220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Face_Angry_23
+      rect:
+        serializedVersion: 2
+        x: 543
+        y: 0
+        width: 181
+        height: 278
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46809d00c2251d040985ec32b96fe4af
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Face_Angry_24
+      rect:
+        serializedVersion: 2
+        x: 724
+        y: 0
+        width: 181
+        height: 278
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f7f77478a6e11d45a11ebb94a5fc06f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Face_Angry_25
+      rect:
+        serializedVersion: 2
+        x: 905
+        y: 0
+        width: 181
+        height: 278
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f51b78d44278b7f41b4ab0018901917f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Face_Angry_26
+      rect:
+        serializedVersion: 2
+        x: 1086
+        y: 0
+        width: 181
+        height: 278
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8656242126fd9449a78a81fc15248e5
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Face_Angry_27
+      rect:
+        serializedVersion: 2
+        x: 1267
+        y: 0
+        width: 181
+        height: 278
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6219041d7673f4489de4a2cd7e32288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Face_Angry_28
+      rect:
+        serializedVersion: 2
+        x: 1448
+        y: 0
+        width: 181
+        height: 278
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c07e454f22948847b4738045ea487ab
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss_Face_Angry_29
+      rect:
+        serializedVersion: 2
+        x: 1629
+        y: 0
+        width: 181
+        height: 278
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 495d3cc9044f7be4c947f0c7ed925bf2
       vertices: []
       indices: 
       edges: []
@@ -758,7 +758,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 0001c2ac76d9d7e45b92218e04d1be44
+    spriteID: 812874907750f534aa4dfa5400928883
     vertices: []
     indices: 
     edges: []

@@ -289,7 +289,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4671319466812548, guid: ee597472126027349af3ca72002f7a99, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 5
+      value: 5.43
       objectReference: {fileID: 0}
     - target: {fileID: 4671319466812548, guid: ee597472126027349af3ca72002f7a99, type: 2}
       propertyPath: m_LocalPosition.y
@@ -1135,6 +1135,16 @@ Prefab:
     - target: {fileID: 114581469062169214, guid: 7569cf5bbb6044deca62cf121836da37,
         type: 2}
       propertyPath: buffIgnoreConstantDamage
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114581469062169214, guid: 7569cf5bbb6044deca62cf121836da37,
+        type: 2}
+      propertyPath: buffAutoShoot
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114581469062169214, guid: 7569cf5bbb6044deca62cf121836da37,
+        type: 2}
+      propertyPath: fireRate
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
