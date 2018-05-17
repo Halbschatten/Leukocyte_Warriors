@@ -25,7 +25,12 @@ public class PlayerBuffFasterMovement : MonoBehaviour
                 gameControllerScript.Players[i].GetComponent<PlayerScript>().buffFasterMovement = true;
                 Debug.Log(string.Format("[Player {0}]: [{1}] activated!", i + 1, "buffFasterMovement"));
             }
-            Destroy(this.gameObject);
+            StartCoroutine(WaitNSecondsAndDestroy(0.5f));
         }
+    }
+    IEnumerator WaitNSecondsAndDestroy(float n)
+    {
+        yield return new WaitForSeconds(n);
+        Destroy(this.gameObject);
     }
 }
