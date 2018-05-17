@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class MainMenuScript : MonoBehaviour
 {
     public float bgScrollSpeed;
-    public GameObject mainMenu, player1Menu, player2Menu, tutorialMenu, settingsMenu, aboutMenu;
+    public GameObject mainMenu, player1Menu, player2Menu, tutorialMenu, settingsMenu, confirmationMenu, aboutMenu;
     public string[] activeItems = new string[2], activeHats = new string[2];
     public PlayerAccessories player1Accessories;
     public PlayerAccessories player2Accessories;
@@ -48,7 +48,6 @@ public class MainMenuScript : MonoBehaviour
 	{
 		QuitGame();
 	}
-    //Play Menu
     public void Player1MenuBackButton()
     {
         player1Menu.SetActive(false);
@@ -58,8 +57,8 @@ public class MainMenuScript : MonoBehaviour
     {
         activeHats[0] = player1Accessories.GetSelectedHat();
         activeItems[0] = player1Accessories.GetSelectedAccessory();
-        print(activeHats[0]);
-        print(activeItems[0]);
+        //print(activeHats[0]);
+        //print(activeItems[0]);
         player1Menu.SetActive(false);
         player2Menu.SetActive(true);
     }
@@ -72,12 +71,10 @@ public class MainMenuScript : MonoBehaviour
     {
         activeHats[1] = player2Accessories.GetSelectedHat();
         activeItems[1] = player2Accessories.GetSelectedAccessory();
-
-        print(activeHats[1]);
-        print(activeItems[1]);
+        //print(activeHats[1]);
+        //print(activeItems[1]);
         SceneManager.LoadScene("DemoScene");
     }
-    //
     public void TutorialMenuBackButton()
     {
         tutorialMenu.SetActive(false);
@@ -87,6 +84,22 @@ public class MainMenuScript : MonoBehaviour
     {
         settingsMenu.SetActive(false);
         mainMenu.SetActive(true);
+    }
+    public void SettingsMenuEraseAllDataButton()
+    {
+        confirmationMenu.SetActive(true);
+        settingsMenu.SetActive(false);
+    }
+    public void ConfirmationMenuYesButton()
+    {
+        PlayerPrefs.DeleteAll();
+        confirmationMenu.SetActive(false);
+        settingsMenu.SetActive(true);
+    }
+    public void ConfirmationMenuBackButton()
+    {
+        confirmationMenu.SetActive(false);
+        settingsMenu.SetActive(true);
     }
     public void AboutMenuBackButton()
     {

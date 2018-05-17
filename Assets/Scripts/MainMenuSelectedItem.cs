@@ -42,6 +42,9 @@ public class MainMenuSelectedItem : MonoBehaviour
             {
                 if (GameObject.Find(tmpDropdown.captionText.text).GetComponent<SpriteRenderer>())
                 {
+                    r.interactable = true;
+                    g.interactable = true;
+                    b.interactable = true;
                     Color color = GameObject.Find(tmpDropdown.captionText.text).GetComponent<SpriteRenderer>().color;
                     r.value = color.r;
                     g.value = color.g;
@@ -67,6 +70,17 @@ public class MainMenuSelectedItem : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-       
+       if (tmpDropdown.captionText.text == "None")
+        {
+            r.interactable = false;
+            g.interactable = false;
+            b.interactable = false;
+        }
+       else
+        {
+            r.interactable = true;
+            g.interactable = true;
+            b.interactable = true;
+        }
 	}
 }
