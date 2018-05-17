@@ -10,7 +10,7 @@ public class MainMenuSelectedItem : MonoBehaviour
     List<string> selection = new List<string>();
     TMP_Dropdown tmpDropdown;
     public Slider r, g, b;
-    public Image displayColor;
+    public Image displayColor, rFill, gFill, bFill;
 
     public void SetSelection(List<string> input)
     {
@@ -46,6 +46,9 @@ public class MainMenuSelectedItem : MonoBehaviour
                     r.value = color.r;
                     g.value = color.g;
                     b.value = color.b;
+                    rFill.color = new Color(color.r, 0.0f, 0.0f);
+                    gFill.color = new Color(0.0f, color.g, 0.0f);
+                    bFill.color = new Color(0.0f, 0.0f, color.b);
                     displayColor.color = color;
                 }
             }

@@ -7,7 +7,7 @@ public class PlayerCustomizationScreen : MonoBehaviour
 {
     //Play Menu
     public Image[] colorSliderBackgrounds = new Image[3];
-    public Color color = Color.black;
+    public Color color;
     public Image colorDisplay;
     public TMPro.TMP_Dropdown tMP_Dropdown;
     private GameObject selection;
@@ -21,7 +21,7 @@ public class PlayerCustomizationScreen : MonoBehaviour
 			color = new Color (value, color.g, color.b);
 			colorSliderBackgrounds [0].color = new Vector4 (value, 0.0f, 0.0f, 1.0f);
 			if (tMP_Dropdown.captionText.text != "None") {
-				selection = GameObject.Find (tMP_Dropdown.captionText.text); //
+				selection = GameObject.Find (tMP_Dropdown.captionText.text);
 				selection.GetComponent<SpriteRenderer> ().color = color;
 				PlayerPrefs.SetFloat (gameObject.name + selection.gameObject.name + "_r_", value);
 			}
@@ -60,7 +60,7 @@ public class PlayerCustomizationScreen : MonoBehaviour
 	{
 		hatDrop.value = PlayerPrefs.GetInt (gameObject.name + "selectedHatIndex");
 		accessoryDrop.value = PlayerPrefs.GetInt (gameObject.name + "selectedAccessoryIndex");
-
+        color = new Color(PlayerPrefs.GetFloat(gameObject.name + PlayerPrefs.GetString(gameObject.name + "selectedAccessory") + "_r_"), PlayerPrefs.GetFloat(gameObject.name + PlayerPrefs.GetString(gameObject.name + "selectedAccessory") + "_g_"), PlayerPrefs.GetFloat(gameObject.name + PlayerPrefs.GetString(gameObject.name + "selectedAccessory") + "_b_"));
 		colorSliderBackgrounds [0].transform.parent.parent.GetComponent<Slider> ().value = PlayerPrefs.GetFloat (gameObject.name + PlayerPrefs.GetString(gameObject.name + "selectedAccessory") + "_r_");
 		colorSliderBackgrounds [1].transform.parent.parent.GetComponent<Slider> ().value = PlayerPrefs.GetFloat (gameObject.name + PlayerPrefs.GetString(gameObject.name + "selectedAccessory") + "_g_");
 		colorSliderBackgrounds [2].transform.parent.parent.GetComponent<Slider> ().value = PlayerPrefs.GetFloat (gameObject.name + PlayerPrefs.GetString(gameObject.name + "selectedAccessory") + "_b_");
