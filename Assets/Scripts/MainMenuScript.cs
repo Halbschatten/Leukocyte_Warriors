@@ -19,6 +19,10 @@ public class MainMenuScript : MonoBehaviour
             Application.Quit();
         }
     }
+	void Awake()
+	{
+		
+	}
 
 	public void MainMenuButtonPlay()
 	{

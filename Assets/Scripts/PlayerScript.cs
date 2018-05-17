@@ -42,6 +42,8 @@ public class PlayerScript : MonoBehaviour
     public bool buffFasterMovement = false;
     public float buffFasterMovementMultiplier = 1.5f;
     public bool buffIgnoreConstantDamage = false;
+	public GameObject[] hats;
+	public GameObject[] accessories;
 
 
     Vector2 MovementVelocity(string inputH, string inputV, float inputPlayerSpeedH, float inputPlayerSpeedV)
@@ -70,6 +72,22 @@ public class PlayerScript : MonoBehaviour
         rb2d = GetComponent<Rigidbody2D>();
         trsfm = GetComponent<Transform>();
         playerResizeOnShoot = GetComponent<PlayerResizeOnShoot>();
+		foreach (GameObject go in hats)
+		{
+			go.SetActive(go.name == PlayerPrefs.GetString(gameObject.name + "selectedHat"));
+			if (go.activeSelf) 
+			{
+				go.GetComponent<SpriteRenderer> ().color = new Color (PlayerPrefs.GetFloat (gameObject.name + go.gameObject.name + "_r_"), PlayerPrefs.GetFloat (gameObject.name + go.gameObject.name + "_g_"), PlayerPrefs.GetFloat (gameObject.name + go.gameObject.name + "_b_"));
+			}
+		}
+		foreach (GameObject go in accessories)
+		{
+			go.SetActive(go.name == PlayerPrefs.GetString(gameObject.name + "selectedAccessory"));
+			if (go.activeSelf) 
+			{
+				go.GetComponent<SpriteRenderer> ().color = new Color (PlayerPrefs.GetFloat (gameObject.name + go.gameObject.name + "_r_"), PlayerPrefs.GetFloat (gameObject.name + go.gameObject.name + "_g_"), PlayerPrefs.GetFloat (gameObject.name + go.gameObject.name + "_b_"));
+			}
+		}
     }
 
     void FixedUpdate()
