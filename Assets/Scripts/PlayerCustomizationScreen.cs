@@ -15,8 +15,8 @@ public class PlayerCustomizationScreen : MonoBehaviour
 
     public void OnRedSliderChange(float value)
     {
-		if (selection != null) {
-			selection = GameObject.Find (tMP_Dropdown.captionText.text);
+        selection = GameObject.Find(tMP_Dropdown.captionText.text);
+        if (selection != null) {
 			PlayerPrefs.SetFloat (gameObject.name + selection.gameObject.name + "_r_", 0.0f);
 			color = new Color (value, color.g, color.b);
 			colorSliderBackgrounds [0].color = new Vector4 (value, 0.0f, 0.0f, 1.0f);
@@ -51,8 +51,6 @@ public class PlayerCustomizationScreen : MonoBehaviour
 			if (tMP_Dropdown.captionText.text != "None") {
 				selection.GetComponent<SpriteRenderer> ().color = color;
 				PlayerPrefs.SetFloat (gameObject.name + selection.gameObject.name + "_b_", value);
-				PlayerPrefs.Save ();
-				print ("entrou");
 			}
 		}
     }

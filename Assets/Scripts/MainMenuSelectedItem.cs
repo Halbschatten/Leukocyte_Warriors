@@ -2,12 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class MainMenuSelectedItem : MonoBehaviour
 {
     MainMenuScript mainMenuScript;
     List<string> selection = new List<string>();
     TMP_Dropdown tmpDropdown;
+    public Slider r, g, b;
+    public Image displayColor;
 
     public void SetSelection(List<string> input)
     {
@@ -34,6 +37,17 @@ public class MainMenuSelectedItem : MonoBehaviour
             if (accessory != null)
             {
                 selection.Add(accessory.name);
+            }
+            if (GameObject.Find(tmpDropdown.captionText.text))
+            {
+                if (GameObject.Find(tmpDropdown.captionText.text).GetComponent<SpriteRenderer>())
+                {
+                    Color color = GameObject.Find(tmpDropdown.captionText.text).GetComponent<SpriteRenderer>().color;
+                    r.value = color.r;
+                    g.value = color.g;
+                    b.value = color.b;
+                    displayColor.color = color;
+                }
             }
         }
         tmpDropdown.ClearOptions();
