@@ -8,6 +8,7 @@ public class MainMenuScript : MonoBehaviour
 {
     public float bgScrollSpeed;
     public GameObject mainMenu, player1Menu, player2Menu, tutorialMenu, settingsMenu, confirmationMenu, aboutMenu;
+    public GameObject logo;
     public string[] activeItems = new string[2], activeHats = new string[2];
     public PlayerAccessories player1Accessories;
     public PlayerAccessories player2Accessories;
@@ -27,21 +28,25 @@ public class MainMenuScript : MonoBehaviour
 	public void MainMenuButtonPlay()
 	{
         mainMenu.SetActive(false);
+        logo.SetActive(false);
         player1Menu.SetActive(true);
 	}
 	public void MainMenuButtonTutorial()
 	{
         mainMenu.SetActive(false);
+        logo.SetActive(false);
         tutorialMenu.SetActive(true);
     }
 	public void MainMenuButtonSettings()
 	{
         mainMenu.SetActive(false);
+        logo.SetActive(false);
         settingsMenu.SetActive(true);
     }
     public void MainMenuButtonAbout()
     {
         mainMenu.SetActive(false);
+        logo.SetActive(false);
         aboutMenu.SetActive(true);
     }
     public void MainMenuButtonExit()
@@ -52,6 +57,7 @@ public class MainMenuScript : MonoBehaviour
     {
         player1Menu.SetActive(false);
         mainMenu.SetActive(true);
+        logo.SetActive(true);
     }
     public void Player1MenuNextButton()
     {
@@ -79,11 +85,13 @@ public class MainMenuScript : MonoBehaviour
     {
         tutorialMenu.SetActive(false);
         mainMenu.SetActive(true);
+        logo.SetActive(true);
     }
     public void SettingsMenuBackButton()
     {
         settingsMenu.SetActive(false);
         mainMenu.SetActive(true);
+        logo.SetActive(true);
     }
     public void SettingsMenuEraseAllDataButton()
     {
@@ -105,6 +113,7 @@ public class MainMenuScript : MonoBehaviour
     {
         aboutMenu.SetActive(false);
         mainMenu.SetActive(true);
+        logo.SetActive(true);
     }
     public void QuitGame()
 	{

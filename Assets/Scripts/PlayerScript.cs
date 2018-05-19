@@ -45,6 +45,8 @@ public class PlayerScript : MonoBehaviour
 	public GameObject[] hats;
 	public GameObject[] accessories;
 
+    public bool debuffInvertedMovement = false;
+
 
     Vector2 MovementVelocity(string inputH, string inputV, float inputPlayerSpeedH, float inputPlayerSpeedV)
     {
@@ -52,6 +54,30 @@ public class PlayerScript : MonoBehaviour
         velocity = new Vector2(Input.GetAxis(inputH) * inputPlayerSpeedH, Input.GetAxis(inputV) * inputPlayerSpeedV) * Time.fixedDeltaTime;
         //Debug.Log (string.Format("{0}: {1} | {2}: {3}", inputH, velocity.x, inputV, velocity.y));
         return velocity;
+    }
+    public float buffHealHP(float amount)
+    {
+        float amountHealed = 0.0f;
+        if (life == defaultLife)
+        {
+            return amountHealed;
+        }
+        else
+        {
+            if (life + amount > defaultLife)
+            {
+                amountHealed = defaultLife - life;
+                life = defaultLife;
+                return amountHealed;
+            }
+            else
+            {
+                life = life + amount;
+                amountHealed = amount;
+                return amountHealed;
+            }
+        }
+       
     }
     void Shoot(GameObject projectile)
     {
@@ -102,7 +128,14 @@ public class PlayerScript : MonoBehaviour
             playerHorizontalSpeed = playerDefaultHorizontalSpeed;
             playerVerticalSpeed = playerDefaultVerticalSpeed;
         }
-        rb2d.velocity = MovementVelocity(inputPlayerHorizontal, inputPlayerVertical, playerHorizontalSpeed, playerVerticalSpeed);
+        if (debuffInvertedMovement == true)
+        {
+            rb2d.velocity = MovementVelocity(inputPlayerHorizontal, inputPlayerVertical, -playerHorizontalSpeed, -playerVerticalSpeed);
+        }
+        else
+        {
+            rb2d.velocity = MovementVelocity(inputPlayerHorizontal, inputPlayerVertical, playerHorizontalSpeed, playerVerticalSpeed);
+        }
         if (limitPlayerToScreenBounds == true)
         {
             trsfm.position = new Vector2(Mathf.Clamp(trsfm.position.x, -screenBoundariesX, screenBoundariesX), Mathf.Clamp(trsfm.position.y, -screenBoundariesY, screenBoundariesY));

@@ -5,39 +5,74 @@ using UnityEngine;
 public class RotatePlayerOnMovement : MonoBehaviour
 {
     private Transform trsfm;
+    private GameObject player;
+    public PlayerScript playerScript;
     public string inputPlayerVertical = "VERTICAL0";
     public float rotationInEachUpdate = 0.01f;
     public float maxRotation = 0.2f;
 
     public void RotateOnMovement()
     {
-        if (Input.GetAxis(inputPlayerVertical) > 0) // > 0 -> Up
+        if (playerScript.debuffInvertedMovement == true)
         {
-            RotateUp(-rotationInEachUpdate);
-        }
-        else if ((Input.GetAxis(inputPlayerVertical) < 0)) // < 0 -> Down
-        {
-            RotateDown(rotationInEachUpdate);
-        }
-        else // = 0 (-) -> Down | (+) -> Up
-        {
-            if (trsfm.rotation.z > 0) //(+)->Up
+            if (-Input.GetAxis(inputPlayerVertical) > 0) // > 0 -> Up
             {
-                RotateDown(rotationInEachUpdate * 2);
-                if (trsfm.rotation.z < 0)
+                RotateUp(-rotationInEachUpdate);
+            }
+            else if ((-Input.GetAxis(inputPlayerVertical) < 0)) // < 0 -> Down
+            {
+                RotateDown(rotationInEachUpdate);
+            }
+            else // = 0 (-) -> Down | (+) -> Up
+            {
+                if (trsfm.rotation.z > 0) //(+)->Up
                 {
-                    trsfm.rotation = new Quaternion(trsfm.rotation.x, trsfm.rotation.y, 0.0f, trsfm.rotation.w);
+                    RotateDown(rotationInEachUpdate * 2);
+                    if (trsfm.rotation.z < 0)
+                    {
+                        trsfm.rotation = new Quaternion(trsfm.rotation.x, trsfm.rotation.y, 0.0f, trsfm.rotation.w);
+                    }
+                }
+                else if (trsfm.rotation.z < 0) //(-) -> Down
+                {
+                    RotateUp(-rotationInEachUpdate * 2);
+                    if (trsfm.rotation.z > 0)
+                    {
+                        trsfm.rotation = new Quaternion(trsfm.rotation.x, trsfm.rotation.y, 0.0f, trsfm.rotation.w);
+                    }
                 }
             }
-            else if (trsfm.rotation.z < 0) //(-) -> Down
+        }
+        else
+        {
+            if (Input.GetAxis(inputPlayerVertical) > 0) // > 0 -> Up
             {
-                RotateUp(-rotationInEachUpdate * 2);
-                if (trsfm.rotation.z > 0)
+                RotateUp(-rotationInEachUpdate);
+            }
+            else if ((Input.GetAxis(inputPlayerVertical) < 0)) // < 0 -> Down
+            {
+                RotateDown(rotationInEachUpdate);
+            }
+            else // = 0 (-) -> Down | (+) -> Up
+            {
+                if (trsfm.rotation.z > 0) //(+)->Up
                 {
-                    trsfm.rotation = new Quaternion(trsfm.rotation.x, trsfm.rotation.y, 0.0f, trsfm.rotation.w);
+                    RotateDown(rotationInEachUpdate * 2);
+                    if (trsfm.rotation.z < 0)
+                    {
+                        trsfm.rotation = new Quaternion(trsfm.rotation.x, trsfm.rotation.y, 0.0f, trsfm.rotation.w);
+                    }
+                }
+                else if (trsfm.rotation.z < 0) //(-) -> Down
+                {
+                    RotateUp(-rotationInEachUpdate * 2);
+                    if (trsfm.rotation.z > 0)
+                    {
+                        trsfm.rotation = new Quaternion(trsfm.rotation.x, trsfm.rotation.y, 0.0f, trsfm.rotation.w);
+                    }
                 }
             }
-        }
+        } 
     }
     void RotateUp(float rotation)
     {
@@ -56,6 +91,8 @@ public class RotatePlayerOnMovement : MonoBehaviour
     void Awake()
     {
         trsfm = GetComponent<Transform>();
+        player = transform.parent.gameObject;
+        playerScript = player.GetComponent<PlayerScript>();
     }
 
     // Update is called once per frame
