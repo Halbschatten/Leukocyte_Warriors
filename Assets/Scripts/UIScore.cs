@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class UIScore : MonoBehaviour 
 {
@@ -16,6 +17,6 @@ public class UIScore : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
-		GetComponent<Text> ().text = string.Format ("Score: {0:D9}  ", gameControllerGameObject.GetComponent<GameControllerScript>().Score);
+		GetComponent<TMP_Text> ().text = string.Format ("Score: {0:D9}", gameControllerGameObject.GetComponent<GameControllerScript>().Score);
 	}
 }
