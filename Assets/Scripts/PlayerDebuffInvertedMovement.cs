@@ -14,7 +14,6 @@ public class PlayerDebuffInvertedMovement : MonoBehaviour
     {
         gameControllerGameObject = GameObject.FindGameObjectWithTag(gameControllerTag);
         gameControllerScript = gameControllerGameObject.GetComponent<GameControllerScript>();
-
     }
 
     // Use this for initialization
@@ -31,6 +30,7 @@ public class PlayerDebuffInvertedMovement : MonoBehaviour
             StartCoroutine(WaitNSecondsAndDestroy(0.5f));
         }
     }
+
     IEnumerator WaitNSecondsAndDestroy(float n)
     {
         yield return new WaitForSeconds(n);

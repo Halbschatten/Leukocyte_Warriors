@@ -31,6 +31,7 @@ public class PlayerBuffFasterMovement : MonoBehaviour
             StartCoroutine(WaitNSecondsAndDestroy(0.5f));           
         }
     }
+
     IEnumerator WaitNSecondsAndDestroy(float n)
     {
         yield return new WaitForSeconds(n);

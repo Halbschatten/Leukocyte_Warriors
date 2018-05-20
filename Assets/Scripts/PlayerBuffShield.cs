@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerBuffRestoreHealth : MonoBehaviour
+public class PlayerBuffShield : MonoBehaviour
 {
     private GameObject gameControllerGameObject; //Reference to the Game Controller GameObject;
     private GameControllerScript gameControllerScript;
     private string gameControllerTag = "GameController"; //Game Controller's tag;
     private string playerTag = "Player";
-    public float amountOfHealthToHeal = 5.0f;
+    public float multiplier = 0.5f;
+    public float duration = 30.0f;
 
     void Awake()
     {
@@ -23,7 +24,8 @@ public class PlayerBuffRestoreHealth : MonoBehaviour
         {
             for (int i = 0; i < gameControllerScript.Players.Length; i++)
             {
-                Debug.Log(string.Format("[Player {0}]: [{1}] activated, healing {2} points of health!", i + 1, "buffRestoreHealth", gameControllerScript.Players[i].GetComponent<PlayerScript>().BuffHealHP(amountOfHealthToHeal)));
+                gameControllerScript.Players[i].GetComponent<PlayerScript>().BuffShield(duration, multiplier);
+                Debug.Log(string.Format("[Player {0}]: [{1}, {2:00}s, {3:#.##}x] activated!", i + 1, "buffShield", duration, multiplier));
             }
             GetComponent<CircleCollider2D>().enabled = false;
             StartCoroutine(WaitNSecondsAndDestroy(0.5f));

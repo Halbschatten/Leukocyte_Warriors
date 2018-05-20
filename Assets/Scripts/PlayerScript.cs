@@ -8,8 +8,8 @@ public class PlayerScript : MonoBehaviour
     private string gameControllerTag = "GameController"; //Game Controller's tag;
     private float screenBoundariesX, screenBoundariesY; //Receives the GameController's boundaries on Awake().
     public string bacteriaTag = "Bacteria";
-    public float bacteriaDamageOnTriggerEnter = 0.5f;
-    public float bacteriaDamageOnTriggerStay = 0.01f;
+    private float bacteriaDamageOnTriggerEnter = 0.5f;
+    private float bacteriaDamageOnTriggerStay = 0.01f;
     private Rigidbody2D rb2d; //Reference to the player's Rigidbody2D;
     private Transform trsfm; //Reference to the player's Transform;
     public int playerID = 0;
@@ -33,7 +33,7 @@ public class PlayerScript : MonoBehaviour
     public string inputPlayerVertical = "VERTICAL0"; //Defaults to Player 1. Change in Unity's Inspector to the desired player controls.
     public string inputPlayerShoot = "GREEN0"; //Defaults to Player 1. Change in Unity's Inspector to the desired player controls.
     private float nextFire;
-    public float fireRate = 0.15f;
+    private float fireRate = 0.15f;
     public bool limitPlayerToScreenBounds = true;
     private float resizeOnShoot = 0.75f;
     private PlayerResizeOnShoot playerResizeOnShoot;
@@ -42,9 +42,12 @@ public class PlayerScript : MonoBehaviour
     private bool buffFasterMovement = false;
     private float buffFasterMovementMultiplier;
     private bool buffIgnoreConstantDamage = false;
+    private bool buffShield = false;
+    private float buffShieldMultiplier;
     private float buffAutoShootDuration = 0.0f;
     private float buffFasterMovementDuration = 0.0f;
     private float buffIgnoreConstantDamageDuration = 0.0f;
+    private float buffShieldDuration = 0.0f;
 
     private bool debuffInvertedMovement = false;
     public bool GetDebuffInvertedMovement
@@ -105,6 +108,12 @@ public class PlayerScript : MonoBehaviour
     {
         this.buffIgnoreConstantDamageDuration = duration;
         buffIgnoreConstantDamage = true;
+    }
+    public void BuffShield(float duration, float multiplier)
+    {
+        this.buffShieldDuration = duration;
+        this.buffShieldMultiplier = multiplier;
+        buffShield = true;
     }
     public void DebuffInvertedMovement(float duration)
     {
@@ -195,6 +204,7 @@ public class PlayerScript : MonoBehaviour
             }
         }
     }
+
     void BuffDebuffTimers()
     {
         //Buffs
@@ -244,6 +254,21 @@ public class PlayerScript : MonoBehaviour
             }
         }
 
+        //buffShield Timer
+        if (buffShield == true)
+        {
+            if (buffShieldDuration < 0.0f)
+            {
+                buffShieldDuration = 0.0f;
+                buffShield = false;
+                print(string.Format("[Player {0}]: [{1}] deactivated!", playerID + 1, "buffShield"));
+            }
+            else
+            {
+                buffShieldDuration = buffShieldDuration - Time.deltaTime;
+            }
+        }
+
         //Debuffs
 
         //debuffInvertedMovement Timer
@@ -266,7 +291,14 @@ public class PlayerScript : MonoBehaviour
     {
         if (other.gameObject.tag == bacteriaTag)
         {
-            this.life -= bacteriaDamageOnTriggerEnter;
+            if (buffShield == true)
+            {
+                this.life -= bacteriaDamageOnTriggerEnter * buffShieldMultiplier;
+            }
+            else
+            {
+                this.life -= bacteriaDamageOnTriggerEnter;
+            }
             if (this.life <= 0.0f)
             {
 				life = 0.0f;
@@ -279,7 +311,14 @@ public class PlayerScript : MonoBehaviour
     {
         if (other.gameObject.tag == bacteriaTag && buffIgnoreConstantDamage == false)
         {
-            this.life -= bacteriaDamageOnTriggerStay;
+            if (buffShield == true)
+            {
+                this.life -= bacteriaDamageOnTriggerStay * buffShieldMultiplier;
+            }
+            else
+            {
+                this.life -= bacteriaDamageOnTriggerStay;
+            }
             if (this.life <= 0.0f)
             {
 				life = 0.0f;

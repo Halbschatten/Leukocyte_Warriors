@@ -14549,6 +14549,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79b7827f4dedd81418ba98ec2f42e50d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerScript: {fileID: 0}
   inputPlayerVertical: VERTICAL1
   rotationInEachUpdate: 0.01
   maxRotation: 0.2
@@ -17560,6 +17561,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79b7827f4dedd81418ba98ec2f42e50d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerScript: {fileID: 0}
   inputPlayerVertical: VERTICAL0
   rotationInEachUpdate: 0.01
   maxRotation: 0.2
@@ -24427,8 +24429,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 898137c5bb4a7ac4cb37cb19ba94260a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colorA: {r: 0, g: 0, b: 0, a: 0.05882353}
-  colorB: {r: 1, g: 0, b: 0, a: 0.39215687}
+  colorA: {r: 1, g: 0.9094449, b: 0, a: 0.11764706}
+  colorB: {r: 1, g: 0.9094449, b: 0, a: 0.39215687}
   time: 1
   lerpedColor: {r: 0.867939, g: 0, b: 0, a: 0.34813654}
 --- !u!1 &2026973942
