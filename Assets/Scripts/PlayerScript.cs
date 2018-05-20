@@ -194,8 +194,15 @@ public class PlayerScript : MonoBehaviour
     {
         if (buffFasterMovement == true)
         {
-            playerHorizontalSpeed = playerDefaultHorizontalSpeed * buffFasterMovementMultiplier;
-            playerVerticalSpeed = playerDefaultVerticalSpeed * buffFasterMovementMultiplier;
+            if (debuffSlowerMovement == true)
+            {
+                debuffSlowerMovementDuration = 0.0f;
+            }
+            else
+            {
+                playerHorizontalSpeed = playerDefaultHorizontalSpeed * buffFasterMovementMultiplier;
+                playerVerticalSpeed = playerDefaultVerticalSpeed * buffFasterMovementMultiplier;
+            }
         }
         else
         {
@@ -215,8 +222,15 @@ public class PlayerScript : MonoBehaviour
         }
         if (debuffSlowerMovement == true)
         {
-            playerHorizontalSpeed = playerDefaultHorizontalSpeed * debuffSlowerMovementMultiplier;
-            playerVerticalSpeed = playerDefaultVerticalSpeed * debuffSlowerMovementMultiplier;
+            if (buffFasterMovement == true)
+            {
+                buffFasterMovementDuration = 0.0f;
+            }
+            else
+            {
+                playerHorizontalSpeed = playerDefaultHorizontalSpeed * debuffSlowerMovementMultiplier;
+                playerVerticalSpeed = playerDefaultVerticalSpeed * debuffSlowerMovementMultiplier;
+            }
         }
         else
         {

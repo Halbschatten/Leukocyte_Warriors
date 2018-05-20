@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BacteriaScript : MonoBehaviour
 {
+    bool isQuitting;
 	private GameObject gameControllerGameObject; //Reference to the Game Controller GameObject;
 	private string gameControllerTag = "GameController"; //Game Controller's tag;
 	private float life = 5.0f;
@@ -75,4 +76,37 @@ public class BacteriaScript : MonoBehaviour
 			}
 		}
 	}
+    void OnApplicationQuit()
+    {
+        isQuitting = true;
+    }
+    private void OnDestroy()
+    {
+        if (!isQuitting)
+        {
+            if (Random.Range(0, 9) == 4)
+            {
+
+                bool isSpawnGoingToBeBuff;
+                if (Random.Range(0, 2) == 0)
+                {
+                    isSpawnGoingToBeBuff = false;
+                }
+                else
+                {
+                    isSpawnGoingToBeBuff = true;
+                }
+                if (isSpawnGoingToBeBuff == true)
+                {
+                    int randomSpawn = Random.Range(0, gameControllerGameObject.GetComponent<GameControllerScript>().buffPickups.Length);
+                    Instantiate(gameControllerGameObject.GetComponent<GameControllerScript>().buffPickups[randomSpawn], this.transform.position, Quaternion.identity);
+                }
+                else
+                {
+                    int randomSpawn = Random.Range(0, gameControllerGameObject.GetComponent<GameControllerScript>().debuffPickups.Length);
+                    Instantiate(gameControllerGameObject.GetComponent<GameControllerScript>().debuffPickups[randomSpawn], this.transform.position, Quaternion.identity);
+                }
+            }
+        }
+    }
 }

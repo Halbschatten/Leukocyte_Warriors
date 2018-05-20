@@ -120,7 +120,8 @@ public class GameControllerScript : MonoBehaviour
 	public GameObject pSystem;
 
     public List<GameObject> enemies = new List<GameObject>();
-
+    public GameObject[] buffPickups;
+    public GameObject[] debuffPickups;
     public void AddEnemyToEnemyList(GameObject enemy)
     {
         enemies.Add(enemy);
