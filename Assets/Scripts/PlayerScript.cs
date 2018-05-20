@@ -58,6 +58,9 @@ public class PlayerScript : MonoBehaviour
         }
     }
     private float debuffInvertedMovementDuration = 0.0f;
+    private bool debuffSlowerMovement = false;
+    private float debuffSlowerMovementDuration = 0.0f;
+    private float debuffSlowerMovementMultiplier;
 
     public GameObject[] hats;
 	public GameObject[] accessories;
@@ -74,6 +77,7 @@ public class PlayerScript : MonoBehaviour
         float amountHealed = 0.0f;
         if (life == defaultLife)
         {
+            Debug.Log(string.Format("[Player {0}]: [{1}] activated, healing {2} points of health!", playerID + 1, "buffRestoreHealth", amountHealed));
             return amountHealed;
         }
         else
@@ -82,43 +86,59 @@ public class PlayerScript : MonoBehaviour
             {
                 amountHealed = defaultLife - life;
                 life = defaultLife;
+                Debug.Log(string.Format("[Player {0}]: [{1}] activated, healing {2} points of health!", playerID + 1, "buffRestoreHealth", amountHealed));
                 return amountHealed;
             }
             else
             {
                 life = life + amount;
                 amountHealed = amount;
+                Debug.Log(string.Format("[Player {0}]: [{1}] activated, healing {2} points of health!", playerID + 1, "buffRestoreHealth", amountHealed));
                 return amountHealed;
             }
         }
        
     }
+    //Buffs
     public void BuffAutoShoot(float duration)
     {
         this.buffAutoShootDuration = duration;
         buffAutoShoot = true;
+        Debug.Log(string.Format("[Player {0}]: [{1}, {2:00}s] activated!", playerID + 1, "buffAutoShoot", buffAutoShootDuration));
     }
     public void BuffFasterMovement(float duration, float multiplier)
     {
         this.buffFasterMovementDuration = duration;
         this.buffFasterMovementMultiplier = multiplier;
         buffFasterMovement = true;
+        Debug.Log(string.Format("[Player {0}]: [{1}, {2:00}s, {3:#.##}x] activated!", playerID + 1, "buffFasterMovement", buffFasterMovementDuration, buffFasterMovementMultiplier));
     }
     public void BuffIgnoreConstantDamage(float duration)
     {
         this.buffIgnoreConstantDamageDuration = duration;
         buffIgnoreConstantDamage = true;
+        Debug.Log(string.Format("[Player {0}]: [{1}, {2:00}s] activated!", playerID + 1, "buffIgnoreConstantDamage", buffIgnoreConstantDamageDuration));
     }
     public void BuffShield(float duration, float multiplier)
     {
         this.buffShieldDuration = duration;
         this.buffShieldMultiplier = multiplier;
         buffShield = true;
+        Debug.Log(string.Format("[Player {0}]: [{1}, {2:00}s, {3:#.##}x] activated!", playerID + 1, "buffShield", buffShieldDuration, buffShieldMultiplier));
     }
+
+    //Debuffs
     public void DebuffInvertedMovement(float duration)
     {
         this.debuffInvertedMovementDuration = duration;
         debuffInvertedMovement = true;
+    }
+    public void DebuffSlowerMovement(float duration, float multiplier)
+    {
+        this.debuffSlowerMovementDuration = duration;
+        this.debuffSlowerMovementMultiplier = multiplier;
+        debuffSlowerMovement = true;
+        Debug.Log(string.Format("[Player {0}]: [{1}, {2:00}s, {3:#.##}x] activated!", playerID + 1, "debuffSlowerMovement", debuffSlowerMovementDuration, debuffSlowerMovementMultiplier));
     }
 
     void Shoot(GameObject projectile)
@@ -167,8 +187,11 @@ public class PlayerScript : MonoBehaviour
         }
         else
         {
-            playerHorizontalSpeed = playerDefaultHorizontalSpeed;
-            playerVerticalSpeed = playerDefaultVerticalSpeed;
+            if (debuffSlowerMovement == false)
+            {
+                playerHorizontalSpeed = playerDefaultHorizontalSpeed;
+                playerVerticalSpeed = playerDefaultVerticalSpeed;
+            }
         }
         if (debuffInvertedMovement == true)
         {
@@ -177,6 +200,19 @@ public class PlayerScript : MonoBehaviour
         else
         {
             rb2d.velocity = MovementVelocity(inputPlayerHorizontal, inputPlayerVertical, playerHorizontalSpeed, playerVerticalSpeed);
+        }
+        if (debuffSlowerMovement == true)
+        {
+            playerHorizontalSpeed = playerDefaultHorizontalSpeed * debuffSlowerMovementMultiplier;
+            playerVerticalSpeed = playerDefaultVerticalSpeed * debuffSlowerMovementMultiplier;
+        }
+        else
+        {
+            if (buffFasterMovement == false)
+            {
+                playerHorizontalSpeed = playerDefaultHorizontalSpeed;
+                playerVerticalSpeed = playerDefaultVerticalSpeed;
+            }
         }
         if (limitPlayerToScreenBounds == true)
         {
@@ -286,6 +322,20 @@ public class PlayerScript : MonoBehaviour
             }
         }
 
+        //debuffSlowerMovement Timer
+        if (debuffSlowerMovement == true)
+        {
+            if (debuffSlowerMovementDuration < 0.0f)
+            {
+                debuffSlowerMovementDuration = 0.0f;
+                debuffSlowerMovement = false;
+                print(string.Format("[Player {0}]: [{1}] deactivated!", playerID + 1, "debuffSlowerMovement"));
+            }
+            else
+            {
+                debuffSlowerMovementDuration = debuffSlowerMovementDuration - Time.deltaTime;
+            }
+        }
     }
     void OnTriggerEnter2D(Collider2D other)
     {

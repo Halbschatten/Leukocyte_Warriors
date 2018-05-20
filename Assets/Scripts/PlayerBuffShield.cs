@@ -8,7 +8,7 @@ public class PlayerBuffShield : MonoBehaviour
     private GameControllerScript gameControllerScript;
     private string gameControllerTag = "GameController"; //Game Controller's tag;
     private string playerTag = "Player";
-    public float multiplier = 0.5f;
+    public float multiplier = 0.025f;
     public float duration = 30.0f;
 
     void Awake()
@@ -25,7 +25,7 @@ public class PlayerBuffShield : MonoBehaviour
             for (int i = 0; i < gameControllerScript.Players.Length; i++)
             {
                 gameControllerScript.Players[i].GetComponent<PlayerScript>().BuffShield(duration, multiplier);
-                Debug.Log(string.Format("[Player {0}]: [{1}, {2:00}s, {3:#.##}x] activated!", i + 1, "buffShield", duration, multiplier));
+                //Debug.Log(string.Format("[Player {0}]: [{1}, {2:00}s, {3:#.##}x] activated!", i + 1, "buffShield", duration, multiplier));
             }
             GetComponent<CircleCollider2D>().enabled = false;
             StartCoroutine(WaitNSecondsAndDestroy(0.5f));

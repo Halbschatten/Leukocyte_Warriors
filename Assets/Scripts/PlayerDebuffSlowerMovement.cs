@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerDebuffInvertedMovement : MonoBehaviour
+public class PlayerDebuffSlowerMovement : MonoBehaviour
 {
     private GameObject gameControllerGameObject; //Reference to the Game Controller GameObject;
     private GameControllerScript gameControllerScript;
     private string gameControllerTag = "GameController"; //Game Controller's tag;
     private string playerTag = "Player";
+    public float multiplier = 0.5f;
     public float duration = 30.0f;
 
     void Awake()
@@ -23,8 +24,8 @@ public class PlayerDebuffInvertedMovement : MonoBehaviour
         {
             for (int i = 0; i < gameControllerScript.Players.Length; i++)
             {
-                gameControllerScript.Players[i].GetComponent<PlayerScript>().DebuffInvertedMovement(duration);
-                //Debug.Log(string.Format("[Player {0}]: [{1}, {2:00}s] activated!", i + 1, "debuffInvertedMovement", duration));
+                gameControllerScript.Players[i].GetComponent<PlayerScript>().DebuffSlowerMovement(duration, multiplier);
+                //Debug.Log(string.Format("[Player {0}]: [{1}, {2:00}s, {3:#.##}x] activated!", i + 1, "debuffSlowerMovement", duration, multiplier));
             }
             GetComponent<CircleCollider2D>().enabled = false;
             StartCoroutine(WaitNSecondsAndDestroy(0.5f));

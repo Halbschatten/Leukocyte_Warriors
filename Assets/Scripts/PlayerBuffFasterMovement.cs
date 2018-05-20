@@ -25,7 +25,7 @@ public class PlayerBuffFasterMovement : MonoBehaviour
             for (int i = 0; i < gameControllerScript.Players.Length; i++)
             {
                 gameControllerScript.Players[i].GetComponent<PlayerScript>().BuffFasterMovement(duration, multiplier);
-                Debug.Log(string.Format("[Player {0}]: [{1}, {2:00}s, {3:#.##}x] activated!", i + 1, "buffFasterMovement", duration, multiplier));
+                //Debug.Log(string.Format("[Player {0}]: [{1}, {2:00}s, {3:#.##}x] activated!", i + 1, "buffFasterMovement", duration, multiplier));
             }
             GetComponent<CircleCollider2D>().enabled = false;
             StartCoroutine(WaitNSecondsAndDestroy(0.5f));           

@@ -23,7 +23,8 @@ public class PlayerBuffRestoreHealth : MonoBehaviour
         {
             for (int i = 0; i < gameControllerScript.Players.Length; i++)
             {
-                Debug.Log(string.Format("[Player {0}]: [{1}] activated, healing {2} points of health!", i + 1, "buffRestoreHealth", gameControllerScript.Players[i].GetComponent<PlayerScript>().BuffHealHP(amountOfHealthToHeal)));
+                gameControllerScript.Players[i].GetComponent<PlayerScript>().BuffHealHP(amountOfHealthToHeal);
+                //Debug.Log(string.Format("[Player {0}]: [{1}] activated, healing {2} points of health!", i + 1, "buffRestoreHealth", gameControllerScript.Players[i].GetComponent<PlayerScript>().BuffHealHP(amountOfHealthToHeal)));
             }
             GetComponent<CircleCollider2D>().enabled = false;
             StartCoroutine(WaitNSecondsAndDestroy(0.5f));
