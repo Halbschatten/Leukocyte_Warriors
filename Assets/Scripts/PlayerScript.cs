@@ -34,6 +34,8 @@ public class PlayerScript : MonoBehaviour
     public string inputPlayerShoot = "GREEN0"; //Defaults to Player 1. Change in Unity's Inspector to the desired player controls.
     private float nextFire;
     private float fireRate = 0.15f;
+    private static float defaultBulletDamage = 1.0f;
+    private float bulletDamage = defaultBulletDamage;
     public bool limitPlayerToScreenBounds = true;
     private float resizeOnShoot = 0.75f;
     private PlayerResizeOnShoot playerResizeOnShoot;
@@ -44,10 +46,13 @@ public class PlayerScript : MonoBehaviour
     private bool buffIgnoreConstantDamage = false;
     private bool buffShield = false;
     private float buffShieldMultiplier;
+    private bool buffStrongerAttacks = false;
+    private float buffStrongerAttacksMultiplier;
     private float buffAutoShootDuration = 0.0f;
     private float buffFasterMovementDuration = 0.0f;
     private float buffIgnoreConstantDamageDuration = 0.0f;
     private float buffShieldDuration = 0.0f;
+    private float buffStrongerAttacksDuration = 0.0f;
 
     private bool debuffInvertedMovement = false;
     public bool GetDebuffInvertedMovement
@@ -126,6 +131,13 @@ public class PlayerScript : MonoBehaviour
         buffShield = true;
         Debug.Log(string.Format("[Player {0}]: [{1}, {2:00}s, {3:#.##}x] activated!", playerID + 1, "buffShield", buffShieldDuration, buffShieldMultiplier));
     }
+    public void BuffStrongerAttacks(float duration, float multiplier)
+    {
+        this.buffStrongerAttacksDuration = duration;
+        this.buffStrongerAttacksMultiplier = multiplier;
+        this.buffStrongerAttacks = true;
+        Debug.Log(string.Format("[Player {0}]: [{1}, {2:00}s, {3:#.##}x] activated!", playerID + 1, "buffStrongerAttacks", buffStrongerAttacksDuration, buffStrongerAttacksMultiplier));
+    }
 
     //Debuffs
     public void DebuffInvertedMovement(float duration)
@@ -144,7 +156,7 @@ public class PlayerScript : MonoBehaviour
     void Shoot(GameObject projectile)
     {
         playerResizeOnShoot.Shrink(resizeOnShoot);
-        Instantiate(projectile, cannonTransform.position, cannonTransform.rotation);
+        Instantiate(projectile, cannonTransform.position, cannonTransform.rotation).gameObject.GetComponent<BulletScript>().damage = bulletDamage;
     }
 
     void UpdateLifeInGameController()
@@ -239,6 +251,10 @@ public class PlayerScript : MonoBehaviour
                 Shoot(projectile);
             }
         }
+        if (buffStrongerAttacks == true)
+        {
+            bulletDamage = defaultBulletDamage * buffStrongerAttacksMultiplier;
+        }
     }
 
     void BuffDebuffTimers()
@@ -302,6 +318,21 @@ public class PlayerScript : MonoBehaviour
             else
             {
                 buffShieldDuration = buffShieldDuration - Time.deltaTime;
+            }
+        }
+
+        //buffStrongerAttacks Timer
+        if (buffStrongerAttacks == true)
+        {
+            if (buffStrongerAttacksDuration < 0.0f)
+            {
+                buffStrongerAttacksDuration = 0.0f;
+                buffStrongerAttacks = false;
+                print(string.Format("[Player {0}]: [{1}] deactivated!", playerID + 1, "buffStrongerAttacks"));
+            }
+            else
+            {
+                buffStrongerAttacksDuration = buffStrongerAttacksDuration - Time.deltaTime;
             }
         }
 

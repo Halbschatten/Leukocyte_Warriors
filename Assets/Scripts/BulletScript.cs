@@ -6,6 +6,7 @@ public class BulletScript : MonoBehaviour
 {
 	private Rigidbody2D rb2d;
 	public float bulletVelocity = 10.0f;
+    public float damage;
 
 	void Awake()
 	{

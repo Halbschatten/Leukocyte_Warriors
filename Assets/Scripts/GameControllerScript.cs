@@ -118,6 +118,14 @@ public class GameControllerScript : MonoBehaviour
 	public GameObject uiPlayer2HPGameObject;
 	public GameObject uiScoreGameObject;
 	public GameObject pSystem;
+
+    public List<GameObject> enemies = new List<GameObject>();
+
+    public void AddEnemyToEnemyList(GameObject enemy)
+    {
+        enemies.Add(enemy);
+    }
+
 	void Awake()
 	{
 		players = FindAllPlayers ();
@@ -154,6 +162,7 @@ public class GameControllerScript : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
+        enemies.Remove(null);
         if (Input.GetKey(KeyCode.Escape))
         {
             SceneManager.LoadScene("MainMenu");

@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BacteriaScript : MonoBehaviour {
-
+public class BacteriaScript : MonoBehaviour
+{
 	private GameObject gameControllerGameObject; //Reference to the Game Controller GameObject;
 	private string gameControllerTag = "GameController"; //Game Controller's tag;
 	private float life = 5.0f;
@@ -17,11 +17,8 @@ public class BacteriaScript : MonoBehaviour {
     public float inactiveTime = 0.01f;
 	public float followSpeedMultiplier = 0.009f;
 	public float followSpeed = 5.0f;
-    private static float defaultDamage = 1.0f;
-    public bool debuffTakeMoreDamage = true;
-    public float debuffTakeMoreDamageMultiplier = 1.75f;
-
-	GameObject FindOneRandomPlayer()
+    
+    GameObject FindOneRandomPlayer()
 	{
 		PlayerScript[] players = GameObject.FindObjectsOfType<PlayerScript> ();
 		try
@@ -39,15 +36,11 @@ public class BacteriaScript : MonoBehaviour {
 	void Awake()
 	{	
 		gameControllerGameObject = GameObject.FindGameObjectWithTag (gameControllerTag);
-		physs = this.gameObject.GetComponent<PhysicsScript> ();	
-		player = FindOneRandomPlayer ();
+		physs = this.gameObject.GetComponent<PhysicsScript> ();
+        gameControllerGameObject.GetComponent<GameControllerScript>().enemies.Add(this.gameObject);
+        player = FindOneRandomPlayer ();
 	}
-	// Use this for initialization
-	void Start ()
-	{
-		
 
-	}
 	void FixedUpdate()
 	{
         time += Time.fixedDeltaTime;
@@ -68,24 +61,13 @@ public class BacteriaScript : MonoBehaviour {
 			}
 		}
 	}
-	// Update is called once per frame
-	void Update () 
-	{
 
-	}
 	void OnTriggerEnter2D(Collider2D other)
 	{
 		if (other.gameObject.tag == bulletTag)
 		{
-            if (debuffTakeMoreDamage == true)
-            {
-                this.life -= defaultDamage * debuffTakeMoreDamageMultiplier;
-            }
-            else
-            {
-                this.life -= defaultDamage;
-            }
-			Destroy (other.gameObject);
+            this.life -= other.gameObject.GetComponent<BulletScript>().damage;
+            Destroy (other.gameObject);
 			if (this.life <= 0.0f) 
 			{
 				Destroy (this.gameObject);
