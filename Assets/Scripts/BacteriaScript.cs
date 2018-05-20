@@ -82,7 +82,7 @@ public class BacteriaScript : MonoBehaviour
     }
     private void OnDestroy()
     {
-        if (!isQuitting)
+        if (!isQuitting && gameControllerGameObject != null)
         {
             if (Random.Range(0, 9) == 4)
             {

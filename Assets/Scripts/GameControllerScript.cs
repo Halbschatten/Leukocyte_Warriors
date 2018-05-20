@@ -149,10 +149,10 @@ public class GameControllerScript : MonoBehaviour
 			uiPlayer2HPGameObject.gameObject.SetActive(false);
 			uiScoreGameObject.gameObject.SetActive(false);
 			uiGameOverGameObject.gameObject.SetActive(true);
-			pSystem.GetComponent<ParticleSystem>().Stop();
+			//pSystem.GetComponent<ParticleSystem>().Stop();
 			//Implement Game Over Code Here;
-			Debug.Log ("Game Over! Returning to Main Menu in 5 seconds!");
-			StartCoroutine(WaitForNSecondsAndReturnToMainMenu(5));
+			//Debug.Log ("Game Over! Returning to Main Menu in 5 seconds!");
+			//StartCoroutine(WaitForNSecondsAndReturnToMainMenu(5));
 		}
 	}
 	IEnumerator WaitForNSecondsAndReturnToMainMenu(int n)
