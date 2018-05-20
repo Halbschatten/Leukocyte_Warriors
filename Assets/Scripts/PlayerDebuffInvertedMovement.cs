@@ -8,12 +8,13 @@ public class PlayerDebuffInvertedMovement : MonoBehaviour
     private GameControllerScript gameControllerScript;
     private string gameControllerTag = "GameController"; //Game Controller's tag;
     private string playerTag = "Player";
-    public float amountOfHealthToHeal = 5.0f;
+    public float duration = 30.0f;
 
     void Awake()
     {
         gameControllerGameObject = GameObject.FindGameObjectWithTag(gameControllerTag);
         gameControllerScript = gameControllerGameObject.GetComponent<GameControllerScript>();
+
     }
 
     // Use this for initialization
@@ -23,9 +24,10 @@ public class PlayerDebuffInvertedMovement : MonoBehaviour
         {
             for (int i = 0; i < gameControllerScript.Players.Length; i++)
             {
-                gameControllerScript.Players[i].GetComponent<PlayerScript>().debuffInvertedMovement = true;
-                Debug.Log(string.Format("[Player {0}]: [{1}] activated!", i + 1, "debuffInvertedMovement"));
+                gameControllerScript.Players[i].GetComponent<PlayerScript>().DebuffInvertedMovement(duration);
+                Debug.Log(string.Format("[Player {0}]: [{1}, {2:00}s] activated!", i + 1, "debuffInvertedMovement", duration));
             }
+            GetComponent<CircleCollider2D>().enabled = false;
             StartCoroutine(WaitNSecondsAndDestroy(0.5f));
         }
     }

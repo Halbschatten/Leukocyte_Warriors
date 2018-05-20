@@ -13,7 +13,7 @@ public class RotatePlayerOnMovement : MonoBehaviour
 
     public void RotateOnMovement()
     {
-        if (playerScript.debuffInvertedMovement == true)
+        if (playerScript.GetDebuffInvertedMovement == true)
         {
             if (-Input.GetAxis(inputPlayerVertical) > 0) // > 0 -> Up
             {

@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class MainMenuSelectedItem : MonoBehaviour
 {
-    MainMenuScript mainMenuScript;
     List<string> selection = new List<string>();
     TMP_Dropdown tmpDropdown;
     public Slider r, g, b;
@@ -63,7 +62,6 @@ public class MainMenuSelectedItem : MonoBehaviour
     // Use this for initialization
     void Start ()
     {
-        mainMenuScript = FindObjectOfType<MainMenuScript>();
         tmpDropdown = GetComponent<TMP_Dropdown>();
     }
 	

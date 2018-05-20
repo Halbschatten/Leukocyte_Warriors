@@ -27,8 +27,8 @@ public class PlayerScript : MonoBehaviour
     private Transform cannonTransform; //Reference to the player cannon's transform.
     private static float playerDefaultHorizontalSpeed = 200.0f; //Player horizontal movement speed.
     private static float playerDefaultVerticalSpeed = 200.0f; //Player vertical movement speed.
-    public float playerHorizontalSpeed = playerDefaultHorizontalSpeed; //Player horizontal movement speed.
-    public float playerVerticalSpeed = playerDefaultVerticalSpeed; //Player vertical movement speed.
+    private float playerHorizontalSpeed = playerDefaultHorizontalSpeed; //Player horizontal movement speed.
+    private float playerVerticalSpeed = playerDefaultVerticalSpeed; //Player vertical movement speed.
     public string inputPlayerHorizontal = "HORIZONTAL0"; //Defaults to Player 1. Change in Unity's Inspector to the desired player controls.
     public string inputPlayerVertical = "VERTICAL0"; //Defaults to Player 1. Change in Unity's Inspector to the desired player controls.
     public string inputPlayerShoot = "GREEN0"; //Defaults to Player 1. Change in Unity's Inspector to the desired player controls.
@@ -38,15 +38,26 @@ public class PlayerScript : MonoBehaviour
     private float resizeOnShoot = 0.75f;
     private PlayerResizeOnShoot playerResizeOnShoot;
 
-    public bool buffAutoShoot = false;
-    public bool buffFasterMovement = false;
-    public float buffFasterMovementMultiplier = 1.5f;
-    public bool buffIgnoreConstantDamage = false;
-	public GameObject[] hats;
+    private bool buffAutoShoot = false;
+    private bool buffFasterMovement = false;
+    private float buffFasterMovementMultiplier;
+    private bool buffIgnoreConstantDamage = false;
+    private float buffAutoShootDuration = 0.0f;
+    private float buffFasterMovementDuration = 0.0f;
+    private float buffIgnoreConstantDamageDuration = 0.0f;
+
+    private bool debuffInvertedMovement = false;
+    public bool GetDebuffInvertedMovement
+    {
+        get
+        {
+            return debuffInvertedMovement;
+        }
+    }
+    private float debuffInvertedMovementDuration = 0.0f;
+
+    public GameObject[] hats;
 	public GameObject[] accessories;
-
-    public bool debuffInvertedMovement = false;
-
 
     Vector2 MovementVelocity(string inputH, string inputV, float inputPlayerSpeedH, float inputPlayerSpeedV)
     {
@@ -55,7 +66,7 @@ public class PlayerScript : MonoBehaviour
         //Debug.Log (string.Format("{0}: {1} | {2}: {3}", inputH, velocity.x, inputV, velocity.y));
         return velocity;
     }
-    public float buffHealHP(float amount)
+    public float BuffHealHP(float amount)
     {
         float amountHealed = 0.0f;
         if (life == defaultLife)
@@ -79,6 +90,28 @@ public class PlayerScript : MonoBehaviour
         }
        
     }
+    public void BuffAutoShoot(float duration)
+    {
+        this.buffAutoShootDuration = duration;
+        buffAutoShoot = true;
+    }
+    public void BuffFasterMovement(float duration, float multiplier)
+    {
+        this.buffFasterMovementDuration = duration;
+        this.buffFasterMovementMultiplier = multiplier;
+        buffFasterMovement = true;
+    }
+    public void BuffIgnoreConstantDamage(float duration)
+    {
+        this.buffIgnoreConstantDamageDuration = duration;
+        buffIgnoreConstantDamage = true;
+    }
+    public void DebuffInvertedMovement(float duration)
+    {
+        this.debuffInvertedMovementDuration = duration;
+        debuffInvertedMovement = true;
+    }
+
     void Shoot(GameObject projectile)
     {
         playerResizeOnShoot.Shrink(resizeOnShoot);
@@ -145,6 +178,7 @@ public class PlayerScript : MonoBehaviour
     void Update()
     {
         UpdateLifeInGameController();
+        BuffDebuffTimers();
         if (buffAutoShoot == true)
         {
             if (Input.GetButton(inputPlayerShoot) && Time.time > nextFire)
@@ -158,6 +192,72 @@ public class PlayerScript : MonoBehaviour
             if (Input.GetButtonDown(inputPlayerShoot))
             {
                 Shoot(projectile);
+            }
+        }
+    }
+    void BuffDebuffTimers()
+    {
+        //Buffs
+
+        //buffAutoShoot Timer
+        if (buffAutoShoot == true)
+        {
+            if (buffAutoShootDuration < 0.0f)
+            { 
+                buffAutoShootDuration = 0.0f;
+                buffAutoShoot = false;
+                print(string.Format("[Player {0}]: [{1}] deactivated!", playerID + 1, "buffAutoShoot"));
+            }
+            else
+            {
+                buffAutoShootDuration = buffAutoShootDuration - Time.deltaTime;
+            }
+        }
+
+        //buffFasterMovement Timer
+        if (buffFasterMovement == true)
+        {
+            if (buffFasterMovementDuration < 0.0f)
+            {
+                buffFasterMovementDuration = 0.0f;
+                buffFasterMovement = false;
+                print(string.Format("[Player {0}]: [{1}] deactivated!", playerID + 1, "buffFasterMovement"));
+            }
+            else
+            {
+                buffFasterMovementDuration = buffFasterMovementDuration - Time.deltaTime;
+            }
+        }
+
+        //buffIgnoreConstantDamage Timer
+        if (buffIgnoreConstantDamage == true)
+        {
+            if (buffIgnoreConstantDamageDuration < 0.0f)
+            {
+                buffIgnoreConstantDamageDuration = 0.0f;
+                buffIgnoreConstantDamage = false;
+                print(string.Format("[Player {0}]: [{1}] deactivated!", playerID + 1, "buffIgnoreConstantDamage"));
+            }
+            else
+            {
+                buffIgnoreConstantDamageDuration = buffIgnoreConstantDamageDuration - Time.deltaTime;
+            }
+        }
+
+        //Debuffs
+
+        //debuffInvertedMovement Timer
+        if (debuffInvertedMovement == true)
+        {
+            if (debuffInvertedMovementDuration < 0.0f)
+            {
+                debuffInvertedMovementDuration = 0.0f;
+                debuffInvertedMovement = false;
+                print(string.Format("[Player {0}]: [{1}] deactivated!", playerID + 1, "debuffInvertedMovement"));
+            }
+            else
+            {
+                debuffInvertedMovementDuration = debuffInvertedMovementDuration - Time.deltaTime;
             }
         }
 

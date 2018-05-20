@@ -8,6 +8,8 @@ public class PlayerBuffFasterMovement : MonoBehaviour
     private GameControllerScript gameControllerScript;
     private string gameControllerTag = "GameController"; //Game Controller's tag;
     private string playerTag = "Player";
+    public float multiplier = 1.5f;
+    public float duration = 30.0f;
 
     void Awake()
     {
@@ -22,9 +24,10 @@ public class PlayerBuffFasterMovement : MonoBehaviour
         {
             for (int i = 0; i < gameControllerScript.Players.Length; i++)
             {
-                gameControllerScript.Players[i].GetComponent<PlayerScript>().buffFasterMovement = true;
-                Debug.Log(string.Format("[Player {0}]: [{1}] activated!", i + 1, "buffFasterMovement"));
+                gameControllerScript.Players[i].GetComponent<PlayerScript>().BuffFasterMovement(duration, multiplier);
+                Debug.Log(string.Format("[Player {0}]: [{1}, {2:00}s, {3:#.##}x] activated!", i + 1, "buffFasterMovement", duration, multiplier));
             }
+            GetComponent<CircleCollider2D>().enabled = false;
             StartCoroutine(WaitNSecondsAndDestroy(0.5f));           
         }
     }
