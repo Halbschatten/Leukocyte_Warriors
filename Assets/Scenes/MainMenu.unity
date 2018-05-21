@@ -1583,6 +1583,7 @@ GameObject:
   - component: {fileID: 102506143}
   - component: {fileID: 102506145}
   - component: {fileID: 102506144}
+  - component: {fileID: 102506146}
   m_Layer: 5
   m_Name: Stage Progression Box
   m_TagString: Untagged
@@ -1641,6 +1642,21 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 102506142}
+--- !u!114 &102506146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 102506142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 898137c5bb4a7ac4cb37cb19ba94260a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colorA: {r: 1, g: 1, b: 0, a: 0.49019608}
+  colorB: {r: 0.88235295, g: 0.88235295, b: 0, a: 0.39215687}
+  time: 1
+  lerpedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &110036853
 GameObject:
   m_ObjectHideFlags: 0
@@ -2652,7 +2668,7 @@ RectTransform:
   m_Children:
   - {fileID: 1611477554}
   m_Father: {fileID: 1048040258}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -13210,6 +13226,7 @@ RectTransform:
   - {fileID: 1619342578}
   - {fileID: 357485629}
   - {fileID: 1822764462}
+  - {fileID: 1158529480}
   - {fileID: 1873212212}
   - {fileID: 1476595587}
   - {fileID: 1309797342}
@@ -13240,6 +13257,7 @@ MonoBehaviour:
   dialogMessages:
   - {fileID: 357485630}
   - {fileID: 1822764463}
+  - {fileID: 1158529477}
   - {fileID: 1873212213}
   - {fileID: 1476595588}
   - {fileID: 1309797343}
@@ -13712,6 +13730,7 @@ GameObject:
   - component: {fileID: 1080426708}
   - component: {fileID: 1080426710}
   - component: {fileID: 1080426709}
+  - component: {fileID: 1080426711}
   m_Layer: 5
   m_Name: Score Box
   m_TagString: Untagged
@@ -13770,6 +13789,21 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1080426707}
+--- !u!114 &1080426711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1080426707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 898137c5bb4a7ac4cb37cb19ba94260a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colorA: {r: 1, g: 1, b: 0, a: 0.49019608}
+  colorB: {r: 0.88235295, g: 0.88235295, b: 0, a: 0.39215687}
+  time: 1
+  lerpedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &1086264175
 GameObject:
   m_ObjectHideFlags: 0
@@ -14758,6 +14792,181 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -20, y: -20}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1158529476
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 1525637041497166, guid: ff9f8b2ffadec2a43aaf75e070cedfbb,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1158529480}
+  - component: {fileID: 1158529479}
+  - component: {fileID: 1158529478}
+  - component: {fileID: 1158529477}
+  m_Layer: 5
+  m_Name: Dialog Text 3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &1158529477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 114305360786102296, guid: ff9f8b2ffadec2a43aaf75e070cedfbb,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1158529476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1453722849, guid: 89f0137620f6af44b9ba852b4190e64e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_text: "\tFirst, let's start with the players health bars. These bars, in the game,
+    will have different colors, depending on how much health each player have."
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: d62a573c923f5cb47b8ff65261033b90, type: 2}
+  m_sharedMaterial: {fileID: 2164040, guid: d62a573c923f5cb47b8ff65261033b90, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 1
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 11400000, guid: ba646aa27369b494ea40878ce1638201,
+    type: 2}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_outlineColor:
+    serializedVersion: 2
+    rgba: 4278190080
+  m_fontSize: 72
+  m_fontSizeBase: 48
+  m_fontWeight: 400
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 32
+  m_textAlignment: 264
+  m_isAlignmentEnumConverted: 1
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_firstOverflowCharacterIndex: -1
+  m_linkedTextComponent: {fileID: 0}
+  m_isLinkedTextComponent: 0
+  m_isTextTruncated: 0
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_ignoreRectMaskCulling: 0
+  m_ignoreCulling: 1
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_firstVisibleCharacter: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_textInfo:
+    textComponent: {fileID: 1158529477}
+    characterCount: 149
+    spriteCount: 0
+    spaceCount: 25
+    wordCount: 26
+    linkCount: 0
+    lineCount: 4
+    pageCount: 1
+    materialCount: 1
+  m_havePropertiesChanged: 1
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_spriteAnimator: {fileID: 0}
+  m_isInputParsingRequired: 0
+  m_inputSource: 0
+  m_hasFontAssetChanged: 0
+  m_subTextObjects:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &1158529478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1158529476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fd354032c72c45059d99dff33272cdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectsToEnable:
+  - {fileID: 1813867127}
+  - {fileID: 2049530812}
+--- !u!222 &1158529479
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 222917074555131196, guid: ff9f8b2ffadec2a43aaf75e070cedfbb,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1158529476}
+--- !u!224 &1158529480
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 224241124612436398, guid: ff9f8b2ffadec2a43aaf75e070cedfbb,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1158529476}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.7899913, y: 0.7899913, z: 0.7899913}
+  m_Children: []
+  m_Father: {fileID: 1048040258}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -0.000091552734, y: 24.99997}
+  m_SizeDelta: {x: 1200, y: 350}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1167238130
 GameObject:
   m_ObjectHideFlags: 0
@@ -15723,7 +15932,7 @@ GameObject:
   - component: {fileID: 1221315063}
   - component: {fileID: 1221315062}
   m_Layer: 5
-  m_Name: Dialog Text 8
+  m_Name: Dialog Text 9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15741,7 +15950,7 @@ RectTransform:
   m_LocalScale: {x: 0.7899941, y: 0.7899941, z: 0.7899941}
   m_Children: []
   m_Father: {fileID: 1048040258}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -17006,7 +17215,7 @@ GameObject:
   - component: {fileID: 1309797345}
   - component: {fileID: 1309797343}
   m_Layer: 5
-  m_Name: Dialog Text 5
+  m_Name: Dialog Text 6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17024,7 +17233,7 @@ RectTransform:
   m_LocalScale: {x: 0.7899941, y: 0.7899941, z: 0.7899941}
   m_Children: []
   m_Father: {fileID: 1048040258}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -18454,7 +18663,7 @@ GameObject:
   - component: {fileID: 1476595588}
   - component: {fileID: 1476595590}
   m_Layer: 5
-  m_Name: Dialog Text 4
+  m_Name: Dialog Text 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18472,7 +18681,7 @@ RectTransform:
   m_LocalScale: {x: 0.7899941, y: 0.7899941, z: 0.7899941}
   m_Children: []
   m_Father: {fileID: 1048040258}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -20682,7 +20891,7 @@ GameObject:
   - component: {fileID: 1589729752}
   - component: {fileID: 1589729750}
   m_Layer: 5
-  m_Name: Dialog Text 7
+  m_Name: Dialog Text 8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20700,7 +20909,7 @@ RectTransform:
   m_LocalScale: {x: 0.7899941, y: 0.7899941, z: 0.7899941}
   m_Children: []
   m_Father: {fileID: 1048040258}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -28975,6 +29184,7 @@ GameObject:
   - component: {fileID: 1813867128}
   - component: {fileID: 1813867130}
   - component: {fileID: 1813867129}
+  - component: {fileID: 1813867131}
   m_Layer: 5
   m_Name: Player 1 Box
   m_TagString: Untagged
@@ -29033,6 +29243,21 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1813867127}
+--- !u!114 &1813867131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1813867127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 898137c5bb4a7ac4cb37cb19ba94260a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colorA: {r: 1, g: 1, b: 0, a: 0.49019608}
+  colorB: {r: 0.88235295, g: 0.88235295, b: 0, a: 0.39215687}
+  time: 1
+  lerpedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &1814103627
 GameObject:
   m_ObjectHideFlags: 0
@@ -29165,7 +29390,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1822764462}
   - component: {fileID: 1822764464}
-  - component: {fileID: 1822764466}
   - component: {fileID: 1822764463}
   m_Layer: 5
   m_Name: Dialog Text 2
@@ -29213,8 +29437,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: "\tFirst, let's start with the players health bars. These bars, in the game,
-    will have different colors, depending on how much health each player have."
+  m_text: "\t{INSERT CONTROLS HERE}"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d62a573c923f5cb47b8ff65261033b90, type: 2}
   m_sharedMaterial: {fileID: 2164040, guid: d62a573c923f5cb47b8ff65261033b90, type: 2}
@@ -29295,7 +29518,7 @@ MonoBehaviour:
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 0
+  m_isInputParsingRequired: 1
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
@@ -29316,20 +29539,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1822764461}
---- !u!114 &1822764466
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1822764461}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8fd354032c72c45059d99dff33272cdf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectsToEnable:
-  - {fileID: 1813867127}
-  - {fileID: 2049530812}
 --- !u!1 &1849557228
 GameObject:
   m_ObjectHideFlags: 0
@@ -29497,7 +29706,7 @@ GameObject:
   - component: {fileID: 1851127493}
   - component: {fileID: 1851127491}
   m_Layer: 5
-  m_Name: Dialog Text 6
+  m_Name: Dialog Text 7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29515,7 +29724,7 @@ RectTransform:
   m_LocalScale: {x: 0.7899941, y: 0.7899941, z: 0.7899941}
   m_Children: []
   m_Father: {fileID: 1048040258}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -29827,7 +30036,7 @@ GameObject:
   - component: {fileID: 1873212213}
   - component: {fileID: 1873212215}
   m_Layer: 5
-  m_Name: Dialog Text 3
+  m_Name: Dialog Text 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29845,7 +30054,7 @@ RectTransform:
   m_LocalScale: {x: 0.7899941, y: 0.7899941, z: 0.7899941}
   m_Children: []
   m_Father: {fileID: 1048040258}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -31188,7 +31397,7 @@ RectTransform:
   m_Children:
   - {fileID: 1130929843}
   m_Father: {fileID: 1048040258}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -32057,6 +32266,7 @@ GameObject:
   - component: {fileID: 2049530813}
   - component: {fileID: 2049530815}
   - component: {fileID: 2049530814}
+  - component: {fileID: 2049530816}
   m_Layer: 5
   m_Name: Player 2 Box
   m_TagString: Untagged
@@ -32115,6 +32325,21 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2049530812}
+--- !u!114 &2049530816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2049530812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 898137c5bb4a7ac4cb37cb19ba94260a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colorA: {r: 1, g: 1, b: 0, a: 0.49019608}
+  colorB: {r: 0.88235295, g: 0.88235295, b: 0, a: 0.39215687}
+  time: 1
+  lerpedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &2053704076
 GameObject:
   m_ObjectHideFlags: 0
