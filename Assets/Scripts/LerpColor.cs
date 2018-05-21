@@ -12,6 +12,16 @@ public class LerpColor : MonoBehaviour
 	void Update () 
 	{
         lerpedColor = Color.Lerp(colorA, colorB, Mathf.PingPong(Time.time, time));
-        GetComponent<SpriteRenderer>().color = lerpedColor;
+        if (GetComponent<SpriteRenderer>() != null)
+        {
+            GetComponent<SpriteRenderer>().color = lerpedColor;
+        }
+        else
+        {
+            if (GetComponent<Image>() != null)
+            {
+                GetComponent<Image>().color = lerpedColor;
+            }   
+        }
 	}
 }
