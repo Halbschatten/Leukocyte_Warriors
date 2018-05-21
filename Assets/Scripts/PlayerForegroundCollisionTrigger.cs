@@ -26,7 +26,6 @@ public class PlayerForegroundCollisionTrigger : MonoBehaviour
     {
         if (collision.gameObject.tag == playerTag)
         {
-            collision.GetComponent<PlayerScript>().DebuffSlowerMovement(0f, 1.0f);
             gameControllerScript.fgScrollSpeed = gameControllerScript.defaultFGScrollSpeed;
             gameControllerScript.bgScrollSpeed = gameControllerScript.defaultBGScrollSpeed;
         }

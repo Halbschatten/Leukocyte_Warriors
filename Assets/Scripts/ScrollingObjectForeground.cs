@@ -15,16 +15,17 @@ public class ScrollingObjectForeground : MonoBehaviour
         rb2d = GetComponent<Rigidbody2D>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
-        // If the game is over, stop scrolling.
-        if (gameControllerGameObject.GetComponent<GameControllerScript>().GameOver == true)
-        {
-            rb2d.velocity = Vector2.zero;
-        }
-        else
-        {
-            rb2d.velocity = new Vector2(gameControllerGameObject.GetComponent<GameControllerScript>().fgScrollSpeed, 0);
-        }
+        //// If the game is over, stop scrolling.
+        //if (gameControllerGameObject.GetComponent<GameControllerScript>().GameOver == true)
+        //{
+        //    rb2d.velocity = Vector2.zero;
+        //}
+        //else
+        //{
+        //    rb2d.velocity = new Vector2(gameControllerGameObject.GetComponent<GameControllerScript>().fgScrollSpeed, 0);
+        //}
+        rb2d.velocity = new Vector2(gameControllerGameObject.GetComponent<GameControllerScript>().fgScrollSpeed, 0);
     }
 }

@@ -19,5 +19,12 @@ public class UIBuffAndDebuffs : MonoBehaviour
                 statusEffect[i].fillAmount = playerScript.statusEffectTime[i] / playerScript.originalTime[i];
             }
         }
+        else
+        {
+            for (int i = 0; i < statusEffect.Length; i++)
+            {
+                statusEffect[i].enabled = false;
+            }
+        }
 	}
 }

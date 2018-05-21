@@ -128,6 +128,21 @@ public class GameControllerScript : MonoBehaviour
     public List<GameObject> enemies = new List<GameObject>();
     public GameObject[] buffPickups;
     public GameObject[] debuffPickups;
+
+    private Checkpoint checkpoint;
+    private int checkpointNumber = 0;
+
+    public void AddNewCheckpoint()
+    {
+        checkpoint.AddCheckpoint(score, checkpointNumber);
+        checkpointNumber++;
+    }
+
+    public string GetCheckpoints()
+    {
+        return checkpoint.GetCheckpointToString();
+    }
+    
     public void AddEnemyToEnemyList(GameObject enemy)
     {
         enemies.Add(enemy);
@@ -145,6 +160,7 @@ public class GameControllerScript : MonoBehaviour
         {
             debugUI.SetActive(true);
         }
+        checkpoint = new Checkpoint();
 		players = FindAllPlayers ();
         if (FindAllPlayers() != null)
         {
@@ -165,6 +181,7 @@ public class GameControllerScript : MonoBehaviour
 			uiPlayer2HPGameObject.gameObject.SetActive(false);
 			uiScoreGameObject.gameObject.SetActive(false);
 			uiGameOverGameObject.gameObject.SetActive(true);
+            print(checkpoint.GetCheckpointToString());
 			//pSystem.GetComponent<ParticleSystem>().Stop();
 			//Implement Game Over Code Here;
 			//Debug.Log ("Game Over! Returning to Main Menu in 5 seconds!");

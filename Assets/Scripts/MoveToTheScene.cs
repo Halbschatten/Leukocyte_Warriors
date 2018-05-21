@@ -6,6 +6,7 @@ public class MoveToTheScene : MonoBehaviour
 {
     private Rigidbody2D rb2d;
     public bool movementEnabled = true;
+    public bool noStop = false;
     public float speed = 5.0f;
     public float offset = 2.5f;
     private Vector3 screenBoundary;
@@ -21,21 +22,40 @@ public class MoveToTheScene : MonoBehaviour
 
      void FixedUpdate()
     {
-        if (transform.position.x < screenBoundary.x - offset && transform.position.x > -screenBoundary.x + offset)
+        if (noStop == true)
         {
-            movementEnabled = false;
-            rb2d.velocity = Vector3.zero;
+            rb2d.velocity = new Vector3(-speed, 0.0f, 0.0f);
         }
-        if (movementEnabled == true)
+        else
         {
-            if (transform.position.x > gameControllerScript.ScreenBoundariesX - offset)
+            if (transform.position.x < screenBoundary.x - offset && transform.position.x > -screenBoundary.x + offset)
             {
-                rb2d.velocity = new Vector3(-speed, 0.0f, 0.0f);
+                movementEnabled = false;
+                rb2d.velocity = Vector3.zero;
             }
-            else if (transform.position.x < gameControllerScript.ScreenBoundariesX + offset)
+            if (movementEnabled == true)
             {
-                rb2d.velocity = new Vector3(speed, 0.0f, 0.0f);
+                if (transform.position.x > gameControllerScript.ScreenBoundariesX - offset)
+                {
+                    rb2d.velocity = new Vector3(-speed, 0.0f, 0.0f);
+                }
+                else if (transform.position.x < gameControllerScript.ScreenBoundariesX + offset)
+                {
+                    rb2d.velocity = new Vector3(speed, 0.0f, 0.0f);
+                }
             }
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (this.gameObject.tag == "Checkpoint" && collision.gameObject.tag == "Player")
+        {
+            gameControllerScript.AddNewCheckpoint();
+            Destroy(this.gameObject);
+        }
+        if (this.gameObject.tag == "Bacteria" && collision.gameObject.tag == "Player")
+        {
+            
         }
     }
 }
