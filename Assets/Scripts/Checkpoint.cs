@@ -45,7 +45,7 @@ public class Checkpoint
             int originalScoreOnCheckpointCount = scoreOnCheckpoint.Count, originalCheckpointNumberCount = checkpointNumber.Count;
             for (int i = 0; i < originalScoreOnCheckpointCount && i < originalCheckpointNumberCount; i++) //The two stacks must have the same size, otherwise something went wrong!
             {
-                returnString = returnString + checkpointNumberInverse.Pop() + " | ";
+                returnString = returnString + checkpointNumberInverse.Pop() + " |\t";
                 returnString = returnString + scoreOnCheckpointInverse.Pop();
                 returnString = returnString + "\n";
             }

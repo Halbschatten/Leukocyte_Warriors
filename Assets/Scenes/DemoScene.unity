@@ -381,7 +381,7 @@ Prefab:
     - target: {fileID: 114411727942678292, guid: ee597472126027349af3ca72002f7a99,
         type: 2}
       propertyPath: offset
-      value: 12
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1143269684576820, guid: ee597472126027349af3ca72002f7a99, type: 2}
       propertyPath: m_TagString
@@ -1398,7 +1398,7 @@ Prefab:
     - target: {fileID: 114724056045730398, guid: 2161ced3f55a887419b2d9fe63773c42,
         type: 2}
       propertyPath: m_textAlignment
-      value: 1056
+      value: 544
       objectReference: {fileID: 0}
     - target: {fileID: 224690107945682038, guid: 2161ced3f55a887419b2d9fe63773c42,
         type: 2}

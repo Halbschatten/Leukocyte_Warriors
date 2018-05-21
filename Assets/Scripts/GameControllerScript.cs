@@ -181,7 +181,6 @@ public class GameControllerScript : MonoBehaviour
 			uiPlayer2HPGameObject.gameObject.SetActive(false);
 			uiScoreGameObject.gameObject.SetActive(false);
 			uiGameOverGameObject.gameObject.SetActive(true);
-            print(checkpoint.GetCheckpointToString());
 			//pSystem.GetComponent<ParticleSystem>().Stop();
 			//Implement Game Over Code Here;
 			//Debug.Log ("Game Over! Returning to Main Menu in 5 seconds!");
