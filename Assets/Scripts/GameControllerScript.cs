@@ -84,6 +84,19 @@ public class GameControllerScript : MonoBehaviour
 			playersHealth = value;
 		}
 	}
+    private float bossHealth;
+    public float BossHealth
+    {
+        get
+        {
+            return bossHealth;
+        }
+        set
+        {
+            bossHealth = value;
+        }
+    }
+
 
     public float defaultBGScrollSpeed = -1.0f;
     public float defaultFGScrollSpeed = -3.0f;

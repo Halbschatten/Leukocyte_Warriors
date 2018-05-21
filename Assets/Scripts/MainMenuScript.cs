@@ -3,16 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class MainMenuScript : MonoBehaviour
 {
     public float bgScrollSpeed;
     public GameObject mainMenu, player1Menu, player2Menu, tutorialMenu, settingsMenu, confirmationMenu, aboutMenu;
     public GameObject logo;
+    private List<Resolution> resolutions;
     public GameObject debugUIFPS;
     public string[] activeItems = new string[2], activeHats = new string[2];
     public PlayerAccessories player1Accessories;
     public PlayerAccessories player2Accessories;
+
+    //Settings
+    public TMP_Dropdown resolutionDropdown;
+    public Toggle resolutionFullscreenToggle;
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.KeypadDivide))
@@ -37,6 +44,14 @@ public class MainMenuScript : MonoBehaviour
     }
 	void Awake()
 	{
+        resolutions = new List<Resolution>(Screen.resolutions);
+        List<string> resolutionString = new List<string>();
+        foreach (Resolution res in resolutions)
+        {
+            resolutionString.Add(string.Format("{0}x{1}", res.width, res.height));
+        }
+        resolutionDropdown.ClearOptions();
+        resolutionDropdown.AddOptions(resolutionString);
         if (PlayerPrefs.GetInt("gameDebugUI_FPS") == 0)
         {
             debugUIFPS.SetActive(false);
@@ -114,6 +129,10 @@ public class MainMenuScript : MonoBehaviour
         settingsMenu.SetActive(false);
         mainMenu.SetActive(true);
         logo.SetActive(true);
+    }
+    public void SettingsMenuApplyButton()
+    {
+        Screen.SetResolution(resolutions[resolutionDropdown.value].width, resolutions[resolutionDropdown.value].height, resolutionFullscreenToggle);
     }
     public void SettingsMenuEraseAllDataButton()
     {

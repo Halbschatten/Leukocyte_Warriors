@@ -71,9 +71,9 @@ public class BacteriaScript : MonoBehaviour
             Destroy (other.gameObject);
 			if (this.life <= 0.0f) 
 			{
-				Destroy (this.gameObject);
 				gameControllerGameObject.GetComponent<GameControllerScript> ().Score += scoreOnDeath;
-			}
+                Destroy(this.gameObject);
+            }
 		}
 	}
     void OnApplicationQuit()
