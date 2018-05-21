@@ -67,6 +67,10 @@ public class PlayerScript : MonoBehaviour
     private float debuffSlowerMovementDuration = 0.0f;
     private float debuffSlowerMovementMultiplier;
 
+    public bool[] statusEffect = new bool[7];
+    public float[] statusEffectTime = new float[7];
+    public float[] originalTime = new float[7];
+
     public GameObject[] hats;
 	public GameObject[] accessories;
 
@@ -108,6 +112,7 @@ public class PlayerScript : MonoBehaviour
     public void BuffAutoShoot(float duration)
     {
         this.buffAutoShootDuration = duration;
+        this.originalTime[0] = duration;
         buffAutoShoot = true;
         Debug.Log(string.Format("[Player {0}]: [{1}, {2:00}s] activated!", playerID + 1, "buffAutoShoot", buffAutoShootDuration));
     }
@@ -115,12 +120,14 @@ public class PlayerScript : MonoBehaviour
     {
         this.buffFasterMovementDuration = duration;
         this.buffFasterMovementMultiplier = multiplier;
+        this.originalTime[2] = duration;
         buffFasterMovement = true;
         Debug.Log(string.Format("[Player {0}]: [{1}, {2:00}s, {3:#.##}x] activated!", playerID + 1, "buffFasterMovement", buffFasterMovementDuration, buffFasterMovementMultiplier));
     }
     public void BuffIgnoreConstantDamage(float duration)
     {
         this.buffIgnoreConstantDamageDuration = duration;
+        this.originalTime[1] = duration;
         buffIgnoreConstantDamage = true;
         Debug.Log(string.Format("[Player {0}]: [{1}, {2:00}s] activated!", playerID + 1, "buffIgnoreConstantDamage", buffIgnoreConstantDamageDuration));
     }
@@ -128,6 +135,7 @@ public class PlayerScript : MonoBehaviour
     {
         this.buffShieldDuration = duration;
         this.buffShieldMultiplier = multiplier;
+        this.originalTime[3] = duration;
         buffShield = true;
         Debug.Log(string.Format("[Player {0}]: [{1}, {2:00}s, {3:#.##}x] activated!", playerID + 1, "buffShield", buffShieldDuration, buffShieldMultiplier));
     }
@@ -135,6 +143,7 @@ public class PlayerScript : MonoBehaviour
     {
         this.buffStrongerAttacksDuration = duration;
         this.buffStrongerAttacksMultiplier = multiplier;
+        this.originalTime[4] = duration;
         this.buffStrongerAttacks = true;
         Debug.Log(string.Format("[Player {0}]: [{1}, {2:00}s, {3:#.##}x] activated!", playerID + 1, "buffStrongerAttacks", buffStrongerAttacksDuration, buffStrongerAttacksMultiplier));
     }
@@ -143,12 +152,14 @@ public class PlayerScript : MonoBehaviour
     public void DebuffInvertedMovement(float duration)
     {
         this.debuffInvertedMovementDuration = duration;
+        this.originalTime[5] = duration;
         debuffInvertedMovement = true;
     }
     public void DebuffSlowerMovement(float duration, float multiplier)
     {
         this.debuffSlowerMovementDuration = duration;
         this.debuffSlowerMovementMultiplier = multiplier;
+        this.originalTime[6] = duration;
         debuffSlowerMovement = true;
         Debug.Log(string.Format("[Player {0}]: [{1}, {2:00}s, {3:#.##}x] activated!", playerID + 1, "debuffSlowerMovement", debuffSlowerMovementDuration, debuffSlowerMovementMultiplier));
     }
@@ -248,6 +259,28 @@ public class PlayerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        statusEffect[0] = buffAutoShoot;
+        statusEffectTime[0] = buffAutoShootDuration;
+
+        statusEffect[1] = buffIgnoreConstantDamage; //In UI this spot is Enemy Takes Damage over Time. This is just for testing.
+        statusEffectTime[1] = buffIgnoreConstantDamageDuration;
+
+        statusEffect[2] = buffFasterMovement;
+        statusEffectTime[2] = buffFasterMovementDuration;
+
+        statusEffect[3] = buffShield;
+        statusEffectTime[3] = buffShieldDuration;
+
+        statusEffect[4] = buffStrongerAttacks;
+        statusEffectTime[4] = buffStrongerAttacksDuration;
+
+        statusEffect[5] = debuffInvertedMovement;
+        statusEffectTime[5] = debuffInvertedMovementDuration;
+
+        statusEffect[6] = debuffSlowerMovement;
+        statusEffectTime[6] = debuffSlowerMovementDuration;
+
+
         UpdateLifeInGameController();
         BuffDebuffTimers();
         if (buffAutoShoot == true)

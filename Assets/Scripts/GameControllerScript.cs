@@ -83,7 +83,7 @@ public class GameControllerScript : MonoBehaviour
 		{
 			playersHealth = value;
 		}
-	}
+	} 
 	public float bgScrollSpeed;
 	public GameObject[] FindAllPlayers()
 	{
@@ -118,6 +118,7 @@ public class GameControllerScript : MonoBehaviour
 	public GameObject uiPlayer2HPGameObject;
 	public GameObject uiScoreGameObject;
 	public GameObject pSystem;
+    public GameObject debugUI;
 
     public List<GameObject> enemies = new List<GameObject>();
     public GameObject[] buffPickups;
@@ -129,6 +130,14 @@ public class GameControllerScript : MonoBehaviour
 
 	void Awake()
 	{
+        if (PlayerPrefs.GetInt("gameDebugUI") == 0)
+        {
+            debugUI.SetActive(false);
+        }
+        else
+        {
+            debugUI.SetActive(true);
+        }
 		players = FindAllPlayers ();
         if (FindAllPlayers() != null)
         {
@@ -167,6 +176,19 @@ public class GameControllerScript : MonoBehaviour
         if (Input.GetKey(KeyCode.Escape))
         {
             SceneManager.LoadScene("MainMenu");
+        }
+        if (Input.GetKeyDown(KeyCode.F3))
+        {
+            if (debugUI.activeSelf == true)
+            {
+                debugUI.SetActive(false);
+                PlayerPrefs.SetInt("gameDebugUI", 0);
+            }
+            else
+            {
+                debugUI.SetActive(true);
+                PlayerPrefs.SetInt("gameDebugUI", 1);
+            }
         }
         players = FindAllPlayers ();
 		if (players == null) 

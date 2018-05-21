@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Bullet
   - Bacteria
+  - DebugUI
   layers:
   - Default
   - TransparentFX

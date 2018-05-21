@@ -9,11 +9,25 @@ public class MainMenuScript : MonoBehaviour
     public float bgScrollSpeed;
     public GameObject mainMenu, player1Menu, player2Menu, tutorialMenu, settingsMenu, confirmationMenu, aboutMenu;
     public GameObject logo;
+    public GameObject debugUI;
     public string[] activeItems = new string[2], activeHats = new string[2];
     public PlayerAccessories player1Accessories;
     public PlayerAccessories player2Accessories;
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.F3))
+        {
+            if (debugUI.activeSelf == true)
+            {
+                debugUI.SetActive(false);
+                PlayerPrefs.SetInt("gameDebugUI", 0);
+            }
+            else
+            {
+                debugUI.SetActive(true);
+                PlayerPrefs.SetInt("gameDebugUI", 1);
+            }
+        }
         //If ESC key is pressed, quit application.
         if (Input.GetKey(KeyCode.Escape))
         {
@@ -22,8 +36,15 @@ public class MainMenuScript : MonoBehaviour
     }
 	void Awake()
 	{
-		
-	}
+        if (PlayerPrefs.GetInt("gameDebugUI") == 0)
+        {
+            debugUI.SetActive(false);
+        }
+        else
+        {
+            debugUI.SetActive(true);
+        }
+    }
 
 	public void MainMenuButtonPlay()
 	{
