@@ -177,7 +177,7 @@ public class GameControllerScript : MonoBehaviour
         {
             SceneManager.LoadScene("MainMenu");
         }
-        if (Input.GetKeyDown(KeyCode.F3))
+        if (Input.GetKeyDown(KeyCode.KeypadMinus))
         {
             if (debugUI.activeSelf == true)
             {

@@ -15,7 +15,7 @@ public class MainMenuScript : MonoBehaviour
     public PlayerAccessories player2Accessories;
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F3))
+        if (Input.GetKeyDown(KeyCode.KeypadMinus))
         {
             if (debugUI.activeSelf == true)
             {
