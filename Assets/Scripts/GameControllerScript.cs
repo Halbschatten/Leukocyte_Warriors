@@ -83,8 +83,13 @@ public class GameControllerScript : MonoBehaviour
 		{
 			playersHealth = value;
 		}
-	} 
-	public float bgScrollSpeed;
+	}
+
+    public float defaultBGScrollSpeed = -1.0f;
+    public float defaultFGScrollSpeed = -3.0f;
+    public float bgScrollSpeed;
+    public float fgScrollSpeed;
+  
 	public GameObject[] FindAllPlayers()
 	{
 		PlayerScript[] playerScripts = GameObject.FindObjectsOfType<PlayerScript> ();
@@ -130,6 +135,8 @@ public class GameControllerScript : MonoBehaviour
 
 	void Awake()
 	{
+        bgScrollSpeed = defaultBGScrollSpeed;
+        fgScrollSpeed = defaultFGScrollSpeed;
         if (PlayerPrefs.GetInt("gameDebugUI") == 0)
         {
             debugUI.SetActive(false);
