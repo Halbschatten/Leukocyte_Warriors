@@ -1804,9 +1804,7 @@ Prefab:
     - target: {fileID: 114724056045730398, guid: 2161ced3f55a887419b2d9fe63773c42,
         type: 2}
       propertyPath: m_text
-      value: '--Checkpoints--
-
-        **Press KeypadPlus to Add New**'
+      value: --Checkpoints--
       objectReference: {fileID: 0}
     - target: {fileID: 114724056045730398, guid: 2161ced3f55a887419b2d9fe63773c42,
         type: 2}
@@ -4673,6 +4671,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4b1c7aaaa8be42b98338e45bd3fbdd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bossPosition: {fileID: 1046221938}
   defaultBGScrollSpeed: -1
   defaultFGScrollSpeed: -3
   bgScrollSpeed: -1

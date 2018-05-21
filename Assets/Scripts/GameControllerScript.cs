@@ -72,6 +72,7 @@ public class GameControllerScript : MonoBehaviour
 			players = value;
 		}
 	}
+    public Transform bossPosition;
 	private float[] playersHealth;
 	public float[] PlayersHealth
 	{
@@ -148,7 +149,7 @@ public class GameControllerScript : MonoBehaviour
 
     public void AddNewCheckpoint()
     {
-        checkpoint.AddCheckpoint(score, checkpointNumber);
+        checkpoint.AddCheckpoint(bossPosition.position, score, checkpointNumber);
         checkpointNumber++;
     }
 
