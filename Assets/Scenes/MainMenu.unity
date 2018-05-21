@@ -4595,6 +4595,14 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1933557448856484, guid: 2161ced3f55a887419b2d9fe63773c42, type: 2}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1539695714653316, guid: 2161ced3f55a887419b2d9fe63773c42, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1259408266103420, guid: 2161ced3f55a887419b2d9fe63773c42, type: 2}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -9253,7 +9261,7 @@ MonoBehaviour:
   confirmationMenu: {fileID: 2048466896}
   aboutMenu: {fileID: 903154728}
   logo: {fileID: 1547554471}
-  debugUI: {fileID: 1051032453}
+  debugUIFPS: {fileID: 1409928528}
   activeItems:
   - 
   - 
@@ -9993,11 +10001,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &1051032453 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1933557448856484, guid: 2161ced3f55a887419b2d9fe63773c42,
-    type: 2}
-  m_PrefabInternal: {fileID: 423059898}
 --- !u!1 &1069015628
 GameObject:
   m_ObjectHideFlags: 0
@@ -13232,6 +13235,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ShowMaskGraphic: 0
+--- !u!1 &1409928528 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1259408266103420, guid: 2161ced3f55a887419b2d9fe63773c42,
+    type: 2}
+  m_PrefabInternal: {fileID: 423059898}
 --- !u!1 &1417970504
 GameObject:
   m_ObjectHideFlags: 0

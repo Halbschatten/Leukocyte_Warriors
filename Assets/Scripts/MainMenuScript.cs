@@ -9,25 +9,26 @@ public class MainMenuScript : MonoBehaviour
     public float bgScrollSpeed;
     public GameObject mainMenu, player1Menu, player2Menu, tutorialMenu, settingsMenu, confirmationMenu, aboutMenu;
     public GameObject logo;
-    public GameObject debugUI;
+    public GameObject debugUIFPS;
     public string[] activeItems = new string[2], activeHats = new string[2];
     public PlayerAccessories player1Accessories;
     public PlayerAccessories player2Accessories;
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.KeypadMinus))
+        if (Input.GetKeyDown(KeyCode.KeypadDivide))
         {
-            if (debugUI.activeSelf == true)
+            if (debugUIFPS.activeSelf == true)
             {
-                debugUI.SetActive(false);
-                PlayerPrefs.SetInt("gameDebugUI", 0);
+                debugUIFPS.SetActive(false);
+                PlayerPrefs.SetInt("gameDebugUI_FPS", 0);
             }
             else
             {
-                debugUI.SetActive(true);
-                PlayerPrefs.SetInt("gameDebugUI", 1);
+                debugUIFPS.SetActive(true);
+                PlayerPrefs.SetInt("gameDebugUI_FPS", 1);
             }
         }
+       
         //If ESC key is pressed, quit application.
         if (Input.GetKey(KeyCode.Escape))
         {
@@ -36,13 +37,13 @@ public class MainMenuScript : MonoBehaviour
     }
 	void Awake()
 	{
-        if (PlayerPrefs.GetInt("gameDebugUI") == 0)
+        if (PlayerPrefs.GetInt("gameDebugUI_FPS") == 0)
         {
-            debugUI.SetActive(false);
+            debugUIFPS.SetActive(false);
         }
         else
         {
-            debugUI.SetActive(true);
+            debugUIFPS.SetActive(true);
         }
     }
 

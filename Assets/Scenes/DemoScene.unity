@@ -1410,9 +1410,27 @@ Prefab:
       propertyPath: m_SizeDelta.x
       value: 480
       objectReference: {fileID: 0}
+    - target: {fileID: 1539695714653316, guid: 2161ced3f55a887419b2d9fe63773c42, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1259408266103420, guid: 2161ced3f55a887419b2d9fe63773c42, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2161ced3f55a887419b2d9fe63773c42, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &819436047 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1539695714653316, guid: 2161ced3f55a887419b2d9fe63773c42,
+    type: 2}
+  m_PrefabInternal: {fileID: 819436046}
+--- !u!1 &819436048 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1259408266103420, guid: 2161ced3f55a887419b2d9fe63773c42,
+    type: 2}
+  m_PrefabInternal: {fileID: 819436046}
 --- !u!1 &822197605
 GameObject:
   m_ObjectHideFlags: 0
@@ -3105,7 +3123,8 @@ MonoBehaviour:
   uiPlayer2HPGameObject: {fileID: 1023463564}
   uiScoreGameObject: {fileID: 2050671394}
   pSystem: {fileID: 1797564499}
-  debugUI: {fileID: 2000989105}
+  debugUIFPS: {fileID: 819436048}
+  debugUICheckpoint: {fileID: 819436047}
   enemies: []
   buffPickups:
   - {fileID: 1844202022962944, guid: a0c0e5239aaa93143a24fd2696313c9a, type: 2}
@@ -10074,11 +10093,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1996886467}
---- !u!1 &2000989105 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1933557448856484, guid: 2161ced3f55a887419b2d9fe63773c42,
-    type: 2}
-  m_PrefabInternal: {fileID: 819436046}
 --- !u!224 &2000989106 stripped
 RectTransform:
   m_PrefabParentObject: {fileID: 224204448771671616, guid: 2161ced3f55a887419b2d9fe63773c42,

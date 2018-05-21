@@ -123,7 +123,8 @@ public class GameControllerScript : MonoBehaviour
 	public GameObject uiPlayer2HPGameObject;
 	public GameObject uiScoreGameObject;
 	public GameObject pSystem;
-    public GameObject debugUI;
+    public GameObject debugUIFPS;
+    public GameObject debugUICheckpoint;
 
     public List<GameObject> enemies = new List<GameObject>();
     public GameObject[] buffPickups;
@@ -152,13 +153,21 @@ public class GameControllerScript : MonoBehaviour
 	{
         bgScrollSpeed = defaultBGScrollSpeed;
         fgScrollSpeed = defaultFGScrollSpeed;
-        if (PlayerPrefs.GetInt("gameDebugUI") == 0)
+        if (PlayerPrefs.GetInt("gameDebugUI_FPS") == 0)
         {
-            debugUI.SetActive(false);
+            debugUIFPS.SetActive(false);
         }
         else
         {
-            debugUI.SetActive(true);
+            debugUIFPS.SetActive(true);
+        }
+        if (PlayerPrefs.GetInt("gameDebugUI_Checkpoint") == 0)
+        {
+            debugUICheckpoint.SetActive(false);
+        }
+        else
+        {
+            debugUICheckpoint.SetActive(true);
         }
         checkpoint = new Checkpoint();
 		players = FindAllPlayers ();
@@ -200,17 +209,30 @@ public class GameControllerScript : MonoBehaviour
         {
             SceneManager.LoadScene("MainMenu");
         }
-        if (Input.GetKeyDown(KeyCode.KeypadMinus))
+        if (Input.GetKeyDown(KeyCode.KeypadDivide))
         {
-            if (debugUI.activeSelf == true)
+            if (debugUIFPS.activeSelf == true)
             {
-                debugUI.SetActive(false);
-                PlayerPrefs.SetInt("gameDebugUI", 0);
+                debugUIFPS.SetActive(false);
+                PlayerPrefs.SetInt("gameDebugUI_FPS", 0);
             }
             else
             {
-                debugUI.SetActive(true);
-                PlayerPrefs.SetInt("gameDebugUI", 1);
+                debugUIFPS.SetActive(true);
+                PlayerPrefs.SetInt("gameDebugUI_FPS", 1);
+            }
+        }
+        if (Input.GetKeyDown(KeyCode.KeypadMultiply))
+        {
+            if (debugUICheckpoint.activeSelf == true)
+            {
+                debugUICheckpoint.SetActive(false);
+                PlayerPrefs.SetInt("gameDebugUI_Checkpoint", 0);
+            }
+            else
+            {
+                debugUICheckpoint.SetActive(true);
+                PlayerPrefs.SetInt("gameDebugUI_Checkpoint", 1);
             }
         }
         players = FindAllPlayers ();
