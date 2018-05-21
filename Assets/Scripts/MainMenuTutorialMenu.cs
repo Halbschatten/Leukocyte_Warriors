@@ -1,15 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class MainMenuTutorialMenu : MonoBehaviour 
 {
+    public GameObject backButton, nextButton, finishButton;
     public TMP_Text[] dialogMessages;
     private int messageNumberToDisplay = 0;
 	// Use this for initialization
 
-    void DisplayMessage(TMP_Text message)
+	private void Awake()
+	{
+        CheckButtons();
+        SelectionCheck();
+	}
+
+	void DisplayMessage(TMP_Text message)
     {
         for (int i = 0; i < dialogMessages.Length; i++)
         {
@@ -24,7 +32,57 @@ public class MainMenuTutorialMenu : MonoBehaviour
         }
     }
 
-    public void Next()
+    void CheckButtons()
+    {
+        if (messageNumberToDisplay == 0)
+        {
+            backButton.SetActive(false);
+        }
+        else
+        {
+            backButton.SetActive(true);
+        }
+        if (messageNumberToDisplay == dialogMessages.Length - 1)
+        {
+            nextButton.SetActive(false);
+            finishButton.SetActive(true);
+        }
+        else
+        {
+            finishButton.SetActive(false);
+            nextButton.SetActive(true);
+        }
+    }
+
+    void SelectionCheck()
+    {
+        if (messageNumberToDisplay == 0)
+        {
+            if (nextButton.activeSelf)
+            {
+                nextButton.GetComponent<Button>().Select();
+            }
+        }
+        else
+        {
+            if (messageNumberToDisplay == dialogMessages.Length - 1)
+            {
+                if (finishButton.activeSelf)
+                {
+                    finishButton.GetComponent<Button>().Select();
+                }
+                else
+                {
+                    if (nextButton.activeSelf)
+                    {
+                        nextButton.GetComponent<Button>().Select();
+                    }
+                }
+            }
+        }
+    }
+
+	public void Next()
     {
         if (messageNumberToDisplay < dialogMessages.Length - 1)
         {
@@ -32,6 +90,8 @@ public class MainMenuTutorialMenu : MonoBehaviour
             //print(messageNumberToDisplay);
             DisplayMessage(dialogMessages[messageNumberToDisplay]);
         }
+        CheckButtons();
+        SelectionCheck();
     }
     public void Back()
     {
@@ -40,6 +100,25 @@ public class MainMenuTutorialMenu : MonoBehaviour
             messageNumberToDisplay--;
             //print(messageNumberToDisplay);
             DisplayMessage(dialogMessages[messageNumberToDisplay]);
+        }
+        CheckButtons();
+        if (backButton.activeSelf)
+        {
+            if (messageNumberToDisplay >= 1)
+            {
+                backButton.GetComponent<Button>().Select();
+            }
+            else
+            {
+                nextButton.GetComponent<Button>().Select();
+            }
+        }
+        else
+        {
+            if (nextButton.activeSelf)
+            {
+                nextButton.GetComponent<Button>().Select();
+            }
         }
     }
 }
