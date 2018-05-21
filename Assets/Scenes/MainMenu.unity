@@ -4835,7 +4835,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &357485629
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4875,10 +4875,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: 'Welcome to the Leukocyte Warriors Tutorial!
-
-    In this tutorial, we''ll explore the controls needed to play the game, and also
-    its user-interface elements.'
+  m_text: "\tWelcome to the Leukocyte Warriors Tutorial!\n\tIn this tutorial, we'll
+    explore the controls needed to play the game, and also its user-interface elements."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d62a573c923f5cb47b8ff65261033b90, type: 2}
   m_sharedMaterial: {fileID: 2164040, guid: d62a573c923f5cb47b8ff65261033b90, type: 2}
@@ -4947,15 +4945,15 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 357485630}
-    characterCount: 151
+    characterCount: 153
     spriteCount: 0
-    spaceCount: 22
-    wordCount: 23
+    spaceCount: 24
+    wordCount: 24
     linkCount: 0
     lineCount: 5
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 1
+  m_havePropertiesChanged: 0
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
@@ -15549,7 +15547,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1221315061
 RectTransform:
   m_ObjectHideFlags: 0
@@ -15590,7 +15588,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: "\tThis concludes the tutorial. From the game developers, we hope you enjoy
-    playing this game! Reach your highscore to the stars!"
+    playing this game! Reach your highscore to the stars, and game on!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d62a573c923f5cb47b8ff65261033b90, type: 2}
   m_sharedMaterial: {fileID: 2164040, guid: d62a573c923f5cb47b8ff65261033b90, type: 2}
@@ -15659,15 +15657,15 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1221315062}
-    characterCount: 127
+    characterCount: 140
     spriteCount: 0
-    spaceCount: 21
-    wordCount: 22
+    spaceCount: 24
+    wordCount: 25
     linkCount: 0
     lineCount: 4
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 0
+  m_havePropertiesChanged: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
@@ -18297,7 +18295,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: "\tIf you look closely, each power-up/down icon has a darker shade background.
     If your power-up is fully lit, it means you just activated it. Although, every
-    power-up/down has their own timer before they get deactivated."
+    power-up/down have their own timer before they get deactivated."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d62a573c923f5cb47b8ff65261033b90, type: 2}
   m_sharedMaterial: {fileID: 2164040, guid: d62a573c923f5cb47b8ff65261033b90, type: 2}
@@ -18325,7 +18323,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 63.05
+  m_fontSize: 62.3
   m_fontSizeBase: 48
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -18366,7 +18364,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1476595588}
-    characterCount: 218
+    characterCount: 219
     spriteCount: 0
     spaceCount: 35
     wordCount: 38
@@ -18374,7 +18372,7 @@ MonoBehaviour:
     lineCount: 5
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 1
+  m_havePropertiesChanged: 0
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
@@ -28940,7 +28938,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1822764462
 RectTransform:
   m_ObjectHideFlags: 0
@@ -28967,7 +28965,7 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1822764461}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 1453722849, guid: 89f0137620f6af44b9ba852b4190e64e, type: 3}
   m_Name: 
@@ -28980,8 +28978,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: First, let's start with the players health bars. These bars, in the game,
-    will have different colors, depending on how much health each player have.
+  m_text: "\tFirst, let's start with the players health bars. These bars, in the game,
+    will have different colors, depending on how much health each player have."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d62a573c923f5cb47b8ff65261033b90, type: 2}
   m_sharedMaterial: {fileID: 2164040, guid: d62a573c923f5cb47b8ff65261033b90, type: 2}
@@ -29050,10 +29048,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1822764463}
-    characterCount: 148
+    characterCount: 149
     spriteCount: 0
-    spaceCount: 24
-    wordCount: 25
+    spaceCount: 25
+    wordCount: 26
     linkCount: 0
     lineCount: 4
     pageCount: 1
@@ -29296,7 +29294,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: "\tNext, we got the stage progression bar. This bar will tell how far the
     stage boss is from the players. When the boss arrives, this bar will turn into
-    the boss'  health bar! Notice the flag in the middle of the bar? That's our checkpoint
+    the boss' health bar! Notice the flag in the middle of the bar? That's our checkpoint
     marker. Be safe!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d62a573c923f5cb47b8ff65261033b90, type: 2}
@@ -29366,9 +29364,9 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1851127491}
-    characterCount: 254
+    characterCount: 253
     spriteCount: 0
-    spaceCount: 49
+    spaceCount: 48
     wordCount: 49
     linkCount: 0
     lineCount: 6
@@ -29689,7 +29687,7 @@ MonoBehaviour:
     lineCount: 5
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 1
+  m_havePropertiesChanged: 0
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
