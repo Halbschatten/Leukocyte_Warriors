@@ -5,17 +5,24 @@ using UnityEngine.UI;
 
 public class UIGameOverScript : MonoBehaviour 
 {
-	private GameObject gameControllerGameObject; //Reference to the Game Controller GameObject;
-	private string gameControllerTag = "GameController"; //Game Controller's tag;
+    private GameControllerScript gameControllerScript;
 
+    public void ResumeFromLastCheckpointButton()
+    {
+        gameControllerScript.ResumeFromLastCheckpoint();
+    }
+    public void DisplayHighscoresButton()
+    {
+
+    }
 	void Awake()
 	{
-		gameControllerGameObject = GameObject.FindGameObjectWithTag (gameControllerTag);
+        gameControllerScript = FindObjectOfType<GameControllerScript>();
 	}
 
 	// Update is called once per frame
 	void Update () 
 	{
-		GetComponent<Text> ().text = string.Format ("GAME OVER!\nScore: {0:D9}  ", gameControllerGameObject.GetComponent<GameControllerScript>().Score);
+
 	}
 }

@@ -12,6 +12,7 @@ public class PlayerScript : MonoBehaviour
     private float bacteriaDamageOnTriggerStay = 0.01f;
     private Rigidbody2D rb2d; //Reference to the player's Rigidbody2D;
     private Transform trsfm; //Reference to the player's Transform;
+    private Vector3 originalPosition;
     public int playerID = 0;
     private static float defaultLife = 10.0f; //Player Life;
     private float life = defaultLife;
@@ -53,6 +54,16 @@ public class PlayerScript : MonoBehaviour
     private float buffIgnoreConstantDamageDuration = 0.0f;
     private float buffShieldDuration = 0.0f;
     private float buffStrongerAttacksDuration = 0.0f;
+    private bool buffEnemyLoseHPOverTime = false;
+    public bool GetBuffEnemyLoseHPOverTime
+    {
+        get
+        {
+            return buffEnemyLoseHPOverTime;
+        }
+    }
+    private float buffEnemyLoseHPOverTimeDuration;
+    private float buffEnemyLoseHPOverTimeMultiplier;
 
     private bool debuffInvertedMovement = false;
     public bool GetDebuffInvertedMovement
@@ -71,8 +82,25 @@ public class PlayerScript : MonoBehaviour
     public float[] statusEffectTime = new float[7];
     public float[] originalTime = new float[7];
 
+    private List<GameObject> enemies = new List<GameObject>();
+
     public GameObject[] hats;
 	public GameObject[] accessories;
+
+    public void Respawn()
+    {
+        trsfm.position = originalPosition;
+        life = defaultLife;
+        buffAutoShoot = false;
+        buffFasterMovement = false;
+        buffIgnoreConstantDamage = false;
+        buffShield = false;
+        buffStrongerAttacks = false;
+        debuffInvertedMovement = false;
+        debuffSlowerMovement = false;
+        this.gameObject.SetActive(true);
+        gameControllerGameObject.GetComponent<GameControllerScript>().disabledPlayers.Remove(this.gameObject);
+    }
 
     Vector2 MovementVelocity(string inputH, string inputV, float inputPlayerSpeedH, float inputPlayerSpeedV)
     {
@@ -127,7 +155,7 @@ public class PlayerScript : MonoBehaviour
     public void BuffIgnoreConstantDamage(float duration)
     {
         this.buffIgnoreConstantDamageDuration = duration;
-        this.originalTime[1] = duration;
+        //this.originalTime[1] = duration; [?]
         buffIgnoreConstantDamage = true;
         Debug.Log(string.Format("[Player {0}]: [{1}, {2:00}s] activated!", playerID + 1, "buffIgnoreConstantDamage", buffIgnoreConstantDamageDuration));
     }
@@ -146,6 +174,15 @@ public class PlayerScript : MonoBehaviour
         this.originalTime[4] = duration;
         this.buffStrongerAttacks = true;
         Debug.Log(string.Format("[Player {0}]: [{1}, {2:00}s, {3:#.##}x] activated!", playerID + 1, "buffStrongerAttacks", buffStrongerAttacksDuration, buffStrongerAttacksMultiplier));
+    }
+
+    public void BuffEnemyLoseHPOverTime(float duration, float multiplier)
+    {
+        this.buffEnemyLoseHPOverTimeDuration = duration;
+        this.buffEnemyLoseHPOverTimeMultiplier = multiplier;
+        this.originalTime[1] = duration;
+        this.buffEnemyLoseHPOverTime = true;
+        Debug.Log(string.Format("[Player {0}]: [{1}, {2:00}s, {3:#.##}x] activated!", playerID + 1, "buffEnemyLoseHPOverTime", buffEnemyLoseHPOverTimeDuration, buffEnemyLoseHPOverTimeMultiplier));
     }
 
     //Debuffs
@@ -182,6 +219,7 @@ public class PlayerScript : MonoBehaviour
         cannonTransform = playerCannon.GetComponent<Transform>();
         rb2d = GetComponent<Rigidbody2D>();
         trsfm = GetComponent<Transform>();
+        originalPosition = trsfm.position;
         playerResizeOnShoot = GetComponent<PlayerResizeOnShoot>();
 		foreach (GameObject go in hats)
 		{
@@ -259,11 +297,14 @@ public class PlayerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        UpdateLifeInGameController();
+        BuffDebuffTimers();
+
         statusEffect[0] = buffAutoShoot;
         statusEffectTime[0] = buffAutoShootDuration;
 
-        statusEffect[1] = buffIgnoreConstantDamage; //In UI this spot is Enemy Takes Damage over Time. This is just for testing.
-        statusEffectTime[1] = buffIgnoreConstantDamageDuration;
+        statusEffect[1] = buffEnemyLoseHPOverTime; //In UI this spot is Enemy Takes Damage over Time. This is just for testing.
+        statusEffectTime[1] = buffEnemyLoseHPOverTimeDuration;
 
         statusEffect[2] = buffFasterMovement;
         statusEffectTime[2] = buffFasterMovementDuration;
@@ -280,9 +321,19 @@ public class PlayerScript : MonoBehaviour
         statusEffect[6] = debuffSlowerMovement;
         statusEffectTime[6] = debuffSlowerMovementDuration;
 
+        if (buffEnemyLoseHPOverTime == true)
+        {
+            enemies = gameControllerGameObject.GetComponent<GameControllerScript>().enemies;
+            foreach (GameObject enemy in enemies)
+            {
+                float enemyLife, enemyDefaultLife;
+                enemyLife = enemy.GetComponent<BacteriaScript>().Life;
+                enemyDefaultLife = enemy.GetComponent<BacteriaScript>().GetDefaultLife;
+                enemy.GetComponent<BacteriaScript>().Life = enemyLife - (enemyDefaultLife * buffEnemyLoseHPOverTimeMultiplier);
+                print(enemy + " lost " + (enemyDefaultLife * buffEnemyLoseHPOverTimeMultiplier));
+            }
+        }
 
-        UpdateLifeInGameController();
-        BuffDebuffTimers();
         if (buffAutoShoot == true)
         {
             if (Input.GetButton(inputPlayerShoot) && Time.time > nextFire)
@@ -383,6 +434,22 @@ public class PlayerScript : MonoBehaviour
             }
         }
 
+        //buffStrongerAttacks Timer
+        if (buffEnemyLoseHPOverTime == true)
+        {
+            if (buffEnemyLoseHPOverTimeDuration < 0.0f)
+            {
+                buffEnemyLoseHPOverTimeDuration = 0.0f;
+                buffEnemyLoseHPOverTime = false;
+                print(string.Format("[Player {0}]: [{1}] deactivated!", playerID + 1, "buffEnemyLoseHPOverTime"));
+            }
+            else
+            {
+                buffEnemyLoseHPOverTimeDuration = buffEnemyLoseHPOverTimeDuration - Time.deltaTime;
+            }
+        }
+
+
         //Debuffs
 
         //debuffInvertedMovement Timer
@@ -431,7 +498,8 @@ public class PlayerScript : MonoBehaviour
             {
 				life = 0.0f;
 				UpdateLifeInGameController();
-                Destroy(this.gameObject);
+                gameControllerGameObject.GetComponent<GameControllerScript>().disabledPlayers.Add(this.gameObject);
+                this.gameObject.SetActive(false);
             }
         }
     }
@@ -451,7 +519,8 @@ public class PlayerScript : MonoBehaviour
             {
 				life = 0.0f;
 				UpdateLifeInGameController();
-                Destroy(this.gameObject);
+                gameControllerGameObject.GetComponent<GameControllerScript>().disabledPlayers.Add(this.gameObject);
+                this.gameObject.SetActive(false);
             }
         }
     }

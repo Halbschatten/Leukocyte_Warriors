@@ -7,7 +7,27 @@ public class BacteriaScript : MonoBehaviour
     bool isQuitting;
 	private GameObject gameControllerGameObject; //Reference to the Game Controller GameObject;
 	private string gameControllerTag = "GameController"; //Game Controller's tag;
-	private float life = 5.0f;
+    private static float defaultLife = 5.0f;
+	private float life = defaultLife;
+    public float Life
+    {
+        get
+        {
+            return life;
+        }
+        set
+        {
+            life = value;
+        }
+    }
+    public float GetDefaultLife
+    {
+        get
+        {
+            return defaultLife;
+        }
+    }
+
 	private int scoreOnDeath = 125;
 	public string bulletTag = "Bullet";
 	private PhysicsScript physs;
@@ -63,7 +83,16 @@ public class BacteriaScript : MonoBehaviour
 		}
 	}
 
-	void OnTriggerEnter2D(Collider2D other)
+    private void Update()
+    {
+        if (this.life <= 0.0f)
+        {
+            gameControllerGameObject.GetComponent<GameControllerScript>().Score += scoreOnDeath;
+            Destroy(this.gameObject);
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
 	{
 		if (other.gameObject.tag == bulletTag)
 		{
@@ -84,7 +113,7 @@ public class BacteriaScript : MonoBehaviour
     {
         if (!isQuitting && gameControllerGameObject != null)
         {
-            if (Random.Range(0, 9) == 4)
+            if (Random.Range(0, 6) == 3)
             {
 
                 bool isSpawnGoingToBeBuff;

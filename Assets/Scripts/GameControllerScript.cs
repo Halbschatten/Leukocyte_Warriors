@@ -60,7 +60,7 @@ public class GameControllerScript : MonoBehaviour
 			return gameOver;
 		}
 	}
-	private GameObject[] players;
+	public GameObject[] players;
 	public GameObject[] Players
 	{
 		get
@@ -132,6 +132,8 @@ public class GameControllerScript : MonoBehaviour
 			return null;
 		}
 	}
+    public List<GameObject> disabledPlayers = new List<GameObject>();
+
 	public GameObject uiGameOverGameObject;
 	public GameObject uiPlayer1HPGameObject;
 	public GameObject uiPlayer2HPGameObject;
@@ -158,6 +160,24 @@ public class GameControllerScript : MonoBehaviour
         return checkpoint.GetCheckpointToString();
     }
     
+    public void ResumeFromLastCheckpoint()
+    {
+        bossPosition.position = checkpoint.GetLastCheckpointBossPosition();
+        score = checkpoint.GetLastCheckpointScore();
+        for (int i = 0; i < disabledPlayers.Count; i++)
+        {
+            disabledPlayers[i].GetComponent<PlayerScript>().Respawn();
+        }
+        foreach (GameObject enemy in enemies)
+        {
+            Destroy(enemy);
+        }
+        uiPlayer1HPGameObject.gameObject.SetActive(true);
+        uiPlayer2HPGameObject.gameObject.SetActive(true);
+        uiScoreGameObject.gameObject.SetActive(true);
+        uiGameOverGameObject.gameObject.SetActive(false);
+    }
+
     public void AddEnemyToEnemyList(GameObject enemy)
     {
         enemies.Add(enemy);
@@ -184,7 +204,7 @@ public class GameControllerScript : MonoBehaviour
             debugUICheckpoint.SetActive(true);
         }
         checkpoint = new Checkpoint();
-		players = FindAllPlayers ();
+        players = FindAllPlayers();
         if (FindAllPlayers() != null)
         {
             playersHealth = new float[FindAllPlayers().Length];
