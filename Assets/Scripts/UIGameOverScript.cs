@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class UIGameOverScript : MonoBehaviour 
 {
     private GameControllerScript gameControllerScript;
+    public GameObject highscoresUI, checkpointUI;
 
     public void ResumeFromLastCheckpointButton()
     {
@@ -13,16 +15,15 @@ public class UIGameOverScript : MonoBehaviour
     }
     public void DisplayHighscoresButton()
     {
-
+        checkpointUI.SetActive(false);
+        highscoresUI.SetActive(true);
+    }
+    public void ReturnToMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 	void Awake()
 	{
         gameControllerScript = FindObjectOfType<GameControllerScript>();
-	}
-
-	// Update is called once per frame
-	void Update () 
-	{
-
 	}
 }

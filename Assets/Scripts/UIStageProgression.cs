@@ -17,19 +17,22 @@ public class UIStageProgression : MonoBehaviour
         bossTrsfm = boss.GetComponent<Transform>();
     }
 
-    void FixedUpdate ()
+    void Update()
     {
-        if (boss.GetComponent<MoveToTheScene>().movementEnabled == true)
+        if (boss)
         {
-            scrllBar.value = bossTrsfm.position.x / initialPosition;
-            scrllBar.gameObject.SetActive(true);
-            bossHP.gameObject.SetActive(false);
+            if (boss.GetComponent<MoveToTheScene>().movementEnabled == true)
+            {
+                scrllBar.value = bossTrsfm.position.x / initialPosition;
+                scrllBar.gameObject.SetActive(true);
+                bossHP.gameObject.SetActive(false);
+            }
+            else
+            {
+                scrllBar.value = 0.0f;
+                scrllBar.gameObject.SetActive(false);
+                bossHP.gameObject.SetActive(true);
+            }
         }
-        else
-        {
-            scrllBar.value = 0.0f;
-            scrllBar.gameObject.SetActive(false);
-            bossHP.gameObject.SetActive(true);
-        }
-	}
+    }
 }

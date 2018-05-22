@@ -8,7 +8,7 @@ public class PlayerScript : MonoBehaviour
     private string gameControllerTag = "GameController"; //Game Controller's tag;
     private float screenBoundariesX, screenBoundariesY; //Receives the GameController's boundaries on Awake().
     public string bacteriaTag = "Bacteria";
-    private float bacteriaDamageOnTriggerEnter = 0.5f;
+    private float bacteriaDamageOnTriggerEnter = 0.05f;
     private float bacteriaDamageOnTriggerStay = 0.01f;
     private Rigidbody2D rb2d; //Reference to the player's Rigidbody2D;
     private Transform trsfm; //Reference to the player's Transform;
@@ -332,11 +332,14 @@ public class PlayerScript : MonoBehaviour
             enemies = gameControllerGameObject.GetComponent<GameControllerScript>().enemies;
             foreach (GameObject enemy in enemies)
             {
+                if (enemy != null)
+                {
                 float enemyLife, enemyDefaultLife;
                 enemyLife = enemy.GetComponent<BacteriaScript>().Life;
                 enemyDefaultLife = enemy.GetComponent<BacteriaScript>().GetDefaultLife;
                 enemy.GetComponent<BacteriaScript>().Life = enemyLife - (enemyDefaultLife * buffEnemyLoseHPOverTimeMultiplier);
                 //print(enemy + " lost " + (enemyDefaultLife * buffEnemyLoseHPOverTimeMultiplier));
+                }
             }
         }
 

@@ -180,6 +180,8 @@ public class GameControllerScript : MonoBehaviour
 	public GameObject uiGameOverGameObject;
 	public GameObject uiPlayer1HPGameObject;
 	public GameObject uiPlayer2HPGameObject;
+    public GameObject uiBossHPGameObject;
+    public GameObject uiStageProgression;
 	public GameObject uiScoreGameObject;
 	public GameObject pSystem;
     public GameObject debugUIFPS;
@@ -206,6 +208,8 @@ public class GameControllerScript : MonoBehaviour
     public void ResumeFromLastCheckpoint()
     {
         bossPosition.position = checkpoint.GetLastCheckpointBossPosition();
+        bossPosition.GetComponent<MoveToTheScene>().movementEnabled = true;
+        uiStageProgression.SetActive(true);
         score = checkpoint.GetLastCheckpointScore();
         for (int i = 0; i < disabledPlayers.Count; i++)
         {
