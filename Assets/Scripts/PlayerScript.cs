@@ -91,6 +91,7 @@ public class PlayerScript : MonoBehaviour
     {
         trsfm.position = originalPosition;
         life = defaultLife;
+        GetOutfitFromPlayerPrefs();
         buffAutoShoot = false;
         buffFasterMovement = false;
         buffIgnoreConstantDamage = false;
@@ -99,7 +100,6 @@ public class PlayerScript : MonoBehaviour
         debuffInvertedMovement = false;
         debuffSlowerMovement = false;
         this.gameObject.SetActive(true);
-        gameControllerGameObject.GetComponent<GameControllerScript>().disabledPlayers.Remove(this.gameObject);
     }
 
     Vector2 MovementVelocity(string inputH, string inputV, float inputPlayerSpeedH, float inputPlayerSpeedV)
@@ -114,7 +114,7 @@ public class PlayerScript : MonoBehaviour
         float amountHealed = 0.0f;
         if (life == defaultLife)
         {
-            Debug.Log(string.Format("[Player {0}]: [{1}] activated, healing {2} points of health!", playerID + 1, "buffRestoreHealth", amountHealed));
+            //Debug.Log(string.Format("[Player {0}]: [{1}] activated, healing {2} points of health!", playerID + 1, "buffRestoreHealth", amountHealed));
             return amountHealed;
         }
         else
@@ -123,14 +123,14 @@ public class PlayerScript : MonoBehaviour
             {
                 amountHealed = defaultLife - life;
                 life = defaultLife;
-                Debug.Log(string.Format("[Player {0}]: [{1}] activated, healing {2} points of health!", playerID + 1, "buffRestoreHealth", amountHealed));
+                //Debug.Log(string.Format("[Player {0}]: [{1}] activated, healing {2} points of health!", playerID + 1, "buffRestoreHealth", amountHealed));
                 return amountHealed;
             }
             else
             {
                 life = life + amount;
                 amountHealed = amount;
-                Debug.Log(string.Format("[Player {0}]: [{1}] activated, healing {2} points of health!", playerID + 1, "buffRestoreHealth", amountHealed));
+                //Debug.Log(string.Format("[Player {0}]: [{1}] activated, healing {2} points of health!", playerID + 1, "buffRestoreHealth", amountHealed));
                 return amountHealed;
             }
         }
@@ -142,7 +142,7 @@ public class PlayerScript : MonoBehaviour
         this.buffAutoShootDuration = duration;
         this.originalTime[0] = duration;
         buffAutoShoot = true;
-        Debug.Log(string.Format("[Player {0}]: [{1}, {2:00}s] activated!", playerID + 1, "buffAutoShoot", buffAutoShootDuration));
+        //Debug.Log(string.Format("[Player {0}]: [{1}, {2:00}s] activated!", playerID + 1, "buffAutoShoot", buffAutoShootDuration));
     }
     public void BuffFasterMovement(float duration, float multiplier)
     {
@@ -150,14 +150,14 @@ public class PlayerScript : MonoBehaviour
         this.buffFasterMovementMultiplier = multiplier;
         this.originalTime[2] = duration;
         buffFasterMovement = true;
-        Debug.Log(string.Format("[Player {0}]: [{1}, {2:00}s, {3:#.##}x] activated!", playerID + 1, "buffFasterMovement", buffFasterMovementDuration, buffFasterMovementMultiplier));
+        //Debug.Log(string.Format("[Player {0}]: [{1}, {2:00}s, {3:#.##}x] activated!", playerID + 1, "buffFasterMovement", buffFasterMovementDuration, buffFasterMovementMultiplier));
     }
     public void BuffIgnoreConstantDamage(float duration)
     {
         this.buffIgnoreConstantDamageDuration = duration;
         //this.originalTime[1] = duration; [?]
         buffIgnoreConstantDamage = true;
-        Debug.Log(string.Format("[Player {0}]: [{1}, {2:00}s] activated!", playerID + 1, "buffIgnoreConstantDamage", buffIgnoreConstantDamageDuration));
+        //Debug.Log(string.Format("[Player {0}]: [{1}, {2:00}s] activated!", playerID + 1, "buffIgnoreConstantDamage", buffIgnoreConstantDamageDuration));
     }
     public void BuffShield(float duration, float multiplier)
     {
@@ -165,7 +165,7 @@ public class PlayerScript : MonoBehaviour
         this.buffShieldMultiplier = multiplier;
         this.originalTime[3] = duration;
         buffShield = true;
-        Debug.Log(string.Format("[Player {0}]: [{1}, {2:00}s, {3:#.##}x] activated!", playerID + 1, "buffShield", buffShieldDuration, buffShieldMultiplier));
+        //Debug.Log(string.Format("[Player {0}]: [{1}, {2:00}s, {3:#.##}x] activated!", playerID + 1, "buffShield", buffShieldDuration, buffShieldMultiplier));
     }
     public void BuffStrongerAttacks(float duration, float multiplier)
     {
@@ -173,7 +173,7 @@ public class PlayerScript : MonoBehaviour
         this.buffStrongerAttacksMultiplier = multiplier;
         this.originalTime[4] = duration;
         this.buffStrongerAttacks = true;
-        Debug.Log(string.Format("[Player {0}]: [{1}, {2:00}s, {3:#.##}x] activated!", playerID + 1, "buffStrongerAttacks", buffStrongerAttacksDuration, buffStrongerAttacksMultiplier));
+        //Debug.Log(string.Format("[Player {0}]: [{1}, {2:00}s, {3:#.##}x] activated!", playerID + 1, "buffStrongerAttacks", buffStrongerAttacksDuration, buffStrongerAttacksMultiplier));
     }
 
     public void BuffEnemyLoseHPOverTime(float duration, float multiplier)
@@ -182,7 +182,7 @@ public class PlayerScript : MonoBehaviour
         this.buffEnemyLoseHPOverTimeMultiplier = multiplier;
         this.originalTime[1] = duration;
         this.buffEnemyLoseHPOverTime = true;
-        Debug.Log(string.Format("[Player {0}]: [{1}, {2:00}s, {3:#.##}x] activated!", playerID + 1, "buffEnemyLoseHPOverTime", buffEnemyLoseHPOverTimeDuration, buffEnemyLoseHPOverTimeMultiplier));
+        //Debug.Log(string.Format("[Player {0}]: [{1}, {2:00}s, {3:#.##}x] activated!", playerID + 1, "buffEnemyLoseHPOverTime", buffEnemyLoseHPOverTimeDuration, buffEnemyLoseHPOverTimeMultiplier));
     }
 
     //Debuffs
@@ -198,7 +198,7 @@ public class PlayerScript : MonoBehaviour
         this.debuffSlowerMovementMultiplier = multiplier;
         this.originalTime[6] = duration;
         debuffSlowerMovement = true;
-        Debug.Log(string.Format("[Player {0}]: [{1}, {2:00}s, {3:#.##}x] activated!", playerID + 1, "debuffSlowerMovement", debuffSlowerMovementDuration, debuffSlowerMovementMultiplier));
+        //Debug.Log(string.Format("[Player {0}]: [{1}, {2:00}s, {3:#.##}x] activated!", playerID + 1, "debuffSlowerMovement", debuffSlowerMovementDuration, debuffSlowerMovementMultiplier));
     }
 
     void Shoot(GameObject projectile)
@@ -211,6 +211,27 @@ public class PlayerScript : MonoBehaviour
     {
         gameControllerGameObject.GetComponent<GameControllerScript>().PlayersHealth[playerID] = life;
     }
+
+    void GetOutfitFromPlayerPrefs()
+    {
+        foreach (GameObject go in hats)
+        {
+            go.SetActive(go.name == PlayerPrefs.GetString(gameObject.name + "selectedHat"));
+            if (go.activeSelf)
+            {
+                go.GetComponent<SpriteRenderer>().color = new Color(PlayerPrefs.GetFloat(gameObject.name + go.gameObject.name + "_r_"), PlayerPrefs.GetFloat(gameObject.name + go.gameObject.name + "_g_"), PlayerPrefs.GetFloat(gameObject.name + go.gameObject.name + "_b_"));
+            }
+        }
+        foreach (GameObject go in accessories)
+        {
+            go.SetActive(go.name == PlayerPrefs.GetString(gameObject.name + "selectedAccessory"));
+            if (go.activeSelf)
+            {
+                go.GetComponent<SpriteRenderer>().color = new Color(PlayerPrefs.GetFloat(gameObject.name + go.gameObject.name + "_r_"), PlayerPrefs.GetFloat(gameObject.name + go.gameObject.name + "_g_"), PlayerPrefs.GetFloat(gameObject.name + go.gameObject.name + "_b_"));
+            }
+        }
+    }
+
     void Awake()
     {
         gameControllerGameObject = GameObject.FindGameObjectWithTag(gameControllerTag);
@@ -221,22 +242,7 @@ public class PlayerScript : MonoBehaviour
         trsfm = GetComponent<Transform>();
         originalPosition = trsfm.position;
         playerResizeOnShoot = GetComponent<PlayerResizeOnShoot>();
-		foreach (GameObject go in hats)
-		{
-			go.SetActive(go.name == PlayerPrefs.GetString(gameObject.name + "selectedHat"));
-			if (go.activeSelf) 
-			{
-				go.GetComponent<SpriteRenderer> ().color = new Color (PlayerPrefs.GetFloat (gameObject.name + go.gameObject.name + "_r_"), PlayerPrefs.GetFloat (gameObject.name + go.gameObject.name + "_g_"), PlayerPrefs.GetFloat (gameObject.name + go.gameObject.name + "_b_"));
-			}
-		}
-		foreach (GameObject go in accessories)
-		{
-			go.SetActive(go.name == PlayerPrefs.GetString(gameObject.name + "selectedAccessory"));
-			if (go.activeSelf) 
-			{
-				go.GetComponent<SpriteRenderer> ().color = new Color (PlayerPrefs.GetFloat (gameObject.name + go.gameObject.name + "_r_"), PlayerPrefs.GetFloat (gameObject.name + go.gameObject.name + "_g_"), PlayerPrefs.GetFloat (gameObject.name + go.gameObject.name + "_b_"));
-			}
-		}
+        GetOutfitFromPlayerPrefs();
     }
 
     void FixedUpdate()
@@ -330,7 +336,7 @@ public class PlayerScript : MonoBehaviour
                 enemyLife = enemy.GetComponent<BacteriaScript>().Life;
                 enemyDefaultLife = enemy.GetComponent<BacteriaScript>().GetDefaultLife;
                 enemy.GetComponent<BacteriaScript>().Life = enemyLife - (enemyDefaultLife * buffEnemyLoseHPOverTimeMultiplier);
-                print(enemy + " lost " + (enemyDefaultLife * buffEnemyLoseHPOverTimeMultiplier));
+                //print(enemy + " lost " + (enemyDefaultLife * buffEnemyLoseHPOverTimeMultiplier));
             }
         }
 
@@ -366,7 +372,7 @@ public class PlayerScript : MonoBehaviour
             { 
                 buffAutoShootDuration = 0.0f;
                 buffAutoShoot = false;
-                print(string.Format("[Player {0}]: [{1}] deactivated!", playerID + 1, "buffAutoShoot"));
+                //print(string.Format("[Player {0}]: [{1}] deactivated!", playerID + 1, "buffAutoShoot"));
             }
             else
             {
@@ -381,7 +387,7 @@ public class PlayerScript : MonoBehaviour
             {
                 buffFasterMovementDuration = 0.0f;
                 buffFasterMovement = false;
-                print(string.Format("[Player {0}]: [{1}] deactivated!", playerID + 1, "buffFasterMovement"));
+                //print(string.Format("[Player {0}]: [{1}] deactivated!", playerID + 1, "buffFasterMovement"));
             }
             else
             {
@@ -396,7 +402,7 @@ public class PlayerScript : MonoBehaviour
             {
                 buffIgnoreConstantDamageDuration = 0.0f;
                 buffIgnoreConstantDamage = false;
-                print(string.Format("[Player {0}]: [{1}] deactivated!", playerID + 1, "buffIgnoreConstantDamage"));
+                //print(string.Format("[Player {0}]: [{1}] deactivated!", playerID + 1, "buffIgnoreConstantDamage"));
             }
             else
             {
@@ -411,7 +417,7 @@ public class PlayerScript : MonoBehaviour
             {
                 buffShieldDuration = 0.0f;
                 buffShield = false;
-                print(string.Format("[Player {0}]: [{1}] deactivated!", playerID + 1, "buffShield"));
+                //print(string.Format("[Player {0}]: [{1}] deactivated!", playerID + 1, "buffShield"));
             }
             else
             {
@@ -426,7 +432,7 @@ public class PlayerScript : MonoBehaviour
             {
                 buffStrongerAttacksDuration = 0.0f;
                 buffStrongerAttacks = false;
-                print(string.Format("[Player {0}]: [{1}] deactivated!", playerID + 1, "buffStrongerAttacks"));
+                //print(string.Format("[Player {0}]: [{1}] deactivated!", playerID + 1, "buffStrongerAttacks"));
             }
             else
             {
@@ -441,7 +447,7 @@ public class PlayerScript : MonoBehaviour
             {
                 buffEnemyLoseHPOverTimeDuration = 0.0f;
                 buffEnemyLoseHPOverTime = false;
-                print(string.Format("[Player {0}]: [{1}] deactivated!", playerID + 1, "buffEnemyLoseHPOverTime"));
+                //print(string.Format("[Player {0}]: [{1}] deactivated!", playerID + 1, "buffEnemyLoseHPOverTime"));
             }
             else
             {
@@ -459,7 +465,7 @@ public class PlayerScript : MonoBehaviour
             {
                 debuffInvertedMovementDuration = 0.0f;
                 debuffInvertedMovement = false;
-                print(string.Format("[Player {0}]: [{1}] deactivated!", playerID + 1, "debuffInvertedMovement"));
+                //print(string.Format("[Player {0}]: [{1}] deactivated!", playerID + 1, "debuffInvertedMovement"));
             }
             else
             {
@@ -474,7 +480,7 @@ public class PlayerScript : MonoBehaviour
             {
                 debuffSlowerMovementDuration = 0.0f;
                 debuffSlowerMovement = false;
-                print(string.Format("[Player {0}]: [{1}] deactivated!", playerID + 1, "debuffSlowerMovement"));
+                //print(string.Format("[Player {0}]: [{1}] deactivated!", playerID + 1, "debuffSlowerMovement"));
             }
             else
             {
@@ -498,7 +504,6 @@ public class PlayerScript : MonoBehaviour
             {
 				life = 0.0f;
 				UpdateLifeInGameController();
-                gameControllerGameObject.GetComponent<GameControllerScript>().disabledPlayers.Add(this.gameObject);
                 this.gameObject.SetActive(false);
             }
         }
@@ -519,7 +524,6 @@ public class PlayerScript : MonoBehaviour
             {
 				life = 0.0f;
 				UpdateLifeInGameController();
-                gameControllerGameObject.GetComponent<GameControllerScript>().disabledPlayers.Add(this.gameObject);
                 this.gameObject.SetActive(false);
             }
         }

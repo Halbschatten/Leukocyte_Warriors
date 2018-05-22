@@ -3116,11 +3116,11 @@ Prefab:
     - target: {fileID: 224958774276829900, guid: ff9f8b2ffadec2a43aaf75e070cedfbb,
         type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4906036013090776, guid: ff9f8b2ffadec2a43aaf75e070cedfbb, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 224958774276829900, guid: ff9f8b2ffadec2a43aaf75e070cedfbb,
         type: 2}
@@ -9543,7 +9543,7 @@ GameObject:
   - component: {fileID: 717848697}
   - component: {fileID: 717848696}
   m_Layer: 0
-  m_Name: Top_hat
+  m_Name: Top Hat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16856,7 +16856,7 @@ GameObject:
   - component: {fileID: 1240501090}
   - component: {fileID: 1240501089}
   m_Layer: 0
-  m_Name: Samurai_Kabuto1_0
+  m_Name: Kabuto
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16935,8 +16935,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1240501088}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -15.482117, y: 1.9105835, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 2.8571327}
+  m_LocalPosition: {x: 0.41428563, y: 1.9085712, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 670379094}
   - {fileID: 1227601070}
@@ -17529,7 +17529,7 @@ GameObject:
   - component: {fileID: 1326303245}
   - component: {fileID: 1326303244}
   m_Layer: 0
-  m_Name: Samurai_Kabuto1_0
+  m_Name: Kabuto
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19626,7 +19626,7 @@ GameObject:
   - component: {fileID: 1496609542}
   - component: {fileID: 1496609541}
   m_Layer: 0
-  m_Name: Glasses_m
+  m_Name: Male Sunglasses
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22515,7 +22515,7 @@ GameObject:
   - component: {fileID: 1633068228}
   - component: {fileID: 1633068227}
   m_Layer: 0
-  m_Name: Glasses_f
+  m_Name: Female Sunglasses
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22965,7 +22965,7 @@ GameObject:
   - component: {fileID: 1669868556}
   - component: {fileID: 1669868555}
   m_Layer: 0
-  m_Name: Glasses_f
+  m_Name: Female Sunglasses
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23879,7 +23879,7 @@ GameObject:
   - component: {fileID: 1711539048}
   - component: {fileID: 1711539047}
   m_Layer: 0
-  m_Name: Glasses_m
+  m_Name: Male Sunglasses
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32320,7 +32320,7 @@ GameObject:
   - component: {fileID: 2027470266}
   - component: {fileID: 2027470265}
   m_Layer: 0
-  m_Name: Top_hat
+  m_Name: Top Hat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

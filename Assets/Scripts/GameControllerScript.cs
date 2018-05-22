@@ -72,6 +72,9 @@ public class GameControllerScript : MonoBehaviour
 			players = value;
 		}
 	}
+
+    public SpawnerScript[] spawners;
+
     public Transform bossPosition;
 	private float[] playersHealth;
 	public float[] PlayersHealth
@@ -119,17 +122,57 @@ public class GameControllerScript : MonoBehaviour
 		}
 		return players;
 	}
-	public GameObject FindOneRandomPlayer()
+
+    public SpawnerScript[] FindAllSpawners()
+    {
+        SpawnerScript[] spawnerScripts = GameObject.FindObjectsOfType<SpawnerScript>();
+        if (spawnerScripts.Length == 0)
+        {
+            return null;
+        }
+        else
+        {
+            return spawnerScripts;
+        }
+    }
+
+    public List<GameObject> FindAllDisabledPlayers()
+    {
+        PlayerScript[] playerScripts = Resources.FindObjectsOfTypeAll<PlayerScript>();
+        List<GameObject> disabledPlayers = new List<GameObject>();
+
+        int i;
+        for (i = 0; i < playerScripts.Length; i++)
+        {
+            if (playerScripts[i].gameObject.activeSelf == false)
+            {
+                disabledPlayers.Add(playerScripts[i].gameObject);
+            }
+        }
+
+        if (disabledPlayers.Count == 0)
+        {
+            return null;
+        }
+        else
+        {
+            return disabledPlayers;
+        }
+    }
+
+    public GameObject FindOneRandomPlayer()
 	{
 		PlayerScript[] players = GameObject.FindObjectsOfType<PlayerScript> ();
 		try
 		{
 			int pos = Random.Range (0, players.Length);
-			return players[pos].gameObject;
+            //print(players[pos].gameObject.name);
+            return players[pos].gameObject;
 		}
 		catch 
 		{
-			return null;
+            //print(null);
+            return null;
 		}
 	}
     public List<GameObject> disabledPlayers = new List<GameObject>();
@@ -172,10 +215,16 @@ public class GameControllerScript : MonoBehaviour
         {
             Destroy(enemy);
         }
+        foreach (SpawnerScript spawnerScript in spawners)
+        {
+            spawnerScript.enabled = false;
+            spawnerScript.enabled = true;
+        }
         uiPlayer1HPGameObject.gameObject.SetActive(true);
         uiPlayer2HPGameObject.gameObject.SetActive(true);
         uiScoreGameObject.gameObject.SetActive(true);
         uiGameOverGameObject.gameObject.SetActive(false);
+        gameOver = false;
     }
 
     public void AddEnemyToEnemyList(GameObject enemy)
@@ -213,7 +262,7 @@ public class GameControllerScript : MonoBehaviour
 	// Use this for initialization
 	void Start () 
 	{
-
+        AddNewCheckpoint();
 	}
 	void GameOverMethod()
 	{
@@ -270,6 +319,8 @@ public class GameControllerScript : MonoBehaviour
             }
         }
         players = FindAllPlayers ();
+        disabledPlayers = FindAllDisabledPlayers();
+        spawners = FindAllSpawners();
 		if (players == null) 
 		{
 			GameOverMethod ();

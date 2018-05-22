@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PhysicsScript : MonoBehaviour 
+public class PhysicsScript
 {
 	public Quaternion LookAt2D(GameObject source, GameObject target)
 	{
