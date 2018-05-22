@@ -6,7 +6,7 @@ using TMPro;
 
 public class MainMenuTutorialMenu : MonoBehaviour 
 {
-    public GameObject backButton, nextButton, finishButton;
+    public GameObject backButton, nextButton, finishButton, mainMenu, logo;
     public TMP_Text[] dialogMessages;
     private int messageNumberToDisplay = 0;
 	// Use this for initialization
@@ -80,6 +80,17 @@ public class MainMenuTutorialMenu : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void ReturnToMainMenu()
+    {
+        messageNumberToDisplay = 0;
+        DisplayMessage(dialogMessages[messageNumberToDisplay]);
+        CheckButtons();
+        SelectionCheck();
+        transform.parent.gameObject.SetActive(false);
+        logo.SetActive(true);
+        mainMenu.SetActive(true);
     }
 
 	public void Next()

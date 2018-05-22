@@ -88,7 +88,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4186897805507708}
   - component: {fileID: 114233675810986948}
-  - component: {fileID: 114104483069157046}
   - component: {fileID: 70985900380701092}
   m_Layer: 0
   m_Name: enm_bacteria
@@ -384,17 +383,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   randomColor: {r: 0, g: 0, b: 0, a: 0}
---- !u!114 &114104483069157046
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1377291482460438}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bbdcce7885d8e7c478a92e4c29ee4c40, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114135021510347314
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -419,14 +407,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletTag: Bullet
-  playerTags: []
   player: {fileID: 0}
   followPlayer: 1
   inactiveTime: 0.05
   followSpeedMultiplier: 0.005
   followSpeed: 5
-  debuffTakeMoreDamage: 0
-  debuffTakeMoreDamageMultiplier: 1.75
 --- !u!114 &114339517590889832
 MonoBehaviour:
   m_ObjectHideFlags: 1
