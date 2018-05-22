@@ -1,0 +1,14 @@
+{
+"companyName": "Grupo 02",
+"productName": "Leukocyte Warriors",
+"dataUrl": "be505699707b13e96d8e6b035fc7d5a7.unityweb",
+"asmCodeUrl": "111729eecfdbcde8f80876753460d17c.unityweb",
+"asmMemoryUrl": "34099bcf6184a0c64a6cf5614ce685dc.unityweb",
+"asmFrameworkUrl": "c54e947a2245356eda33cf9fae236a3f.unityweb",
+"TOTAL_MEMORY": 805306368,
+"graphicsAPI": ["WebGL 2.0", "WebGL 1.0"],
+"webglContextAttributes": {"preserveDrawingBuffer": false},
+"backgroundUrl": "68b36a557b197fb5701cece4820b2ada.jpg",
+"splashScreenStyle": "Dark",
+"backgroundColor": "#FFFFFF"
+}
