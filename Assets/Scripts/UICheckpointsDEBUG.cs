@@ -17,7 +17,7 @@ public class UICheckpointsDEBUG : MonoBehaviour
     {
         //print(gameControllerScript.GetCheckpoints());
         GetComponent<TMP_Text>().text = string.Format("--Checkpoints--\n{0}", gameControllerScript.GetCheckpoints());
-        if (Input.GetKeyDown(KeyCode.KeypadPlus))
+        if (Input.GetKeyDown(KeyCode.KeypadPlus) || Input.GetKeyDown(KeyCode.F5) || Input.GetButtonDown("MENU") && Input.GetButtonDown("BLUE0"))
         {
             gameControllerScript.AddNewCheckpoint();
         }

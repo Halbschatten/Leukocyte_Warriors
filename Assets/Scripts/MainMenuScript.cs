@@ -22,7 +22,7 @@ public class MainMenuScript : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.KeypadDivide))
+        if (Input.GetKeyDown(KeyCode.KeypadDivide) || Input.GetKeyDown(KeyCode.F3) || Input.GetButtonDown("MENU") && Input.GetButtonDown("GREEN"))
         {
             if (debugUIFPS.activeSelf == true)
             {
