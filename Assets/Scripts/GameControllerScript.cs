@@ -296,7 +296,7 @@ public class GameControllerScript : MonoBehaviour
         {
             SceneManager.LoadScene("MainMenu");
         }
-        if (Input.GetKeyDown(KeyCode.KeypadDivide) || Input.GetKeyDown(KeyCode.F3) || Input.GetButtonDown("MENU") && Input.GetButtonDown("GREEN0"))
+        if (Input.GetKeyDown(KeyCode.KeypadDivide) || Input.GetKeyDown(KeyCode.F3) || Input.GetButton("MENU") && Input.GetButtonDown("GREEN0"))
         {
             if (debugUIFPS.activeSelf == true)
             {
@@ -309,7 +309,7 @@ public class GameControllerScript : MonoBehaviour
                 PlayerPrefs.SetInt("gameDebugUI_FPS", 1);
             }
         }
-        if (Input.GetKeyDown(KeyCode.KeypadMultiply) || Input.GetKeyDown(KeyCode.F4) || Input.GetButtonDown("MENU") && Input.GetButtonDown("RED0"))
+        if (Input.GetKeyDown(KeyCode.KeypadMultiply) || Input.GetKeyDown(KeyCode.F4) || Input.GetButton("MENU") && Input.GetButtonDown("RED0"))
         {
             if (debugUICheckpoint.activeSelf == true)
             {
