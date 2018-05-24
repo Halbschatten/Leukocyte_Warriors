@@ -195,6 +195,19 @@ public class GameControllerScript : MonoBehaviour
     private Checkpoint checkpoint;
     private int checkpointNumber = 0;
 
+    private List<Highscore> highscoreList = new List<Highscore>();
+    public List<Highscore> GetHighscoreList
+    {
+        get
+        {
+            return highscoreList;
+        }
+        set
+        {
+            highscoreList = new List<Highscore>(value);
+        }
+    }
+
     public void AddNewCheckpoint()
     {
         checkpoint.AddCheckpoint(bossPosition.position, score, checkpointNumber);

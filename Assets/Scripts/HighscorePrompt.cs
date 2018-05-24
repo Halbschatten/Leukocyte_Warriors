@@ -11,6 +11,7 @@ public class HighscorePrompt : MonoBehaviour
     public TMP_Text[] player2Name;
     public TMP_Text score;
     public TMP_Text highscoreListText;
+    public int numberOfHighscoresToDisplay = 10;
     private List<Highscore> highscoresList = new List<Highscore>();
     private GameControllerScript gameControllerScript;
     public float timeToWaitBeforeReturningToMainMenu = 5.0f;
@@ -20,7 +21,7 @@ public class HighscorePrompt : MonoBehaviour
         gameControllerScript = FindObjectOfType<GameControllerScript>();
         highscoresList = gameControllerScript.ReadHighscoresFromPlayerPrefs();
         score.text += gameControllerScript.Score;
-        highscoreListText.text = gameControllerScript.ListHighscoreFromPlayerPrefs(highscoresList.Count, false);
+        highscoreListText.text = gameControllerScript.ListHighscoreFromPlayerPrefs(numberOfHighscoresToDisplay, false);
 	}
 	
     public void Ok()
@@ -33,7 +34,7 @@ public class HighscorePrompt : MonoBehaviour
         }
         highscoresList.Add(new Highscore(player1NameString, player2NameString, gameControllerScript.Score));
         gameControllerScript.SaveHighscoreInPlayerPrefs(highscoresList);
-        highscoreListText.text = gameControllerScript.ListHighscoreFromPlayerPrefs(highscoresList.Count, false);
+        highscoreListText.text = gameControllerScript.ListHighscoreFromPlayerPrefs(numberOfHighscoresToDisplay, false);
         WaitNSecondsAndReturnToMainMenu(timeToWaitBeforeReturningToMainMenu);
     }
 
