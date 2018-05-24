@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -234,6 +235,60 @@ public class GameControllerScript : MonoBehaviour
     public void AddEnemyToEnemyList(GameObject enemy)
     {
         enemies.Add(enemy);
+    }
+
+    public List<Highscore> OrderHighscoreByScoreDescend(List<Highscore> input)
+    {
+        return input.OrderByDescending(h => h.GetScore()).ToList();
+    }
+
+    public void SaveHighscoreInPlayerPrefs(List<Highscore> input)
+    {
+        input = OrderHighscoreByScoreDescend(input);
+        for (int i = 0; i < input.Count; i++)
+        {
+            PlayerPrefs.SetString("Highscore_" + i + "_Player1Name", input[i].GetPlayer1Name());
+            PlayerPrefs.SetString("Highscore_" + i + "_Player2Name", input[i].GetPlayer2Name());
+            PlayerPrefs.SetInt("Highscore_" + i + "_Score", input[i].GetScore());
+            PlayerPrefs.SetInt("Highscore_Count", input.Count);
+        }
+    }
+
+    public List<Highscore> ReadHighscoresFromPlayerPrefs()
+    {
+        int highscoreCount = PlayerPrefs.GetInt("Highscore_Count");
+        List<Highscore> aux = new List<Highscore>();
+        for (int i = 0; i < highscoreCount; i++)
+        {
+            aux.Add(new Highscore(PlayerPrefs.GetString("Highscore_" + i + "_Player1Name"), PlayerPrefs.GetString("Highscore_" + i + "_Player2Name"), PlayerPrefs.GetInt("Highscore_" + i + "_Score")));
+        }
+        //foreach (Highscore h in aux)
+        //{
+        //    print(string.Format("{0} | {1}  | {2}", h.GetPlayer1Name(), h.GetPlayer2Name(), h.GetScore()));
+        //}
+        return aux;
+    }
+
+    public string ListHighscoreFromPlayerPrefs(int size, bool isDebug)
+    {
+        string output;
+
+        if (isDebug == true)
+        {
+            output = "---Highscores---\n";   
+        }
+        else
+        {
+            output = "PLAYERS\t\t\tSCORE\n";
+        }
+
+        for (int i = 0; i < size; i++)
+        {
+            output = output + PlayerPrefs.GetString("Highscore_" + i + "_Player1Name") + " | ";
+            output = output + PlayerPrefs.GetString("Highscore_" + i + "_Player2Name") + " | ";
+            output = output + string.Format("{0:D9}\n", PlayerPrefs.GetInt("Highscore_" + i + "_Score"));
+        }
+        return output;
     }
 
 	void Awake()
