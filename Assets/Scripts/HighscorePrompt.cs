@@ -13,7 +13,7 @@ public class HighscorePrompt : MonoBehaviour
     public TMP_Text highscoreListText;
     public int numberOfHighscoresToDisplay = 10;
     private GameControllerScript gameControllerScript;
-    public float timeToWaitBeforeReturningToMainMenu = 5.0f;
+    public float timeToWaitBeforeReturningToMainMenu = 2.5f;
 
     void Awake ()
     {
@@ -33,7 +33,7 @@ public class HighscorePrompt : MonoBehaviour
         gameControllerScript.HighscoreList.Add(new Highscore(player1NameString, player2NameString, gameControllerScript.Score));
         gameControllerScript.SaveHighscoreInPlayerPrefs(gameControllerScript.HighscoreList);
         highscoreListText.text = gameControllerScript.ListHighscoreFromPlayerPrefs(numberOfHighscoresToDisplay, false);
-        WaitNSecondsAndReturnToMainMenu(timeToWaitBeforeReturningToMainMenu);
+        StartCoroutine(WaitNSecondsAndReturnToMainMenu(timeToWaitBeforeReturningToMainMenu));
     }
 
     IEnumerator WaitNSecondsAndReturnToMainMenu(float n)
