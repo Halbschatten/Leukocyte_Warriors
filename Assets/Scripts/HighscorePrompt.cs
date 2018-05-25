@@ -2,11 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using TMPro;
 
 public class HighscorePrompt : MonoBehaviour
 {
 
+    public Button okButton;
+    public TMP_Text okInfoText;
     public TMP_Text[] player1Name;
     public TMP_Text[] player2Name;
     public TMP_Text score;
@@ -20,7 +23,8 @@ public class HighscorePrompt : MonoBehaviour
         gameControllerScript = FindObjectOfType<GameControllerScript>();
         score.text += gameControllerScript.Score;
         highscoreListText.text = gameControllerScript.ListHighscoreFromPlayerPrefs(numberOfHighscoresToDisplay, false);
-	}
+        okInfoText.gameObject.SetActive(false);
+    }
 	
     public void Ok()
     {
@@ -34,6 +38,9 @@ public class HighscorePrompt : MonoBehaviour
         gameControllerScript.SaveHighscoreInPlayerPrefs(gameControllerScript.HighscoreList);
         highscoreListText.text = gameControllerScript.ListHighscoreFromPlayerPrefs(numberOfHighscoresToDisplay, false);
         StartCoroutine(WaitNSecondsAndReturnToMainMenu(timeToWaitBeforeReturningToMainMenu));
+        okButton.interactable = false;
+        okInfoText.text = "Returning to Main Menu...";
+        okInfoText.gameObject.SetActive(true);
     }
 
     IEnumerator WaitNSecondsAndReturnToMainMenu(float n)
