@@ -406,7 +406,7 @@ public class GameControllerScript : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Keypad6) || Input.GetKeyDown(KeyCode.F5) || Input.GetButton("MENU") && Input.GetButtonDown("BLACK0"))
         {
-            if (debugUICheckpoint.activeSelf == true)
+            if (debugUIHighscores.activeSelf == true)
             {
                 debugUIHighscores.SetActive(false);
                 PlayerPrefs.SetInt("gameDebugUI_Highscores", 0);
