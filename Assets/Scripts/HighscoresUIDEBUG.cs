@@ -6,19 +6,26 @@ using TMPro;
 public class HighscoresUIDEBUG : MonoBehaviour 
 {
     private GameControllerScript gameControllerScript;
-    private List<Highscore> highscoresList;
     public TMP_Text highscoreListText;
 
 	void Awake () 
     {
         gameControllerScript = FindObjectOfType<GameControllerScript>();
-        gameControllerScript = FindObjectOfType<GameControllerScript>();
-        highscoresList = new List<Highscore>(gameControllerScript.ReadHighscoresFromPlayerPrefs());
 	}
 	
 	// Update is called once per frame
 	void Update () 
     {
-        highscoreListText.text = gameControllerScript.ListHighscoreFromPlayerPrefs(highscoresList.Count, true);
-	}
+        highscoreListText.text = gameControllerScript.ListHighscoreFromPlayerPrefs(gameControllerScript.HighscoreList.Count, true);
+        if (Input.GetKeyDown(KeyCode.KeypadEnter) || Input.GetButton("MENU") && Input.GetButtonDown("YELLOW0"))
+        {
+            gameControllerScript.HighscoreList.Add(new Highscore("DBG", "DBG", Random.Range(0, 1000000000)));
+            gameControllerScript.SaveHighscoreInPlayerPrefs(gameControllerScript.HighscoreList);
+        }
+        if (Input.GetKeyDown(KeyCode.KeypadMinus) || Input.GetButton("MENU") && Input.GetButtonDown("WHITE0"))
+        {
+            gameControllerScript.HighscoreList.Clear();
+            gameControllerScript.SaveHighscoreInPlayerPrefs(gameControllerScript.HighscoreList);
+        }
+    }
 }

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class UIStageProgression : MonoBehaviour
 {
-    public GameObject boss;
+    private GameObject boss;
     private Transform bossTrsfm;
     private Scrollbar scrllBar;
     public Slider bossHP;
@@ -13,6 +13,7 @@ public class UIStageProgression : MonoBehaviour
 
     private void Awake()
     {
+        boss = GameObject.FindGameObjectWithTag("Boss");
         scrllBar = GetComponent<Scrollbar>();
         bossTrsfm = boss.GetComponent<Transform>();
     }
@@ -33,6 +34,12 @@ public class UIStageProgression : MonoBehaviour
                 scrllBar.gameObject.SetActive(false);
                 bossHP.gameObject.SetActive(true);
             }
+        }
+        else
+        {
+            scrllBar.value = 1.0f;
+            scrllBar.gameObject.SetActive(true);
+            bossHP.gameObject.SetActive(false);
         }
     }
 }

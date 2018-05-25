@@ -187,6 +187,7 @@ public class GameControllerScript : MonoBehaviour
 	public GameObject pSystem;
     public GameObject debugUIFPS;
     public GameObject debugUICheckpoint;
+    public GameObject debugUIHighscores;
 
     public List<GameObject> enemies = new List<GameObject>();
     public GameObject[] buffPickups;
@@ -195,8 +196,9 @@ public class GameControllerScript : MonoBehaviour
     private Checkpoint checkpoint;
     private int checkpointNumber = 0;
 
-    private List<Highscore> highscoreList = new List<Highscore>();
-    public List<Highscore> GetHighscoreList
+    private List<Highscore> highscoreList;
+
+    public List<Highscore> HighscoreList
     {
         get
         {
@@ -258,6 +260,13 @@ public class GameControllerScript : MonoBehaviour
     public void SaveHighscoreInPlayerPrefs(List<Highscore> input)
     {
         input = OrderHighscoreByScoreDescend(input);
+        for (int i = 0; i < PlayerPrefs.GetInt("Highscore_Count"); i++)
+        {
+            PlayerPrefs.DeleteKey("Highscore_" + i + "_Player1Name");
+            PlayerPrefs.DeleteKey("Highscore_" + i + "_Player2Name");
+            PlayerPrefs.DeleteKey("Highscore_" + i + "_Score");
+        }
+        PlayerPrefs.SetInt("Highscore_Count", 0);
         for (int i = 0; i < input.Count; i++)
         {
             PlayerPrefs.SetString("Highscore_" + i + "_Player1Name", input[i].GetPlayer1Name());
@@ -275,10 +284,6 @@ public class GameControllerScript : MonoBehaviour
         {
             aux.Add(new Highscore(PlayerPrefs.GetString("Highscore_" + i + "_Player1Name"), PlayerPrefs.GetString("Highscore_" + i + "_Player2Name"), PlayerPrefs.GetInt("Highscore_" + i + "_Score")));
         }
-        //foreach (Highscore h in aux)
-        //{
-        //    print(string.Format("{0} | {1}  | {2}", h.GetPlayer1Name(), h.GetPlayer2Name(), h.GetScore()));
-        //}
         return aux;
     }
 
@@ -306,8 +311,15 @@ public class GameControllerScript : MonoBehaviour
 
 	void Awake()
 	{
+        highscoreList = new List<Highscore>(ReadHighscoresFromPlayerPrefs());
+        checkpoint = new Checkpoint();
         bgScrollSpeed = defaultBGScrollSpeed;
         fgScrollSpeed = defaultFGScrollSpeed;
+        players = FindAllPlayers();
+        if (FindAllPlayers() != null)
+        {
+            playersHealth = new float[FindAllPlayers().Length];
+        }
         if (PlayerPrefs.GetInt("gameDebugUI_FPS") == 0)
         {
             debugUIFPS.SetActive(false);
@@ -324,13 +336,15 @@ public class GameControllerScript : MonoBehaviour
         {
             debugUICheckpoint.SetActive(true);
         }
-        checkpoint = new Checkpoint();
-        players = FindAllPlayers();
-        if (FindAllPlayers() != null)
+        if (PlayerPrefs.GetInt("gameDebugUI_Highscores") == 0)
         {
-            playersHealth = new float[FindAllPlayers().Length];
+            debugUIHighscores.SetActive(false);
         }
-	}
+        else
+        {
+            debugUIHighscores.SetActive(true);
+        }
+    }
 	// Use this for initialization
 	void Start () 
 	{
@@ -388,6 +402,19 @@ public class GameControllerScript : MonoBehaviour
             {
                 debugUICheckpoint.SetActive(true);
                 PlayerPrefs.SetInt("gameDebugUI_Checkpoint", 1);
+            }
+        }
+        if (Input.GetKeyDown(KeyCode.Keypad6) || Input.GetKeyDown(KeyCode.F5) || Input.GetButton("MENU") && Input.GetButtonDown("BLACK0"))
+        {
+            if (debugUICheckpoint.activeSelf == true)
+            {
+                debugUIHighscores.SetActive(false);
+                PlayerPrefs.SetInt("gameDebugUI_Highscores", 0);
+            }
+            else
+            {
+                debugUIHighscores.SetActive(true);
+                PlayerPrefs.SetInt("gameDebugUI_Highscores", 1);
             }
         }
         players = FindAllPlayers ();
