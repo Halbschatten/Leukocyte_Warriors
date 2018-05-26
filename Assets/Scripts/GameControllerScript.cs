@@ -210,6 +210,20 @@ public class GameControllerScript : MonoBehaviour
         }
     }
 
+    private int stage;
+
+    public int Stage
+    {
+        get
+        {
+            return this.stage;
+        }
+        set
+        {
+            this.stage = value;
+        }
+    }
+
     public void AddNewCheckpoint()
     {
         checkpoint.AddCheckpoint(bossPosition.position, score, checkpointNumber);
@@ -309,6 +323,11 @@ public class GameControllerScript : MonoBehaviour
         return output;
     }
 
+    public void NextStage()
+    {
+        stage++;
+    }
+
 	void Awake()
 	{
         highscoreList = new List<Highscore>(ReadHighscoresFromPlayerPrefs());
@@ -345,9 +364,11 @@ public class GameControllerScript : MonoBehaviour
             debugUIHighscores.SetActive(true);
         }
     }
+
 	// Use this for initialization
 	void Start () 
 	{
+        stage = 0;
         AddNewCheckpoint();
 	}
 	void GameOverMethod()
