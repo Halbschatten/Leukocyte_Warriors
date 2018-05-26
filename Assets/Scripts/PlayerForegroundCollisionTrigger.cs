@@ -5,7 +5,6 @@ using UnityEngine;
 public class PlayerForegroundCollisionTrigger : MonoBehaviour
 {
     private GameControllerScript gameControllerScript;
-    private string gameControllerTag = "GameController"; //Game Controller's tag;
     private string playerTag = "Player";
 
     void Awake ()

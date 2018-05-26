@@ -102,6 +102,19 @@ public class GameControllerScript : MonoBehaviour
         }
     }
 
+    private float bossInitialHealth;
+    public float BossInitialHealth
+    {
+        get
+        {
+            return bossInitialHealth;
+        }
+        set
+        {
+            bossInitialHealth = value;
+        }
+    }
+
 
     public float defaultBGScrollSpeed = -1.0f;
     public float defaultFGScrollSpeed = -3.0f;
@@ -223,28 +236,31 @@ public class GameControllerScript : MonoBehaviour
     
     public void ResumeFromLastCheckpoint()
     {
-        bossPosition.position = checkpoint.GetLastCheckpointBossPosition();
-        bossPosition.GetComponent<MoveToTheScene>().movementEnabled = true;
-        uiStageProgression.SetActive(true);
-        score = checkpoint.GetLastCheckpointScore();
-        for (int i = 0; i < disabledPlayers.Count; i++)
+        if (bossPosition)
         {
-            disabledPlayers[i].GetComponent<PlayerScript>().Respawn();
-        }
-        foreach (GameObject enemy in enemies)
-        {
-            Destroy(enemy);
-        }
-        foreach (SpawnerScript spawnerScript in spawners)
-        {
-            spawnerScript.enabled = false;
-            spawnerScript.enabled = true;
-        }
-        uiPlayer1HPGameObject.gameObject.SetActive(true);
-        uiPlayer2HPGameObject.gameObject.SetActive(true);
-        uiScoreGameObject.gameObject.SetActive(true);
-        uiGameOverGameObject.gameObject.SetActive(false);
-        gameOver = false;
+            bossPosition.position = checkpoint.GetLastCheckpointBossPosition();
+            bossPosition.GetComponent<MoveToTheScene>().movementEnabled = true;
+            uiStageProgression.SetActive(true);
+            score = checkpoint.GetLastCheckpointScore();
+            for (int i = 0; i < disabledPlayers.Count; i++)
+            {
+                disabledPlayers[i].GetComponent<PlayerScript>().Respawn();
+            }
+            foreach (GameObject enemy in enemies)
+            {
+                Destroy(enemy);
+            }
+            foreach (SpawnerScript spawnerScript in spawners)
+            {
+                spawnerScript.enabled = false;
+                spawnerScript.enabled = true;
+            }
+            uiPlayer1HPGameObject.gameObject.SetActive(true);
+            uiPlayer2HPGameObject.gameObject.SetActive(true);
+            uiScoreGameObject.gameObject.SetActive(true);
+            uiGameOverGameObject.gameObject.SetActive(false);
+            gameOver = false;
+        }  
     }
 
     public void AddEnemyToEnemyList(GameObject enemy)

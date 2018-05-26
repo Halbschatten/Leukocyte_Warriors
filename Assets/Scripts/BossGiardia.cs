@@ -2,16 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BacteriaBossScript : MonoBehaviour
+public class BossGiardia : MonoBehaviour
 {
     bool isQuitting;
     private Rigidbody2D rb2d;
     private PhysicsScript physicsScript;
     private GameControllerScript gameControllerScript;
     public SpawnerScript spawnerScript;
-    private static float defaultLife = 100.0f;
+    private static float defaultLife = 500.0f;
     private float life = defaultLife;
-    private int scoreOnDeath = 50000;
+    private int scoreOnDeath = 120000;
     public string bulletTag = "Bullet";
     public Animator animator;
     public GameObject[] gameObjectsToEnableOnDestroy;
@@ -26,7 +26,7 @@ public class BacteriaBossScript : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update ()
+    void Update()
     {
         gameControllerScript.BossHealth = life;
         if (gameControllerScript.GameOver == true)
@@ -41,7 +41,7 @@ public class BacteriaBossScript : MonoBehaviour
         {
             spawnerScript.enabled = false;
         }
-	}
+    }
     void OnApplicationQuit()
     {
         isQuitting = true;
@@ -50,10 +50,10 @@ public class BacteriaBossScript : MonoBehaviour
     {
         if (!isQuitting && gameControllerScript != null)
         {
-            foreach (GameObject gameObject in gameObjectsToEnableOnDestroy)
-            {
-                gameObject.SetActive(true);
-            }
+            //foreach (GameObject gameObject in gameObjectsToEnableOnDestroy)
+            //{
+            //    gameObject.SetActive(true);
+            //}
             gameControllerScript.AddNewCheckpoint();
             gameControllerScript.uiStageProgression.SetActive(true);
         }
