@@ -10,6 +10,9 @@ public class PlayerScript : MonoBehaviour
     public string bacteriaTag = "Bacteria";
     private float bacteriaDamageOnTriggerEnter = 0.05f;
     private float bacteriaDamageOnTriggerStay = 0.01f;
+    public string giardiaTag = "Giardia";
+    private float giardiaDamageOnTriggerEnter = 0.1f;
+    private float giardiaDamageOnTriggerStay = 0.02f;
     private Rigidbody2D rb2d; //Reference to the player's Rigidbody2D;
     private Transform trsfm; //Reference to the player's Transform;
     private Vector3 originalPosition;
@@ -503,12 +506,23 @@ public class PlayerScript : MonoBehaviour
             {
                 this.life -= bacteriaDamageOnTriggerEnter;
             }
-            if (this.life <= 0.0f)
+        }
+        if (other.gameObject.tag == giardiaTag)
+        {
+            if (buffShield == true)
             {
-				life = 0.0f;
-				UpdateLifeInGameController();
-                this.gameObject.SetActive(false);
+                this.life -= giardiaDamageOnTriggerEnter * buffShieldMultiplier;
             }
+            else
+            {
+                this.life -= giardiaDamageOnTriggerEnter;
+            }
+        }
+        if (this.life <= 0.0f)
+        {
+            life = 0.0f;
+            UpdateLifeInGameController();
+            this.gameObject.SetActive(false);
         }
     }
     void OnTriggerStay2D(Collider2D other)
@@ -523,12 +537,23 @@ public class PlayerScript : MonoBehaviour
             {
                 this.life -= bacteriaDamageOnTriggerStay;
             }
-            if (this.life <= 0.0f)
+        }
+        if (other.gameObject.tag == giardiaTag && buffIgnoreConstantDamage == false)
+        {
+            if (buffShield == true)
             {
-				life = 0.0f;
-				UpdateLifeInGameController();
-                this.gameObject.SetActive(false);
+                this.life -= giardiaDamageOnTriggerStay * buffShieldMultiplier;
             }
+            else
+            {
+                this.life -= giardiaDamageOnTriggerStay;
+            }
+        }
+        if (this.life <= 0.0f)
+        {
+            life = 0.0f;
+            UpdateLifeInGameController();
+            this.gameObject.SetActive(false);
         }
     }
 }

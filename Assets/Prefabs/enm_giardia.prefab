@@ -19,13 +19,12 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4536486086206934}
-  - component: {fileID: 50178544400920058}
   - component: {fileID: 70118782934269892}
   - component: {fileID: 212252885518760040}
   - component: {fileID: 114299401435206318}
   m_Layer: 0
   m_Name: enm_giardia
-  m_TagString: Untagged
+  m_TagString: Giardia
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -228,26 +227,6 @@ Transform:
   m_Father: {fileID: 4536486086206934}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &50178544400920058
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1043006263295112}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!70 &70118782934269892
 CapsuleCollider2D:
   m_ObjectHideFlags: 1
@@ -304,13 +283,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea40f0e74f9cb13428a7c6325ab4ee9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprComponents:
-  - {fileID: 212197416020494108}
-  - {fileID: 212693224078737990}
-  - {fileID: 212478132303827990}
-  - {fileID: 212797816015753834}
-  - {fileID: 212600224303073976}
-  - {fileID: 212141084767461582}
   bulletTag: Bullet
 --- !u!114 &114619993798923566
 MonoBehaviour:

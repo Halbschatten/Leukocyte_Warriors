@@ -20,14 +20,14 @@ public class UIBossLife : MonoBehaviour
         gameControllerScript = FindObjectOfType<GameControllerScript>();
         initialHealth = gameControllerScript.BossInitialHealth;
         hpBar = GetComponent<Slider>();
-
     }
 
     // Update is called once per frame
     void Update()
     {
+        initialHealth = gameControllerScript.BossInitialHealth;
         health = gameControllerScript.BossHealth;
-        hpBar.value = health / (initialHealth / 10);
+        hpBar.value = (health / (initialHealth / 10));
         if (health / initialHealth * 100 >= 75)
         {
             fill.color = fillColorHealthy;

@@ -9,6 +9,7 @@ TagManager:
   - DebugUI
   - Checkpoint
   - Boss
+  - Giardia
   layers:
   - Default
   - TransparentFX
