@@ -53,6 +53,7 @@ public class SpawnerScript : MonoBehaviour
 				float yPlus = transform.position.y + rend.bounds.size.y / 2;
 				positionToSpawn = new Vector2 (transform.position.x, Random.Range (yMinus, yPlus));
 			}
+            rotationToSpawn = gameObjectToInstantiate.transform.rotation;
             Instantiate(gameObjectToInstantiate, positionToSpawn, rotationToSpawn); //Instantiate the GameObject.
             amountInstantiated++; //Adds 1 to the amount of instanciated GameObjects.
             Invoke("InstantiateGameObject", timeToInstantiate); //Invoke InstantiateGameObject once again.

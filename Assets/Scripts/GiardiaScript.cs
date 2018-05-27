@@ -6,7 +6,6 @@ public class GiardiaScript : MonoBehaviour
 {
     bool isQuitting;
     private GameControllerScript gameControllerScript; //Reference to the Game Controller GameObject;
-    public SpriteRenderer[] sprComponents;
     private static float defaultLife = 10.0f;
     private float life = defaultLife;
     public float Life
@@ -27,28 +26,29 @@ public class GiardiaScript : MonoBehaviour
             return defaultLife;
         }
     }
-    private Vector3 velocity = new Vector3(-4.0f, 0.0f, 0.0f);
     private int scoreOnDeath = 1250;
     public string bulletTag = "Bullet";
-
+    private float time;
+    private float randomSpeed;
 
     void Awake()
     {
         gameControllerScript = GameObject.FindObjectOfType<GameControllerScript>();
         gameControllerScript.enemies.Add(this.gameObject);
+        randomSpeed = Random.Range(12, 24);
     }
 
     private void FixedUpdate()
     {
-
-        float cosMovement = Mathf.Cos(2 * Mathf.PI * Time.time / 12);
+        time += Time.fixedDeltaTime;
+        float cosMovement = Mathf.Cos(2 * Mathf.PI * time / randomSpeed);
         transform.position = new Vector3((12.0f * cosMovement), transform.position.y, transform.position.z);
-        if (cosMovement <= -0.95)
+        if (cosMovement <= -0.98)
         {
             transform.eulerAngles = new Vector3(transform.rotation.x, transform.rotation.y, 270.0f);
             transform.position = new Vector3(transform.position.x, Random.Range(-gameControllerScript.ScreenBoundariesY, gameControllerScript.ScreenBoundariesY));
         }
-        if (cosMovement >= 0.95)
+        if (cosMovement >= 0.98)
         {
             transform.eulerAngles = new Vector3(transform.rotation.x, transform.rotation.y, 90.0f);
             transform.position = new Vector3(transform.position.x, Random.Range(-gameControllerScript.ScreenBoundariesY, gameControllerScript.ScreenBoundariesY));

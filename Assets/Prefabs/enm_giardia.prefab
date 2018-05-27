@@ -39,7 +39,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4571011710186662}
   - component: {fileID: 212197416020494108}
-  - component: {fileID: 114055678806641882}
   m_Layer: 0
   m_Name: Giardia_L-eye
   m_TagString: Untagged
@@ -91,7 +90,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4609707694162646}
   - component: {fileID: 212693224078737990}
-  - component: {fileID: 114508806675934604}
   m_Layer: 0
   m_Name: Giardia_R-eye
   m_TagString: Untagged
@@ -283,18 +281,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &114055678806641882
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1146660179305768}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: deef06f9868904d798ab9a6d923c56cf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  randomColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &114168796805027516
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -318,19 +304,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea40f0e74f9cb13428a7c6325ab4ee9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sprComponents:
+  - {fileID: 212197416020494108}
+  - {fileID: 212693224078737990}
+  - {fileID: 212478132303827990}
+  - {fileID: 212797816015753834}
+  - {fileID: 212600224303073976}
+  - {fileID: 212141084767461582}
   bulletTag: Bullet
---- !u!114 &114508806675934604
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1582976058264450}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: deef06f9868904d798ab9a6d923c56cf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  randomColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &114619993798923566
 MonoBehaviour:
   m_ObjectHideFlags: 1
