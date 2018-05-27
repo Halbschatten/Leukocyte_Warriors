@@ -332,7 +332,7 @@ public class PlayerScript : MonoBehaviour
             enemies = gameControllerGameObject.GetComponent<GameControllerScript>().enemies;
             foreach (GameObject enemy in enemies)
             {
-                if (enemy != null)
+                if (enemy != null && enemy.GetComponent<BacteriaScript>())
                 {
                 float enemyLife, enemyDefaultLife;
                 enemyLife = enemy.GetComponent<BacteriaScript>().Life;

@@ -6,7 +6,7 @@ public class GiardiaScript : MonoBehaviour
 {
     bool isQuitting;
     private GameControllerScript gameControllerScript; //Reference to the Game Controller GameObject;
-    private static float defaultLife = 10.0f;
+    private static float defaultLife = 15.0f;
     private float life = defaultLife;
     public float Life
     {
@@ -43,12 +43,12 @@ public class GiardiaScript : MonoBehaviour
         time += Time.fixedDeltaTime;
         float cosMovement = Mathf.Cos(2 * Mathf.PI * time / randomSpeed);
         transform.position = new Vector3((12.0f * cosMovement), transform.position.y, transform.position.z);
-        if (cosMovement <= -0.98)
+        if (cosMovement <= -0.98f)
         {
             transform.eulerAngles = new Vector3(transform.rotation.x, transform.rotation.y, 270.0f);
             transform.position = new Vector3(transform.position.x, Random.Range(-gameControllerScript.ScreenBoundariesY, gameControllerScript.ScreenBoundariesY));
         }
-        if (cosMovement >= 0.98)
+        if (cosMovement >= 0.98f)
         {
             transform.eulerAngles = new Vector3(transform.rotation.x, transform.rotation.y, 90.0f);
             transform.position = new Vector3(transform.position.x, Random.Range(-gameControllerScript.ScreenBoundariesY, gameControllerScript.ScreenBoundariesY));

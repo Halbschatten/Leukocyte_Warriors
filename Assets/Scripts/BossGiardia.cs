@@ -60,7 +60,7 @@ public class BossGiardia : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == bulletTag)
+        if (other.gameObject.tag == bulletTag && GetComponent<MoveToTheScene>().movementEnabled == false)
         {
             this.life -= other.gameObject.GetComponent<BulletScript>().damage * 0.75f;
             Destroy(other.gameObject);
