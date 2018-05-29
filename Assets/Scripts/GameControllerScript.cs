@@ -61,6 +61,20 @@ public class GameControllerScript : MonoBehaviour
 			return gameOver;
 		}
 	}
+
+    private bool isFinal = false;
+    public bool IsFinal
+    {
+        get
+        {
+            return isFinal;
+        }
+        set
+        {
+            isFinal = value;
+        }
+    }
+
 	public GameObject[] players;
 	public GameObject[] Players
 	{
@@ -114,7 +128,6 @@ public class GameControllerScript : MonoBehaviour
             bossInitialHealth = value;
         }
     }
-
 
     public float defaultBGScrollSpeed = -1.0f;
     public float defaultFGScrollSpeed = -3.0f;
@@ -197,6 +210,7 @@ public class GameControllerScript : MonoBehaviour
     public GameObject uiBossHPGameObject;
     public GameObject uiStageProgression;
 	public GameObject uiScoreGameObject;
+    public GameObject uiHighscoreGameObject;
 	public GameObject pSystem;
     public GameObject debugUIFPS;
     public GameObject debugUICheckpoint;
@@ -246,9 +260,12 @@ public class GameControllerScript : MonoBehaviour
             {
                 disabledPlayers[i].GetComponent<PlayerScript>().Respawn();
             }
-            foreach (GameObject enemy in enemies)
+            if (enemies != null)
             {
-                Destroy(enemy);
+                foreach (GameObject enemy in enemies)
+                {
+                    Destroy(enemy);
+                }
             }
             foreach (SpawnerScript spawnerScript in spawners)
             {
@@ -370,16 +387,41 @@ public class GameControllerScript : MonoBehaviour
 	{
 		if (gameOver == false) 
 		{
-			gameOver = true;
-			uiPlayer1HPGameObject.gameObject.SetActive(false);
-			uiPlayer2HPGameObject.gameObject.SetActive(false);
-			uiScoreGameObject.gameObject.SetActive(false);
-			uiGameOverGameObject.gameObject.SetActive(true);
-			//pSystem.GetComponent<ParticleSystem>().Stop();
-			//Implement Game Over Code Here;
-			//Debug.Log ("Game Over! Returning to Main Menu in 5 seconds!");
-			//StartCoroutine(WaitForNSecondsAndReturnToMainMenu(5));
-		}
+            if (isFinal == true)
+            {
+                gameOver = true;
+                uiPlayer1HPGameObject.gameObject.SetActive(false);
+                uiPlayer2HPGameObject.gameObject.SetActive(false);
+                uiScoreGameObject.gameObject.SetActive(false);
+                if (enemies != null)
+                {
+                    foreach (GameObject enemy in enemies)
+                    {
+                        Destroy(enemy);
+                    }
+                }
+                if (players != null)
+                {
+                    foreach (GameObject player in players)
+                    {
+                        Destroy(player);
+                    }
+                }
+                uiHighscoreGameObject.SetActive(true);
+            }
+            else
+            {
+                gameOver = true;
+                uiPlayer1HPGameObject.gameObject.SetActive(false);
+                uiPlayer2HPGameObject.gameObject.SetActive(false);
+                uiScoreGameObject.gameObject.SetActive(false);
+                uiGameOverGameObject.gameObject.SetActive(true);
+                //pSystem.GetComponent<ParticleSystem>().Stop();
+                //Implement Game Over Code Here;
+                //Debug.Log ("Game Over! Returning to Main Menu in 5 seconds!");
+                //StartCoroutine(WaitForNSecondsAndReturnToMainMenu(5));
+            }
+        }
 	}
 	IEnumerator WaitForNSecondsAndReturnToMainMenu(int n)
 	{
@@ -440,6 +482,10 @@ public class GameControllerScript : MonoBehaviour
 		{
 			GameOverMethod ();
 		}
+        if (isFinal == true)
+        {
+            GameOverMethod();
+        }
 //		foreach (float hp in playersHealth) 
 //		{
 //			print (hp);

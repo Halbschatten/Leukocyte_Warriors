@@ -5,8 +5,6 @@ using UnityEngine;
 public class BossGiardia : MonoBehaviour
 {
     bool isQuitting;
-    private Rigidbody2D rb2d;
-    private PhysicsScript physicsScript;
     private GameControllerScript gameControllerScript;
     public SpawnerScript spawnerScript;
     private static float defaultLife = 500.0f;
@@ -20,8 +18,6 @@ public class BossGiardia : MonoBehaviour
     {
         gameControllerScript = FindObjectOfType<GameControllerScript>();
         gameControllerScript.bossPosition = GetComponent<Transform>();
-        rb2d = GetComponent<Rigidbody2D>();
-        physicsScript = new PhysicsScript();
         gameControllerScript.BossInitialHealth = defaultLife;
     }
 
@@ -55,15 +51,19 @@ public class BossGiardia : MonoBehaviour
             //    gameObject.SetActive(true);
             //}
             gameControllerScript.AddNewCheckpoint();
-            gameControllerScript.uiStageProgression.SetActive(true);
+            gameControllerScript.uiStageProgression.SetActive(false);
+            gameControllerScript.IsFinal = true;
         }
     }
     void OnTriggerEnter2D(Collider2D other)
     {
+        if (other.gameObject.tag == bulletTag)
+        {
+            Destroy(other.gameObject);
+        }
         if (other.gameObject.tag == bulletTag && GetComponent<MoveToTheScene>().movementEnabled == false)
         {
             this.life -= other.gameObject.GetComponent<BulletScript>().damage * 0.75f;
-            Destroy(other.gameObject);
             animator.Play("Boss_Face_Angry");
             if (this.life <= 0.0f)
             {

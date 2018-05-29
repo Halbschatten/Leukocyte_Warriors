@@ -92,7 +92,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialVelocityX: -2
   multiplier: 1.5
-  duration: 30
+  duration: 60
 --- !u!114 &114753972895813738
 MonoBehaviour:
   m_ObjectHideFlags: 1

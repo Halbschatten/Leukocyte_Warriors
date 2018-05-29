@@ -103,7 +103,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialVelocityX: -2
   multiplier: 1.5
-  duration: 30
+  duration: 20
 --- !u!212 &212247846377124584
 SpriteRenderer:
   m_ObjectHideFlags: 1

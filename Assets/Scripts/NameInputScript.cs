@@ -10,6 +10,7 @@ public class NameInputScript : MonoBehaviour, ISelectHandler, IDeselectHandler
     bool isThisObjectSelected;
     public string axisNameHorizontal;
     public string axisNameVertical;
+    public GameObject arrows;
     public EventSystem eS;
     float timer;
 
@@ -63,6 +64,7 @@ public class NameInputScript : MonoBehaviour, ISelectHandler, IDeselectHandler
 
 	    if (isThisObjectSelected)
         {
+            arrows.SetActive(true);
             if(Input.GetAxis(axisNameVertical) < 0 && timer >= 0.15f)
             {
                 if (GetComponent<TMP_Dropdown>().value == 25)
@@ -87,6 +89,10 @@ public class NameInputScript : MonoBehaviour, ISelectHandler, IDeselectHandler
                 }
                 timer = 0.0f;
             }
+        }
+        else
+        {
+            arrows.SetActive(false);
         }
 	}
 }
