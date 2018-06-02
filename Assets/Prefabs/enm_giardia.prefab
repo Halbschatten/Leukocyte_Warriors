@@ -38,6 +38,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4571011710186662}
   - component: {fileID: 212197416020494108}
+  - component: {fileID: 114009780718674222}
   m_Layer: 0
   m_Name: Giardia_L-eye
   m_TagString: Untagged
@@ -89,6 +90,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4609707694162646}
   - component: {fileID: 212693224078737990}
+  - component: {fileID: 114875088550751732}
   m_Layer: 0
   m_Name: Giardia_R-eye
   m_TagString: Untagged
@@ -182,7 +184,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1146660179305768}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.4, y: 0.62, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4536486086206934}
@@ -195,7 +197,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1582976058264450}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.75, y: 0.62, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4536486086206934}
@@ -260,6 +262,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114009780718674222
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1146660179305768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 602a3e86e537e4bdc8f410df5490d951, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minAngle: -5
+  maxAngle: 20
+  flip: 0
 --- !u!114 &114168796805027516
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -308,6 +324,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   randomColor: {r: 0, g: 0, b: 0, a: 0}
+--- !u!114 &114875088550751732
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1582976058264450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 602a3e86e537e4bdc8f410df5490d951, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minAngle: -5
+  maxAngle: 20
+  flip: 1
 --- !u!114 &114976465503567154
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -1939,6 +1939,7 @@ GameObject:
   m_Component:
   - component: {fileID: 292722970}
   - component: {fileID: 292722971}
+  - component: {fileID: 292722972}
   m_Layer: 0
   m_Name: L_Eye
   m_TagString: Untagged
@@ -1954,7 +1955,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 292722969}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.8, y: 0.925, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1046221938}
@@ -2006,6 +2007,20 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &292722972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 292722969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 602a3e86e537e4bdc8f410df5490d951, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minAngle: -25
+  maxAngle: 25
+  flip: 0
 --- !u!1 &292857254
 GameObject:
   m_ObjectHideFlags: 0
@@ -4435,6 +4450,7 @@ GameObject:
   m_Component:
   - component: {fileID: 599159409}
   - component: {fileID: 599159410}
+  - component: {fileID: 599159411}
   m_Layer: 0
   m_Name: R_Eye
   m_TagString: Untagged
@@ -4450,7 +4466,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 599159408}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.8, y: 0.925, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1046221938}
@@ -4502,6 +4518,20 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &599159411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 599159408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 602a3e86e537e4bdc8f410df5490d951, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minAngle: -25
+  maxAngle: 25
+  flip: 1
 --- !u!1 &610526717
 GameObject:
   m_ObjectHideFlags: 0
@@ -7043,7 +7073,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -8617,7 +8647,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 957701149}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3fa14d7f9a295e14baa7b535033feabb, type: 3}
   m_Name: 
@@ -8629,7 +8659,7 @@ MonoBehaviour:
   positionToSpawn: {x: 0, y: 0}
   rotationToSpawn: {x: 0, y: 0, z: 0, w: 0}
   amountToInstantiate: 5
-  timeToInstantiate: 2
+  timeToInstantiate: 3
 --- !u!1 &973237583
 GameObject:
   m_ObjectHideFlags: 0
@@ -10117,7 +10147,7 @@ MonoBehaviour:
   animator: {fileID: 1930050450}
   gameObjectsToEnableOnDestroy:
   - {fileID: 148143566}
-  - {fileID: 0}
+  - {fileID: 829824601}
   - {fileID: 180311924}
 --- !u!114 &1046221946
 MonoBehaviour:
