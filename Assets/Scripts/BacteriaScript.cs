@@ -5,6 +5,7 @@ using UnityEngine;
 public class BacteriaScript : MonoBehaviour
 {
     bool isQuitting;
+    private bool killedByPlayer;
     private GameControllerScript gameControllerScript; //Reference to the Game Controller GameObject;
     private static float defaultLife = 5.0f;
     private float life = defaultLife;
@@ -86,6 +87,7 @@ public class BacteriaScript : MonoBehaviour
             Destroy(other.gameObject);
             if (this.life <= 0.0f)
             {
+                killedByPlayer = true;
                 gameControllerScript.Score += scoreOnDeath;
                 Destroy(this.gameObject);
             }
@@ -97,7 +99,7 @@ public class BacteriaScript : MonoBehaviour
     }
     private void OnDestroy()
     {
-        if (!isQuitting && gameControllerScript != null)
+        if (!isQuitting && gameControllerScript != null && killedByPlayer == true)
         {
             if (Random.Range(0, 6) == 3)
             {

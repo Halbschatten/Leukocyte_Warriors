@@ -5,6 +5,7 @@ using UnityEngine;
 public class GiardiaScript : MonoBehaviour
 {
     bool isQuitting;
+    bool killedByPlayer;
     private GameControllerScript gameControllerScript; //Reference to the Game Controller GameObject;
     private static float defaultLife = 15.0f;
     private float life = defaultLife;
@@ -72,6 +73,7 @@ public class GiardiaScript : MonoBehaviour
             Destroy(other.gameObject);
             if (this.life <= 0.0f)
             {
+                killedByPlayer = true;
                 gameControllerScript.Score += scoreOnDeath;
                 Destroy(this.gameObject);
             }
